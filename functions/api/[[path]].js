@@ -1,32 +1,33 @@
 /**
- * Copie logique Worker autonome (deploiement wrangler deploy).
- * Source de verite pour Cloudflare Pages : functions/api/[[path]].js
+ * Cloudflare Pages Function — meme API que cloudflare-app-listing-worker.js
+ * Deploy : projet Pages uniquement (build vide, sortie ".") — pas de "npx wrangler deploy".
+ * Liaisons : Dashboard Pages → Parametres → Functions → lier KV "APPS_KV" + secret ADMIN_TOKEN.
  */
-export default {
-  async fetch(request, env) {
-    const url = new URL(request.url);
-    const path = url.pathname;
 
-    if (request.method === "POST" && path === "/api/submissions") {
-      return createSubmission(request, env);
-    }
+export async function onRequest(context) {
+  const { request, env } = context;
+  const url = new URL(request.url);
+  const path = url.pathname;
 
-    if (request.method === "GET" && path === "/api/apps") {
-      return listApprovedApps(env);
-    }
+  if (request.method === "POST" && path === "/api/submissions") {
+    return createSubmission(request, env);
+  }
 
-    if (request.method === "GET" && path === "/api/submissions") {
-      return listSubmissions(request, env, url);
-    }
+  if (request.method === "GET" && path === "/api/apps") {
+    return listApprovedApps(env);
+  }
 
-    const approveMatch = path.match(/^\/api\/submissions\/([^/]+)\/approve$/);
-    if (request.method === "POST" && approveMatch) {
-      return approveSubmission(request, env, approveMatch[1]);
-    }
+  if (request.method === "GET" && path === "/api/submissions") {
+    return listSubmissions(request, env, url);
+  }
 
-    return json({ error: "Not found" }, 404);
-  },
-};
+  const approveMatch = path.match(/^\/api\/submissions\/([^/]+)\/approve$/);
+  if (request.method === "POST" && approveMatch) {
+    return approveSubmission(request, env, approveMatch[1]);
+  }
+
+  return json({ error: "Not found" }, 404);
+}
 
 async function createSubmission(request, env) {
   const formData = await request.formData();

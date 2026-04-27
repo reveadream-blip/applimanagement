@@ -1,11 +1,5 @@
 {
-  "name": "applimanagement-worker",
+  "name": "applimanagement",
   "private": true,
-  "scripts": {
-    "deploy": "wrangler deploy",
-    "dev": "wrangler dev"
-  },
-  "devDependencies": {
-    "wrangler": "^4.85.0"
-  }
+  "description": "Site statique + API via Cloudflare Pages Functions (dossier functions/). Pas de wrangler en CI."
 }

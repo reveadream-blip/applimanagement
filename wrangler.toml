@@ -1,16 +1,11 @@
-# Worker API uniquement (/api/submissions, /api/apps).
-#
-# OBLIGATOIRE avant deploy : remplacer id ci-dessous par le vrai Namespace ID KV (32 caracteres hex).
-# Sinon erreur Cloudflare API [code: 10042] "KV namespace ... is not valid".
-# Ou est l’ID : Dashboard Cloudflare → Stockage → KV → ouvrir le namespace → copier "Namespace ID".
-#
-# Secret ADMIN_TOKEN : tableau de bord Worker → Variables → Secrets, ou : wrangler secret put ADMIN_TOKEN
+# Optionnel : developpement local avec "npx wrangler pages dev ."
+# En production (Pages + Git) : pas besoin de commande wrangler dans le build.
+# Liaisons KV + secret ADMIN_TOKEN : Dashboard Cloudflare → ton projet Pages → Parametres → Functions
 
 name = "applimanagement"
-main = "cloudflare-app-listing-worker.js"
 compatibility_date = "2026-04-27"
+pages_build_output_dir = "."
 
 [[kv_namespaces]]
 binding = "APPS_KV"
-# Remplace cette valeur par ton ID reel (pas de guillemets en trop, une seule ligne).
 id = "REMPLACEZ_PAR_VOTRE_KV_NAMESPACE_ID"
