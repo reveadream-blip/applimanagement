@@ -1,0 +1,11 @@
+# Worker API uniquement (/api/submissions, /api/apps).
+# Remplacez KV_ID ci-dessous par l’ID du namespace KV cree dans Cloudflare (Workers -> KV).
+# Secret ADMIN_TOKEN : wrangler secret put ADMIN_TOKEN  (ou Variables dans le dashboard)
+
+name = "applimanagement-api"
+main = "cloudflare-app-listing-worker.js"
+compatibility_date = "2026-04-27"
+
+[[kv_namespaces]]
+binding = "APPS_KV"
+id = "REMPLACEZ_PAR_VOTRE_KV_NAMESPACE_ID"
