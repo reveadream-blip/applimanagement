@@ -1,8 +1,14 @@
 # Mise en place Cloudflare (validation + publication auto)
 
 ## 1) Creer un KV
-- Dashboard Cloudflare -> Workers & Pages -> KV -> Create namespace
+- Dashboard Cloudflare -> **Stockage** (ou **Workers & Pages**) -> **KV** -> **Create a namespace**
 - Nom conseille: `APPS_KV`
+- **Copie le "Namespace ID"** (32 caracteres hex, ex. `a1b2c3d4e5f6...`) : c’est **obligatoire** pour `wrangler.toml`
+
+### Erreur deploy [code: 10042] "KV namespace is not valid"
+- Le deploy lit `id` dans `[[kv_namespaces]]` de `wrangler.toml`.
+- Tant que `id = "REMPLACEZ_PAR_VOTRE_KV_NAMESPACE_ID"`, le deploiement **echoue**.
+- **Correctif** : remplacer par l’ID reel du namespace, commiter, pousser sur `main`, relancer le build.
 
 ## 2) Creer le Worker
 - Create Worker (ou `wrangler init`)
