@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Listing Platform | AppliManagement</title>
+    <meta name="description" content="Discover approved applications listed on AppliManagement.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://applimanagement.com/app-listing-platform.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-900">
+    <nav class="border-b border-slate-200 bg-white">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index-en.html" class="font-bold text-lg">AppliManagement</a>
+            <div class="flex items-center gap-3">
+                <div class="inline-flex items-center gap-1 rounded-full bg-slate-100 border border-slate-200 p-1 text-xs font-bold uppercase tracking-wide">
+                    <a href="plateforme-referencement.html" class="px-2.5 py-1 rounded-full text-slate-500 hover:bg-white">FR</a>
+                    <a href="app-listing-platform.html" class="px-2.5 py-1 rounded-full bg-slate-900 text-white">EN</a>
+                </div>
+                <a href="submit-app.html" class="text-sm font-semibold bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700">Submit an app</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-10">
+        <header class="mb-8">
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-3">App Listing Platform</h1>
+            <p class="text-slate-600">Apps are automatically published here after admin approval.</p>
+        </header>
+
+        <div id="apps-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        <p id="empty-state" class="hidden mt-8 text-slate-500">No published app yet.</p>
+    </main>
+
+    <script>
+        const grid = document.getElementById("apps-grid");
+        const emptyState = document.getElementById("empty-state");
+
+        function escapeHtml(value) {
+            return (value || "")
+                .replaceAll("&", "&amp;")
+                .replaceAll("<", "&lt;")
+                .replaceAll(">", "&gt;")
+                .replaceAll('"', "&quot;")
+                .replaceAll("'", "&#039;");
+        }
+
+        async function loadApps() {
+            try {
+                const response = await fetch("/api/apps");
+                if (!response.ok) throw new Error("Load error");
+                const apps = await response.json();
+
+                if (!Array.isArray(apps) || apps.length === 0) {
+                    emptyState.classList.remove("hidden");
+                    return;
+                }
+
+                grid.innerHTML = apps.map((app) => `
+                    <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <h2 class="font-bold text-lg">${escapeHtml(app.app_name)}</h2>
+                            <span class="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-600">${escapeHtml(app.platform)}</span>
+                        </div>
+                        <p class="text-sm text-slate-500 mb-3">${escapeHtml(app.category)}</p>
+                        <p class="text-slate-700 text-sm leading-relaxed mb-4">${escapeHtml(app.description)}</p>
+                        <p class="text-xs text-slate-500 mb-4">By ${escapeHtml(app.creator_name)}</p>
+                        <a href="${escapeHtml(app.app_link)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Open app
+                        </a>
+                    </article>
+                `).join("");
+            } catch (error) {
+                emptyState.classList.remove("hidden");
+                emptyState.textContent = "Unable to load apps right now.";
+            }
+        }
+
+        loadApps();
+    </script>
+</body>
+</html>

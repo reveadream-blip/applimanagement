@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BatiPro | CRM pour artisans du bâtiment — Devis, chantiers, factures</title>
+    <meta name="description" content="Gérez vos devis, chantiers et factures facilement. Signature électronique, suivi photo, planning. Test BatiPro gratuitement.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://applimanagement.com/batipro.applimanagement.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://applimanagement.com/batipro.applimanagement.html">
+    <meta property="og:title" content="BatiPro | CRM pour artisans du bâtiment">
+    <meta property="og:description" content="Devis, chantiers, factures, signature électronique et suivi photo. Essai gratuit.">
+    <meta property="og:image" content="https://applimanagement.com/favicon.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="AppliManagement">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://applimanagement.com/favicon.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .hero-gradient { background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); }
+        .feature-card { transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .price-card { transition: transform 0.3s; border: 1px solid #e2e8f0; }
+        .price-card:hover { transform: scale(1.02); }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900">
+
+    <!-- HEADER -->
+    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="https://applimanagement.com" class="flex items-center space-x-3 hover:opacity-80 transition">
+                <img src="https://applimanagement.com/AppliManagement.png" alt="Logo" class="h-10 w-auto">
+                <span class="text-xl font-bold text-slate-800">AppliManagement</span>
+            </a>
+            <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-wide">
+                <a href="#fonctionnalites" class="hover:text-orange-500 transition">Fonctionnalités</a>
+                <a href="#tarifs" class="hover:text-orange-500 transition">Tarifs</a>
+                <a href="#temoignages" class="hover:text-orange-500 transition">Témoignages</a>
+                <a href="https://btp.applimanagement.com/" target="_blank" class="bg-orange-500 text-white px-5 py-2 rounded-full hover:bg-orange-600 transition">Accéder au CRM</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-gradient text-white py-24 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                <span class="text-sm font-bold">🔥 Nouveau</span>
+                <span class="text-sm">Gestion de chantiers simplifiée</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+                Gérez vos chantiers
+                <span class="text-orange-200"> comme un pro</span>
+            </h1>
+            <p class="text-xl text-orange-100 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Devis, factures, suivi chantier, photos, signature électronique... 
+                Tout ce dont vous avez besoin pour piloter votre activité sereinement.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://btp.applimanagement.com/" target="_blank" class="bg-white text-orange-600 px-8 py-4 rounded-2xl font-black text-lg hover:bg-orange-50 transition shadow-xl inline-flex items-center justify-center gap-2">
+                    Test BatiPro GRATUITEMENT <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#fonctionnalites" class="border-2 border-white/30 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/10 transition inline-flex items-center justify-center gap-2">
+                    Découvrir <i class="fas fa-play"></i>
+                </a>
+            </div>
+            <div class="mt-16 flex justify-center gap-8 flex-wrap">
+                <div class="flex items-center gap-2"><i class="fas fa-check-circle"></i> Sans engagement</div>
+                <div class="flex items-center gap-2"><i class="fas fa-check-circle"></i> Paiement sécurisé</div>
+                <div class="flex items-center gap-2"><i class="fas fa-check-circle"></i> Support inclus</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- FEATURES SECTION -->
+    <section id="fonctionnalites" class="py-24 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">
+                    Tout ce dont vous avez besoin
+                </h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">
+                    Un CRM pensé pour les artisans et les pros du bâtiment
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card bg-slate-50 p-8 rounded-3xl hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">📄</div>
+                    <h3 class="text-xl font-black text-slate-900 mb-2">Devis professionnels</h3>
+                    <p class="text-slate-500 text-sm">Créez des devis en quelques clics, avec lignes de prestation, TVA et main d'œuvre. Export PDF et signature électronique.</p>
+                </div>
+                <div class="feature-card bg-slate-50 p-8 rounded-3xl hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">🧾</div>
+                    <h3 class="text-xl font-black text-slate-900 mb-2">Facturation simplifiée</h3>
+                    <p class="text-slate-500 text-sm">Générez des factures automatiquement depuis vos devis acceptés. Suivez les paiements en un coup d'œil.</p>
+                </div>
+                <div class="feature-card bg-slate-50 p-8 rounded-3xl hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">🏗️</div>
+                    <h3 class="text-xl font-black text-slate-900 mb-2">Suivi de chantier</h3>
+                    <p class="text-slate-500 text-sm">Journal de bord, photos terrain, planning visuel. Gardez une trace de l'avancement de vos projets.</p>
+                </div>
+                <div class="feature-card bg-slate-50 p-8 rounded-3xl hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">📸</div>
+                    <h3 class="text-xl font-black text-slate-900 mb-2">Photos illimitées</h3>
+                    <p class="text-slate-500 text-sm">Stockez toutes vos photos de chantier, organisées par projet. Accès depuis mobile.</p>
+                </div>
+                <div class="feature-card bg-slate-50 p-8 rounded-3xl hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">✍️</div>
+                    <h3 class="text-xl font-black text-slate-900 mb-2">Signature électronique</h3>
+                    <p class="text-slate-500 text-sm">Faites signer vos devis à distance. Validez les acceptations en toute sécurité.</p>
+                </div>
+                <div class="feature-card bg-slate-50 p-8 rounded-3xl hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">📊</div>
+                    <h3 class="text-xl font-black text-slate-900 mb-2">Tableau de bord</h3>
+                    <p class="text-slate-500 text-sm">Visualisez votre chiffre d'affaires, les relances à faire, et les indicateurs clés.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="py-20 bg-gradient-to-r from-orange-500 to-orange-600 text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div><div class="text-5xl font-black mb-2">500+</div><div class="text-orange-100">Artisans équipés</div></div>
+                <div><div class="text-5xl font-black mb-2">10k+</div><div class="text-orange-100">Devis créés</div></div>
+                <div><div class="text-5xl font-black mb-2">98%</div><div class="text-orange-100">Clients satisfaits</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="tarifs" class="py-24 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">Des tarifs adaptés à votre activité</h2>
+                <p class="text-slate-500">Sans engagement, résiliable à tout moment</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Standard -->
+                <div class="price-card bg-white rounded-3xl border-2 border-orange-500 p-8 shadow-xl relative">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange-500 text-white text-xs font-black px-4 py-1 rounded-full">POPULAIRE</div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">Standard</h3>
+                    <div class="mb-4"><span class="text-4xl font-black">19€</span><span class="text-slate-400"> / mois</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-orange-500"></i> 25 devis</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-orange-500"></i> 10 chantiers actifs</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-orange-500"></i> Signature électronique</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-orange-500"></i> Export PDF/CSV</li>
+                    </ul>
+                    <a href="https://btp.applimanagement.com/" target="_blank" class="block w-full bg-orange-500 text-white py-3 rounded-2xl font-bold text-center hover:bg-orange-600 transition">Essai gratuit</a>
+                </div>
+
+                <!-- Premium -->
+                <div class="price-card bg-slate-900 rounded-3xl p-8 shadow-xl text-white">
+                    <h3 class="text-2xl font-black mb-2">Premium</h3>
+                    <div class="mb-4"><span class="text-4xl font-black">29€</span><span class="text-slate-400"> / mois</span></div>
+                    <ul class="space-y-3 mb-8 text-slate-300">
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> Devis illimités</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> Chantiers illimités</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> Photos illimitées</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> Support prioritaire</li>
+                    </ul>
+                    <a href="https://btp.applimanagement.com/" target="_blank" class="block w-full bg-purple-500 text-white py-3 rounded-2xl font-bold text-center hover:bg-purple-600 transition">Essai gratuit</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="temoignages" class="py-24 px-4 bg-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-4">Ils nous font confiance</h2>
+                <p class="text-slate-500">Découvrez ce que nos utilisateurs pensent de BatiPro</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm">
+                    <div class="flex items-center gap-1 mb-4">★★★★★</div>
+                    <p class="text-slate-600 italic mb-6">"Un gain de temps énorme ! Les devis sont prêts en 2 minutes, et mes clients adorent la signature en ligne."</p>
+                    <p class="font-black text-slate-900">Thomas M.</p>
+                    <p class="text-sm text-slate-400">Artisan électricien</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm">
+                    <div class="flex items-center gap-1 mb-4">★★★★★</div>
+                    <p class="text-slate-600 italic mb-6">"Le suivi des chantiers et les photos me permettent de garder une trace de tout. Un outil indispensable."</p>
+                    <p class="font-black text-slate-900">Sophie L.</p>
+                    <p class="text-sm text-slate-400">Maître d'œuvre</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm">
+                    <div class="flex items-center gap-1 mb-4">★★★★★</div>
+                    <p class="text-slate-600 italic mb-6">"Je gagne 5h par semaine sur la gestion administrative. Le rapport qualité-prix est imbattable."</p>
+                    <p class="font-black text-slate-900">David R.</p>
+                    <p class="text-sm text-slate-400">Entreprise générale</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="py-20 bg-gradient-to-r from-slate-900 to-slate-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Prêt à simplifier votre gestion ?</h2>
+            <p class="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">Rejoignez plus de 500 artisans qui utilisent BatiPro au quotidien.</p>
+            <a href="https://btp.applimanagement.com/" target="_blank" class="inline-block bg-orange-500 text-white px-10 py-4 rounded-2xl font-black text-lg hover:bg-orange-600 transition shadow-xl">
+                Test BatiPro GRATUITEMENT
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <img src="https://applimanagement.com/AppliManagement.png" alt="Logo" class="h-8">
+                    <span class="text-xl font-black text-slate-900">BatiPro</span>
+                </div>
+                <div class="flex gap-8">
+                    <a href="#fonctionnalites" class="text-slate-500 hover:text-orange-500 text-sm">Fonctionnalités</a>
+                    <a href="#tarifs" class="text-slate-500 hover:text-orange-500 text-sm">Tarifs</a>
+                    <a href="#temoignages" class="text-slate-500 hover:text-orange-500 text-sm">Témoignages</a>
+                </div>
+                <p class="text-slate-400 text-sm">© 2024 BatiPro - Solution CRM pour artisans du bâtiment</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

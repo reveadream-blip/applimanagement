@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soumettre une application | AppliManagement</title>
+    <meta name="description" content="Soumettez votre application sur AppliManagement pour la rendre visible avec un simple lien, même sans publication sur le Play Store.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://applimanagement.com/soumettre-application.html">
+    <link rel="alternate" hreflang="fr" href="https://applimanagement.com/soumettre-application.html">
+    <link rel="alternate" hreflang="en" href="https://applimanagement.com/submit-app.html">
+    <link rel="alternate" hreflang="x-default" href="https://applimanagement.com/soumettre-application.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://applimanagement.com/soumettre-application.html">
+    <meta property="og:title" content="Soumettre une application | AppliManagement">
+    <meta property="og:description" content="Créateurs d'applications: publiez votre projet dans notre vitrine avec un lien vers votre application.">
+    <meta property="og:image" content="https://applimanagement.com/banniere%20applimanagement.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(150deg, #0f172a 0%, #1d4ed8 45%, #0b1220 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+    <nav class="border-b border-slate-200 bg-white/90 backdrop-blur-md sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="https://applimanagement.com/AppliManagement.png" alt="AppliManagement" class="h-9 w-auto">
+                <span class="font-bold">AppliManagement</span>
+            </a>
+            <div class="flex items-center gap-3">
+                <div class="inline-flex items-center gap-1 rounded-full bg-slate-100 border border-slate-200 p-1 text-xs font-bold uppercase tracking-wide">
+                    <a href="soumettre-application.html" class="px-2.5 py-1 rounded-full bg-slate-900 text-white">FR</a>
+                    <a href="submit-app.html" class="px-2.5 py-1 rounded-full text-slate-500 hover:bg-white">EN</a>
+                </div>
+                <a href="index.html" class="text-sm font-semibold text-blue-600 hover:underline">Retour au site</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="gradient-bg text-white py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="text-sm uppercase tracking-[0.22em] text-blue-200 font-semibold mb-3">Vitrine communautaire</p>
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-5">Soumettre votre application</h1>
+            <p class="text-slate-200 text-lg leading-relaxed max-w-2xl mx-auto">
+                Vous n'etes pas encore sur le Play Store ? Aucun probleme. Ajoutez votre application avec un lien public pour la faire decouvrir.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-14">
+        <div class="bg-white border border-slate-200 rounded-3xl shadow-xl p-7 md:p-10">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold mb-3">Formulaire de soumission</h2>
+                <p class="text-slate-600">
+                    Chaque soumission est verifiee avant publication pour proteger les visiteurs contre le spam et les liens non fiables.
+                </p>
+            </div>
+
+            <form id="submission-form-fr" class="space-y-5">
+
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div>
+                        <label for="app_name" class="block text-sm font-semibold mb-2">Nom de l'application *</label>
+                        <input id="app_name" name="app_name" type="text" required class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ex: FreshRescue">
+                    </div>
+                    <div>
+                        <label for="creator_name" class="block text-sm font-semibold mb-2">Nom du createur / equipe *</label>
+                        <input id="creator_name" name="creator_name" type="text" required class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ex: Studio Nova">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div>
+                        <label for="category" class="block text-sm font-semibold mb-2">Categorie *</label>
+                        <select id="category" name="category" required class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                            <option value="">Choisir une categorie</option>
+                            <option value="business">Business</option>
+                            <option value="productivite">Productivite</option>
+                            <option value="education">Education</option>
+                            <option value="sante">Sante</option>
+                            <option value="utilitaires">Utilitaires</option>
+                            <option value="jeu">Jeu</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="platform" class="block text-sm font-semibold mb-2">Plateforme *</label>
+                        <select id="platform" name="platform" required class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white">
+                            <option value="">Choisir une plateforme</option>
+                            <option value="android-apk">Android APK (lien direct)</option>
+                            <option value="webapp">Web App</option>
+                            <option value="ios-testflight">iOS TestFlight</option>
+                            <option value="github">GitHub</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="app_link" class="block text-sm font-semibold mb-2">Lien de l'application *</label>
+                    <input id="app_link" name="app_link" type="url" required class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="https://...">
+                </div>
+
+                <div>
+                    <label for="description" class="block text-sm font-semibold mb-2">Description courte *</label>
+                    <textarea id="description" name="description" rows="4" required class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y" placeholder="A quoi sert votre application ? Pour qui ?"></textarea>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-5">
+                    <div>
+                        <label for="email" class="block text-sm font-semibold mb-2">Email de contact *</label>
+                        <input id="email" name="email" type="email" required class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="vous@email.com">
+                    </div>
+                    <div>
+                        <label for="logo_link" class="block text-sm font-semibold mb-2">Lien logo/image (optionnel)</label>
+                        <input id="logo_link" name="logo_link" type="url" class="w-full rounded-xl border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="https://...">
+                    </div>
+                </div>
+
+                <div class="rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800">
+                    En soumettant, vous confirmez etre proprietaire de l'application ou autorise a la publier. AppliManagement reference des liens externes et n'heberge pas les APK.
+                </div>
+
+                <button type="submit" class="w-full rounded-xl bg-blue-600 text-white font-bold py-3.5 hover:bg-blue-700 transition shadow-lg shadow-blue-600/25">
+                    Envoyer ma soumission
+                </button>
+
+                <p id="submission-status-fr" class="hidden text-sm text-center font-medium"></p>
+
+                <p class="text-xs text-slate-500 text-center">
+                    Apres validation admin, votre application sera ajoutee automatiquement a la plateforme.
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        const formFr = document.getElementById("submission-form-fr");
+        const statusFr = document.getElementById("submission-status-fr");
+
+        function submitViaEmailFallback(formData) {
+            const backup = document.createElement("form");
+            backup.method = "POST";
+            backup.action = "https://formsubmit.co/contact.applimanagement@gmail.com";
+            backup.style.display = "none";
+
+            const add = (name, value) => {
+                const input = document.createElement("input");
+                input.type = "hidden";
+                input.name = name;
+                input.value = value;
+                backup.appendChild(input);
+            };
+
+            add("_subject", "Nouvelle soumission d'application - AppliManagement");
+            add("_next", "https://applimanagement.com/merci-soumission.html");
+            add("_template", "table");
+            add("_captcha", "false");
+
+            for (const [key, value] of formData.entries()) {
+                if (typeof value === "string") {
+                    add(key, value);
+                }
+            }
+
+            document.body.appendChild(backup);
+            backup.submit();
+        }
+
+        formFr.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            statusFr.classList.remove("hidden", "text-emerald-700", "text-red-600", "text-amber-700");
+            statusFr.classList.add("text-slate-600");
+            statusFr.textContent = "Envoi en cours...";
+
+            const formData = new FormData(formFr);
+
+            try {
+                const response = await fetch("/api/submissions", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (response.ok) {
+                    window.location.href = "merci-soumission.html";
+                    return;
+                }
+            } catch (error) {
+                /* API indisponible : secours email */
+            }
+
+            statusFr.classList.remove("text-slate-600", "text-red-600");
+            statusFr.classList.add("text-amber-700");
+            statusFr.textContent = "Envoi par email (API non configuree sur le serveur)...";
+            submitViaEmailFallback(formData);
+        });
+    </script>
+</body>
+</html>

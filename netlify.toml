@@ -1,0 +1,6 @@
+# Déploiement Netlify — dossier racine = site statique
+[build]
+  publish = "."
+
+# Les formulaires Netlify sont détectés automatiquement dans le HTML (data-netlify="true").
+# Notifications e-mail : tableau de bord Netlify → Site → Forms → Notifications.

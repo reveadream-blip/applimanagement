@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="6c_TlRr_9h6rPfTJvfu4bKID_TLURjxgclIsrSHtRTU" />
+    <title>AppliManagement | Sites vitrines &amp; CRM sur-mesure</title>
+    <meta name="description" content="AppliManagement : création de sites vitrines professionnels et CRM sur-mesure (BTP, services, FreshRescue). Tarifs dès 159 € TTC. Essai CRM gratuit. Réponse sous 24 h.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="canonical" href="https://applimanagement.com/">
+    <link rel="alternate" hreflang="fr" href="https://applimanagement.com/">
+    <link rel="alternate" hreflang="en" href="https://applimanagement.com/index-en.html">
+    <link rel="alternate" hreflang="x-default" href="https://applimanagement.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://applimanagement.com/">
+    <meta property="og:title" content="AppliManagement | Sites vitrines &amp; CRM sur-mesure">
+    <meta property="og:description" content="Sites vitrines et CRM personnalisés pour artisans, services et commerçants. Tarifs transparents, essai gratuit, accompagnement.">
+    <meta property="og:image" content="https://applimanagement.com/banniere%20applimanagement.png">
+    <meta property="og:image:alt" content="AppliManagement — sites vitrines et solutions CRM">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="AppliManagement">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AppliManagement | Sites vitrines &amp; CRM sur-mesure">
+    <meta name="twitter:description" content="Sites vitrines et CRM personnalisés. Tarifs dès 159 €. Essai CRM gratuit.">
+    <meta name="twitter:image" content="https://applimanagement.com/banniere%20applimanagement.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://applimanagement.com/#website",
+          "url": "https://applimanagement.com/",
+          "name": "AppliManagement",
+          "description": "Création de sites vitrines et solutions CRM sur-mesure pour entreprises et professionnels.",
+          "inLanguage": "fr-FR",
+          "publisher": { "@id": "https://applimanagement.com/#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://applimanagement.com/#organization",
+          "name": "AppliManagement",
+          "url": "https://applimanagement.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://applimanagement.com/favicon.png"
+          },
+          "description": "Expertise web et outils de gestion : sites vitrines, CRM métiers (BTP, location, services) et intégrations."
+        }
+      ]
+    }
+    </script>
+
+    <link rel="icon" type="image/png" sizes="96x96" href="https://applimanagement.com/favicon.png">
+    <link rel="apple-touch-icon" href="https://applimanagement.com/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="https://applimanagement.com/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 2px 15px -3px rgba(15, 23, 42, 0.08), 0 10px 20px -5px rgba(15, 23, 42, 0.06)',
+                        'card': '0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 20px 40px -12px rgba(15, 23, 42, 0.12)',
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .gradient-bg {
+            background: linear-gradient(145deg, #0b1220 0%, #1e293b 45%, #0f172a 100%);
+        }
+        .feature-card {
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+            cursor: pointer;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
+        }
+        .price-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(226, 232, 240, 0.9);
+        }
+        .price-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.12);
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+        }
+        .btn-pulse { animation: pulse-ring 2s infinite; }
+        details summary { list-style: none; }
+        details summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900 antialiased">
+
+    <nav class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-lg shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 hover:opacity-90 transition group">
+                <img src="https://applimanagement.com/AppliManagement.png" alt="Logo AppliManagement" class="h-10 w-auto drop-shadow-sm">
+                <span class="text-lg font-bold tracking-tight text-slate-900">AppliManagement</span>
+            </a>
+
+            <details class="md:hidden relative">
+                <summary class="flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 cursor-pointer hover:bg-slate-100 transition">
+                    <i class="fas fa-bars text-lg"></i>
+                </summary>
+                <div class="absolute right-0 top-full mt-2 w-56 py-2 rounded-2xl bg-white border border-slate-200 shadow-card z-50 flex flex-col gap-0.5 text-sm font-medium">
+                    <a href="index.html#vitrine" class="px-4 py-2.5 hover:bg-slate-50 text-slate-700">Sites Vitrines</a>
+                    <a href="index.html#crm" class="px-4 py-2.5 hover:bg-slate-50 text-blue-600 font-semibold">Solutions CRM</a>
+                    <a href="plateforme-referencement.html" class="px-4 py-2.5 hover:bg-slate-50 text-slate-700">Plateforme de référencement</a>
+                    <a href="index.html#tarifs" class="px-4 py-2.5 hover:bg-slate-50 text-slate-700">Tarifs</a>
+                    <div class="mx-4 my-2 h-px bg-slate-200"></div>
+                    <div class="px-4 py-2 text-xs uppercase tracking-wider text-slate-500">Langue</div>
+                    <div class="px-4 pb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide">
+                        <a href="index.html" class="px-2.5 py-1 rounded-full bg-slate-900 text-white">FR</a>
+                        <a href="index-en.html" class="px-2.5 py-1 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-50">EN</a>
+                    </div>
+                    <a href="index.html#contact" class="mx-2 mt-1 text-center bg-blue-600 text-white px-4 py-2.5 rounded-xl hover:bg-blue-700 transition">Contact</a>
+                </div>
+            </details>
+
+            <div class="hidden md:flex items-center gap-6 text-sm font-semibold uppercase tracking-wider text-slate-600">
+                <a href="index.html#vitrine" class="hover:text-blue-600 transition">Sites Vitrines</a>
+                <a href="index.html#crm" class="text-blue-600">Solutions CRM</a>
+                <a href="plateforme-referencement.html" class="hover:text-blue-600 transition">Plateforme de référencement</a>
+                <a href="index.html#tarifs" class="hover:text-blue-600 transition">Tarifs</a>
+                <div class="flex items-center gap-1 text-xs font-bold">
+                    <a href="index.html" class="px-2.5 py-1 rounded-full bg-slate-900 text-white">FR</a>
+                    <a href="index-en.html" class="px-2.5 py-1 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-50 transition">EN</a>
+                </div>
+                <a href="index.html#contact" class="bg-blue-600 text-white px-5 py-2.5 rounded-full hover:bg-blue-700 transition shadow-md shadow-blue-600/25">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="contenu-principal">
+    <header class="relative overflow-hidden gradient-bg text-white">
+        <div class="pointer-events-none absolute inset-0">
+            <div class="absolute -top-32 -right-24 h-[420px] w-[420px] rounded-full bg-blue-500/25 blur-3xl"></div>
+            <div class="absolute -bottom-40 -left-20 h-[380px] w-[380px] rounded-full bg-indigo-500/20 blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[min(90vw,720px)] w-[min(90vw,720px)] rounded-full bg-sky-400/5 blur-3xl"></div>
+        </div>
+        <div class="relative max-w-4xl mx-auto px-4 py-20 md:py-28 text-center">
+            <p class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-slate-200 backdrop-blur-sm mb-8 shadow-soft">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-60"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-sky-400"></span>
+                </span>
+                Sites vitrines &amp; CRM sur-mesure
+            </p>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+                Propulsez votre activité
+                <span class="block mt-2 text-3xl sm:text-4xl md:text-5xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-blue-300 to-indigo-300 italic">vers le digital.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto">
+                Expert en <strong class="text-white font-semibold">sites vitrines</strong> pour entreprises et en
+                <strong class="text-white font-semibold">CRM personnalisés</strong>, accessibles en ligne depuis votre PC, téléphone ou tablette — pour tous les métiers et tous les projets.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#vitrine" class="inline-flex items-center justify-center gap-2 bg-white text-slate-900 px-8 py-4 rounded-2xl font-bold hover:bg-slate-100 transition shadow-lg shadow-black/20 ring-1 ring-white/20">
+                    Création site vitrine
+                </a>
+                <a href="#crm" class="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-500 transition shadow-lg shadow-blue-900/40 ring-1 ring-white/10">
+                    Tester un CRM
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="vitrine" class="py-20 md:py-28 px-4 bg-white relative">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(59,130,246,0.08),transparent)] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 md:gap-20 items-center relative">
+            <div>
+                <span class="inline-block text-blue-600 font-bold uppercase tracking-[0.2em] text-xs mb-3">Services web</span>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
+                    Votre présence en ligne,<br><span class="text-slate-600">simplement efficace.</span>
+                </h2>
+                <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                    Nous réalisons des sites vitrines modernes pour les entreprises qui souhaitent présenter leurs services, rassurer leurs clients et être visibles sur Google.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 text-slate-700">
+                        <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600"><i class="fas fa-check text-xs"></i></span>
+                        Design épuré et professionnel
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700">
+                        <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600"><i class="fas fa-check text-xs"></i></span>
+                        Optimisé pour tous les écrans (mobile &amp; desktop)
+                    </li>
+                    <li class="flex items-start gap-3 text-slate-700">
+                        <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600"><i class="fas fa-check text-xs"></i></span>
+                        Référencement naturel (SEO) inclus
+                    </li>
+                </ul>
+            </div>
+            <div class="relative">
+                <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-blue-100 via-slate-100 to-indigo-100 opacity-80 blur-sm"></div>
+                <div class="relative rounded-3xl border border-slate-200/80 bg-slate-50 p-3 shadow-card">
+                    <div class="rounded-2xl overflow-hidden ring-1 ring-slate-200/60 shadow-inner bg-white">
+                        <img src="site vitrine.webp" alt="Aperçu site vitrine" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="crm" class="py-20 md:py-28 px-4 bg-slate-100/90 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,rgba(241,245,249,0.5)_100%)] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto text-center mb-14 md:mb-16 relative">
+            <span class="inline-block text-blue-600 font-bold uppercase tracking-[0.2em] text-xs mb-3">Gestion &amp; automatisation</span>
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 max-w-3xl mx-auto">Le CRM / application de gestion pour votre entreprise</h2>
+            <p class="text-slate-500 text-lg mt-4 max-w-2xl mx-auto">Un outil puissant qui s'adapte à chaque métier ou passion.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto relative">
+            <a href="métiersdomaines.html" class="bg-white p-8 rounded-3xl feature-card text-center flex flex-col h-full border border-slate-100 shadow-soft group hover:border-blue-200">
+                <div class="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-2xl text-blue-600 group-hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2 italic text-slate-900 group-hover:text-blue-600 transition-colors">Pour les entreprises</h3>
+                <p class="text-sm text-slate-500 flex-1 leading-relaxed">BTP, maintenance, loueurs de véhicules, services.</p>
+                <div class="mt-5 text-blue-600 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                    Découvrir <i class="fas fa-arrow-right ml-1"></i>
+                </div>
+            </a>
+
+            <a href="https://freshrescue.app" target="_blank" rel="noopener noreferrer" class="bg-white p-8 rounded-3xl feature-card text-center flex flex-col h-full border border-emerald-100 shadow-soft group hover:border-emerald-300 ring-1 ring-emerald-500/10">
+                <div class="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50 text-2xl text-emerald-600 group-hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1 italic text-slate-900 group-hover:text-emerald-700 transition-colors">freshrescue.app</h3>
+                <p class="text-xs font-semibold uppercase tracking-wide text-emerald-700 mb-3">L'app suisse anti-gaspillage</p>
+                <p class="text-sm text-slate-500 flex-1 leading-relaxed text-left">Elle relie commerçants et consommateurs partout en Suisse : les pros publient les invendus à prix flash justes, les clients consultent, récupèrent et savourent — pour sauver les produits et réduire le gaspillage.</p>
+                <div class="mt-5 text-emerald-600 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                    Découvrir l'app <i class="fas fa-arrow-right ml-1"></i>
+                </div>
+            </a>
+
+            <a href="métiersdomaines.html" class="bg-white p-8 rounded-3xl feature-card text-center flex flex-col h-full border border-slate-100 shadow-soft group hover:border-blue-300">
+                <div class="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-50 text-2xl text-blue-600 group-hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-magic"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-2 text-slate-900 group-hover:text-blue-600 transition-colors">Automatisation</h3>
+                <p class="text-sm text-slate-500 flex-1 leading-relaxed">Gestion et récupération automatique des documents, géolocalisation, devis, signature électronique…</p>
+                <div class="mt-5 text-blue-600 text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                    Découvrir <i class="fas fa-arrow-right ml-1"></i>
+                </div>
+            </a>
+        </div>
+
+        <div class="mt-16 md:mt-20 max-w-5xl mx-auto relative">
+            <div class="text-center mb-8">
+                <a href="métiersdomaines.html" class="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-10 py-4 rounded-2xl font-extrabold text-lg shadow-xl shadow-orange-500/25 hover:shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 hover:scale-[1.02] btn-pulse">
+                    🚀 Tester gratuitement nos CRM
+                </a>
+                <p class="text-slate-500 text-sm mt-4">Essai gratuit · Sans engagement</p>
+            </div>
+            <div class="rounded-3xl border border-red-100 bg-gradient-to-br from-red-50 via-white to-orange-50 p-8 md:p-10 shadow-card">
+                <div class="inline-flex items-center gap-2 rounded-full bg-red-100 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-red-700 mb-5">
+                    <i class="fas fa-triangle-exclamation"></i>
+                    Démo urgence
+                </div>
+                <h3 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 mb-4">SOS International Emergency</h3>
+                <p class="text-slate-600 leading-relaxed mb-3">Une interface pensée pour centraliser les alertes critiques, orienter immédiatement les équipes et accélérer la prise de décision.</p>
+                <p class="text-slate-600 leading-relaxed mb-3">Chaque étape est guidée : signalement, qualification, déclenchement des actions et suivi des interventions en temps réel.</p>
+                <p class="text-slate-600 leading-relaxed mb-8">Objectif : réduire le temps de réaction, fiabiliser la communication et garder une vision claire sur chaque situation d'urgence.</p>
+                <a href="sos-applimanagement.html" class="inline-flex items-center justify-center gap-2 rounded-xl bg-red-600 px-6 py-3 font-bold text-white hover:bg-red-700 transition shadow-lg shadow-red-600/25">
+                    Voir la démo
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-16 max-w-5xl mx-auto text-center relative">
+            <div class="rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50/90 via-white to-indigo-50/80 p-10 md:p-12 shadow-soft">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 text-xl mb-5">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <p class="text-xl font-bold text-slate-800 mb-3">Vous ne trouvez pas votre métier ?</p>
+                <p class="text-slate-600 mb-8 max-w-lg mx-auto leading-relaxed">Nous créons des solutions sur-mesure adaptées à 100&nbsp;% à votre activité.</p>
+                <a href="#contact" class="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-3.5 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">
+                    Demander un devis personnalisé
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 bg-gradient-to-r from-indigo-900 via-blue-900 to-slate-900 text-white">
+        <div class="max-w-6xl mx-auto rounded-3xl border border-white/10 bg-white/5 p-8 md:p-10 backdrop-blur-sm">
+            <div class="grid md:grid-cols-[1fr_auto] gap-6 items-center">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.25em] text-blue-200 font-semibold mb-3">Nouveau</p>
+                    <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-3">Répertoriez votre application même sans Play Store</h2>
+                    <p class="text-slate-200 leading-relaxed">
+                        Vous êtes créateur d'application ? Ajoutez votre projet avec un simple lien (site, APK, GitHub, TestFlight...) pour être visible dans notre vitrine communautaire.
+                    </p>
+                </div>
+                <a href="soumettre-application.html" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-white text-slate-900 px-7 py-4 font-bold hover:bg-slate-100 transition shadow-lg">
+                    Soumettre mon application
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="tarifs" class="py-20 md:py-28 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-14 md:mb-16">
+                <span class="inline-block text-slate-500 font-semibold uppercase tracking-[0.2em] text-xs mb-3">Tarification</span>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Offres &amp; tarifs</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="price-card p-10 bg-slate-50/80 rounded-3xl shadow-soft border-t-8 border-slate-900">
+                    <h3 class="text-2xl font-bold mb-1">Site vitrine</h3>
+                    <p class="text-slate-500 mb-6 text-sm">Création ponctuelle</p>
+                    <div class="text-4xl font-extrabold mb-8 tracking-tight">À partir de 159&nbsp;€<span class="text-lg font-semibold text-slate-500"> TTC</span></div>
+                    <ul class="space-y-3.5 text-slate-600 mb-10 text-sm leading-relaxed">
+                        <li class="flex gap-2"><i class="fas fa-check text-blue-500 mt-0.5 shrink-0"></i> Design personnalisé</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-blue-500 mt-0.5 shrink-0"></i> 3 à 5 pages professionnelles</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-blue-500 mt-0.5 shrink-0"></i> Formulaire de contact direct</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-blue-500 mt-0.5 shrink-0"></i> Formation à l'édition</li>
+                    </ul>
+                    <a href="#contact" class="block text-center py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition">Demander mon site</a>
+                </div>
+
+                <div class="price-card p-10 bg-white rounded-3xl shadow-card border-t-8 border-blue-600 relative overflow-hidden ring-1 ring-slate-100">
+                    <div class="absolute top-4 right-4 text-xs font-bold uppercase tracking-wide text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">Populaire</div>
+                    <h3 class="text-2xl font-bold mb-1">Abonnement CRM</h3>
+                    <p class="text-slate-500 mb-6 text-sm">Accès illimité à l'outil</p>
+                    <div class="text-4xl font-extrabold mb-8 tracking-tight">À partir de 19&nbsp;€<span class="text-lg font-semibold text-slate-400">/mois</span></div>
+                    <ul class="space-y-3.5 text-slate-600 mb-10 text-sm leading-relaxed">
+                        <li class="flex gap-2"><i class="fas fa-check text-blue-600 mt-0.5 shrink-0"></i> 1 application de gestion</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-blue-600 mt-0.5 shrink-0"></i> Stockage documents illimité</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-blue-600 mt-0.5 shrink-0"></i> Fiches clients illimitées</li>
+                        <li class="flex gap-2"><i class="fas fa-check text-blue-600 mt-0.5 shrink-0"></i> Sans engagement</li>
+                    </ul>
+                    <a href="métiersdomaines.html" class="block text-center py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">Testez gratuitement</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 md:py-28 px-4 bg-gradient-to-b from-slate-900 to-slate-950 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30 pointer-events-none bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.25),transparent_50%)]"></div>
+        <div class="max-w-4xl mx-auto relative">
+            <div class="grid md:grid-cols-2 gap-12 md:gap-16">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Prêt à démarrer ?</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed text-lg">
+                        Que ce soit pour une vitrine web ou un outil de gestion sur-mesure, nous revenons vers vous sous 24&nbsp;h avec une proposition adaptée.
+                    </p>
+                    <div class="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-300">
+                        <i class="fas fa-clock text-sky-400"></i>
+                        <span>Réponse rapide garantie</span>
+                    </div>
+                </div>
+                <div>
+                    <form name="contact" method="POST" action="/merci.html" data-netlify="true" netlify-honeypot="bot-field" accept-charset="UTF-8" class="space-y-4">
+                        <input type="hidden" name="form-name" value="contact">
+                        <p class="hidden" aria-hidden="true">
+                            <label>Ne pas remplir : <input type="text" name="bot-field" autocomplete="off" tabindex="-1"></label>
+                        </p>
+
+                        <input type="text" name="name" placeholder="Votre nom" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-white placeholder:text-slate-500 transition" required autocomplete="name">
+
+                        <select name="type_projet" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-white transition" required>
+                            <option value="" disabled selected class="text-slate-900">Type de demande</option>
+                            <option value="site-vitrine" class="text-slate-900">Je veux un site vitrine</option>
+                            <option value="crm" class="text-slate-900">Je m'abonne au CRM</option>
+                            <option value="les-deux" class="text-slate-900">Les deux !</option>
+                        </select>
+
+                        <input type="email" name="email" placeholder="votre@email.com" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-white placeholder:text-slate-500 transition" required autocomplete="email">
+
+                        <textarea name="message" rows="4" placeholder="Votre message…" class="w-full p-4 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-white placeholder:text-slate-500 transition resize-y min-h-[120px]"></textarea>
+
+                        <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-500 transition shadow-lg shadow-blue-600/30">Envoyer ma demande</button>
+                        <p class="text-xs text-slate-500 text-center pt-1">Besoin d’un contact direct ? <a href="mailto:contact.applimanagement@gmail.com" class="text-sky-400 hover:underline">contact.applimanagement@gmail.com</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer class="bg-slate-950 text-slate-400 py-12 px-4 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-sm">
+            <a href="index.html" class="flex items-center gap-3 hover:opacity-90 transition">
+                <img src="https://applimanagement.com/AppliManagement.png" alt="AppliManagement" class="h-8 brightness-0 invert opacity-90">
+                <span class="font-bold text-white">AppliManagement.com</span>
+            </a>
+            <a href="mentions-legales.html" class="text-slate-400 hover:text-white transition underline-offset-4 hover:underline">Mentions légales</a>
+            <p class="text-slate-600 text-xs md:text-sm">Expertise web &amp; data · 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>

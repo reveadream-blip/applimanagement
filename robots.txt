@@ -1,0 +1,8 @@
+# https://www.robotstxt.org/robotstxt.html
+
+# Autoriser tous les robots à explorer tout le site
+User-agent: *
+Allow: /
+
+# Lien vers votre sitemap pour aider l'indexation
+Sitemap: https://applimanagement.com/sitemap.xml
