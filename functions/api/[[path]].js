@@ -8,28 +8,40 @@ export async function onRequest(context) {
   const { request, env } = context;
   const url = new URL(request.url);
   const path = url.pathname;
+  try {
+    if (request.method === "POST" && path === "/api/submissions") {
+      return createSubmission(request, env);
+    }
 
-  if (request.method === "POST" && path === "/api/submissions") {
-    return createSubmission(request, env);
+    if (request.method === "GET" && path === "/api/apps") {
+      return listApprovedApps(env);
+    }
+
+    if (request.method === "GET" && path === "/api/submissions") {
+      return listSubmissions(request, env, url);
+    }
+
+    const approveMatch = path.match(/^\/api\/submissions\/([^/]+)\/approve$/);
+    if (request.method === "POST" && approveMatch) {
+      return approveSubmission(request, env, approveMatch[1]);
+    }
+
+    return json({ error: "Not found" }, 404);
+  } catch (error) {
+    return json(
+      {
+        error: "Internal server error",
+        detail: "Pages Function failed. Check APPS_KV binding and ADMIN_TOKEN secret.",
+      },
+      500
+    );
   }
-
-  if (request.method === "GET" && path === "/api/apps") {
-    return listApprovedApps(env);
-  }
-
-  if (request.method === "GET" && path === "/api/submissions") {
-    return listSubmissions(request, env, url);
-  }
-
-  const approveMatch = path.match(/^\/api\/submissions\/([^/]+)\/approve$/);
-  if (request.method === "POST" && approveMatch) {
-    return approveSubmission(request, env, approveMatch[1]);
-  }
-
-  return json({ error: "Not found" }, 404);
 }
 
 async function createSubmission(request, env) {
+  const missingKv = requireKv(env);
+  if (missingKv) return missingKv;
+
   const formData = await request.formData();
 
   const payload = {
@@ -70,6 +82,9 @@ async function createSubmission(request, env) {
 }
 
 async function listApprovedApps(env) {
+  const missingKv = requireKv(env);
+  if (missingKv) return missingKv;
+
   const ids = await getIds(env, "approved_ids");
   const apps = [];
   for (const id of ids) {
@@ -86,6 +101,9 @@ async function listApprovedApps(env) {
 }
 
 async function listSubmissions(request, env, url) {
+  const missingKv = requireKv(env);
+  if (missingKv) return missingKv;
+
   if (!isAuthorized(request, env)) {
     return json({ error: "Unauthorized" }, 401);
   }
@@ -105,6 +123,9 @@ async function listSubmissions(request, env, url) {
 }
 
 async function approveSubmission(request, env, id) {
+  const missingKv = requireKv(env);
+  if (missingKv) return missingKv;
+
   if (!isAuthorized(request, env)) {
     return json({ error: "Unauthorized" }, 401);
   }
@@ -134,6 +155,19 @@ function isAuthorized(request, env) {
   const auth = request.headers.get("Authorization") || "";
   const expected = `Bearer ${env.ADMIN_TOKEN}`;
   return auth === expected;
+}
+
+function requireKv(env) {
+  if (!env || !env.APPS_KV) {
+    return json(
+      {
+        error: "Configuration error",
+        detail: "APPS_KV binding missing in Cloudflare Pages Settings > Functions > Bindings.",
+      },
+      500
+    );
+  }
+  return null;
 }
 
 function isHttpUrl(value) {
