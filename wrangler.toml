@@ -11,5 +11,4 @@ pages_build_output_dir = "."
 
 [[kv_namespaces]]
 binding = "APPS_KV"
-id = "
-applimanagement_KV"
+id = "6feac490e02b4ee68b4c5edfaf591487"
