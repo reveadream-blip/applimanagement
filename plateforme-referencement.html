@@ -65,6 +65,49 @@
         let allApps = [];
         let filteredApps = [];
         let currentPage = 1;
+        const CATEGORY_OPTIONS = [
+            { value: "all", label: "Toutes les catégories" },
+            { value: "art-design", label: "Art et design" },
+            { value: "auto-vehicules", label: "Auto et véhicules" },
+            { value: "jeu-aventure", label: "Jeu - Aventure" },
+            { value: "jeu-action", label: "Jeu - Action" },
+            { value: "jeu-arcade", label: "Jeu - Arcade" },
+            { value: "jeu-carte", label: "Jeu - Cartes" },
+            { value: "jeu-casino", label: "Jeu - Casino" },
+            { value: "jeu-puzzle", label: "Jeu - Puzzle / Réflexion" },
+            { value: "jeu-course", label: "Jeu - Course" },
+            { value: "jeu-role", label: "Jeu - RPG / Rôle" },
+            { value: "jeu-simulation", label: "Jeu - Simulation" },
+            { value: "jeu-sport", label: "Jeu - Sport" },
+            { value: "jeu-strategie", label: "Jeu - Stratégie" },
+            { value: "jeu-musique", label: "Jeu - Musique" },
+            { value: "jeu-quiz", label: "Jeu - Quiz / Culture" },
+            { value: "jeu-enfant", label: "Jeu - Enfant" },
+            { value: "business", label: "Business" },
+            { value: "communication", label: "Communication" },
+            { value: "finance", label: "Finance" },
+            { value: "lifestyle", label: "Lifestyle" },
+            { value: "shopping", label: "Shopping" },
+            { value: "food-drink", label: "Food & Drink" },
+            { value: "voyage", label: "Voyage et local" },
+            { value: "plans-navigation", label: "Plans et navigation" },
+            { value: "actualites", label: "Actualités et magazines" },
+            { value: "livres", label: "Livres et références" },
+            { value: "divertissement", label: "Divertissement" },
+            { value: "musique-audio", label: "Musique et audio" },
+            { value: "photo-video", label: "Photo et vidéo" },
+            { value: "productivite", label: "Productivité" },
+            { value: "education", label: "Éducation" },
+            { value: "sante", label: "Santé" },
+            { value: "sport-bienetre", label: "Sport et bien-être" },
+            { value: "utilitaires", label: "Utilitaires" },
+            { value: "meteo", label: "Météo" },
+            { value: "parents", label: "Parents" },
+            { value: "medecine", label: "Médecine" },
+            { value: "reseaux-sociaux", label: "Réseaux sociaux" },
+            { value: "autre", label: "Autre" },
+            { value: "jeu", label: "Jeu (ancienne catégorie)" }
+        ];
 
         function escapeHtml(value) {
             return (value || "")
@@ -75,11 +118,10 @@
                 .replaceAll("'", "&#039;");
         }
 
-        function populateCategoryFilter(apps) {
-            const categories = [...new Set(apps.map((app) => (app.category || "").trim()).filter(Boolean))]
-                .sort((a, b) => a.localeCompare(b, "fr"));
-            categoryFilter.innerHTML = `<option value="all">Toutes les catégories</option>` +
-                categories.map((category) => `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`).join("");
+        function populateCategoryFilter() {
+            categoryFilter.innerHTML = CATEGORY_OPTIONS
+                .map((category) => `<option value="${escapeHtml(category.value)}">${escapeHtml(category.label)}</option>`)
+                .join("");
         }
 
         function applyFilterAndRender() {
@@ -142,7 +184,7 @@
                 if (!response.ok) throw new Error("Load error");
                 allApps = await response.json();
                 if (!Array.isArray(allApps)) allApps = [];
-                populateCategoryFilter(allApps);
+                populateCategoryFilter();
                 filteredApps = allApps;
                 renderPage();
             } catch (error) {

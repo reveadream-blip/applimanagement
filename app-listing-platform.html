@@ -65,6 +65,49 @@
         let allApps = [];
         let filteredApps = [];
         let currentPage = 1;
+        const CATEGORY_OPTIONS = [
+            { value: "all", label: "All categories" },
+            { value: "art-design", label: "Art & Design" },
+            { value: "auto-vehicles", label: "Auto & Vehicles" },
+            { value: "game-adventure", label: "Game - Adventure" },
+            { value: "game-action", label: "Game - Action" },
+            { value: "game-arcade", label: "Game - Arcade" },
+            { value: "game-card", label: "Game - Card" },
+            { value: "game-casino", label: "Game - Casino" },
+            { value: "game-puzzle", label: "Game - Puzzle" },
+            { value: "game-racing", label: "Game - Racing" },
+            { value: "game-role-playing", label: "Game - Role Playing" },
+            { value: "game-simulation", label: "Game - Simulation" },
+            { value: "game-sports", label: "Game - Sports" },
+            { value: "game-strategy", label: "Game - Strategy" },
+            { value: "game-music", label: "Game - Music" },
+            { value: "game-trivia", label: "Game - Trivia" },
+            { value: "game-kids", label: "Game - Kids" },
+            { value: "business", label: "Business" },
+            { value: "communication", label: "Communication" },
+            { value: "finance", label: "Finance" },
+            { value: "lifestyle", label: "Lifestyle" },
+            { value: "shopping", label: "Shopping" },
+            { value: "food-drink", label: "Food & Drink" },
+            { value: "travel-local", label: "Travel & Local" },
+            { value: "maps-navigation", label: "Maps & Navigation" },
+            { value: "news-magazines", label: "News & Magazines" },
+            { value: "books-reference", label: "Books & Reference" },
+            { value: "entertainment", label: "Entertainment" },
+            { value: "music-audio", label: "Music & Audio" },
+            { value: "photo-video", label: "Photo & Video" },
+            { value: "productivity", label: "Productivity" },
+            { value: "education", label: "Education" },
+            { value: "health", label: "Health" },
+            { value: "sports-fitness", label: "Sports & Fitness" },
+            { value: "utilities", label: "Utilities" },
+            { value: "weather", label: "Weather" },
+            { value: "parenting", label: "Parenting" },
+            { value: "medical", label: "Medical" },
+            { value: "social", label: "Social" },
+            { value: "other", label: "Other" },
+            { value: "jeu", label: "Game (legacy category)" }
+        ];
 
         function escapeHtml(value) {
             return (value || "")
@@ -75,11 +118,10 @@
                 .replaceAll("'", "&#039;");
         }
 
-        function populateCategoryFilter(apps) {
-            const categories = [...new Set(apps.map((app) => (app.category || "").trim()).filter(Boolean))]
-                .sort((a, b) => a.localeCompare(b, "en"));
-            categoryFilter.innerHTML = `<option value="all">All categories</option>` +
-                categories.map((category) => `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`).join("");
+        function populateCategoryFilter() {
+            categoryFilter.innerHTML = CATEGORY_OPTIONS
+                .map((category) => `<option value="${escapeHtml(category.value)}">${escapeHtml(category.label)}</option>`)
+                .join("");
         }
 
         function applyFilterAndRender() {
@@ -142,7 +184,7 @@
                 if (!response.ok) throw new Error("Load error");
                 allApps = await response.json();
                 if (!Array.isArray(allApps)) allApps = [];
-                populateCategoryFilter(allApps);
+                populateCategoryFilter();
                 filteredApps = allApps;
                 renderPage();
             } catch (error) {
