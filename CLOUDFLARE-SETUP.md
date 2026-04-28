@@ -10,7 +10,9 @@ L’API est dans `functions/api/[[path]].js` (Pages Functions). Tu **ne mets pas
 4. **Deploy command :**  
    - Ideal : vide si ton type de projet ne l’exige pas.  
    - Si le tableau de bord **oblige** une commande et tu utilises Wrangler pour Pages : **`npx wrangler pages deploy .`** (avec un **point** à la fin).  
-   - **Ne mets pas** `npx wrangler deploy` : ce n’est pas pour un projet Pages (`wrangler.toml` avec `pages_build_output_dir`) → erreur *Missing entry-point* ou avertissement *wrangler pages deploy should be used*.
+   - Tu peux aussi mettre **`npm run deploy`** (script défini dans `package.json` → même chose que `wrangler pages deploy .`).  
+   - **Ne mets surtout pas** `npx wrangler deploy` : ce n’est pas pour un projet Pages → erreur *Missing entry-point* et avertissement *wrangler pages deploy should be used*.  
+   - Si tes logs montrent encore `Executing user deploy command: npx wrangler deploy`, c’est que **Cloudflare** utilise encore l’ancienne valeur : ouvre **Build / Deploy**, remplace la commande, **enregistre**, refais un déploiement.
 
 Puis : **Parametres du projet Pages → Functions** :
 - Lier le namespace KV avec le nom de variable **`APPS_KV`** (meme nom que dans le code).

@@ -3,6 +3,7 @@
   "private": true,
   "description": "Pages statiques + Functions (functions/). Deploy Git : wrangler pages deploy — pas wrangler deploy.",
   "scripts": {
+    "deploy": "wrangler pages deploy .",
     "pages:deploy": "wrangler pages deploy .",
     "pages:dev": "wrangler pages dev ."
   },
