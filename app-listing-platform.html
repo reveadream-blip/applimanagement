@@ -59,6 +59,11 @@
 
                 grid.innerHTML = apps.map((app) => `
                     <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                        ${app.screenshot_link || app.logo_link ? `
+                        <div class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
+                            <img src="${escapeHtml(app.screenshot_link || app.logo_link)}" alt="${escapeHtml(app.app_name)} screenshot" class="w-full h-44 object-cover">
+                        </div>
+                        ` : ""}
                         <div class="flex items-center justify-between gap-2 mb-3">
                             <h2 class="font-bold text-lg">${escapeHtml(app.app_name)}</h2>
                             <span class="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-600">${escapeHtml(app.platform)}</span>

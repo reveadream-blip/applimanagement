@@ -53,6 +53,7 @@ async function createSubmission(request, env) {
     app_link: clean(formData.get("app_link")),
     description: clean(formData.get("description")),
     email: clean(formData.get("email")),
+    screenshot_link: clean(formData.get("screenshot_link")),
     logo_link: clean(formData.get("logo_link")),
     status: "pending",
     created_at: new Date().toISOString(),
@@ -65,6 +66,7 @@ async function createSubmission(request, env) {
     !payload.category ||
     !payload.platform ||
     !payload.app_link ||
+    !payload.screenshot_link ||
     !payload.description ||
     !payload.email
   ) {
@@ -73,6 +75,9 @@ async function createSubmission(request, env) {
 
   if (!isHttpUrl(payload.app_link)) {
     return json({ error: "Invalid app URL" }, 400);
+  }
+  if (!isHttpUrl(payload.screenshot_link)) {
+    return json({ error: "Invalid screenshot URL" }, 400);
   }
 
   await env.APPS_KV.put(`submission:${payload.id}`, JSON.stringify(payload));
@@ -246,6 +251,7 @@ async function sendSubmissionEmailNotification(payload) {
     form.set("app_link", payload.app_link);
     form.set("description", payload.description);
     form.set("email", payload.email);
+    form.set("screenshot_link", payload.screenshot_link || "");
     form.set("logo_link", payload.logo_link || "");
     form.set("submission_id", payload.id);
     form.set("created_at", payload.created_at);
