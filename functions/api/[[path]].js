@@ -77,6 +77,7 @@ async function createSubmission(request, env) {
 
   await env.APPS_KV.put(`submission:${payload.id}`, JSON.stringify(payload));
   await pushId(env, "pending_ids", payload.id);
+  await sendSubmissionEmailNotification(payload);
 
   return json({ ok: true, id: payload.id });
 }
@@ -230,4 +231,31 @@ function json(data, status = 200) {
       "cache-control": "no-store",
     },
   });
+}
+
+async function sendSubmissionEmailNotification(payload) {
+  try {
+    const form = new URLSearchParams();
+    form.set("_subject", `Nouvelle soumission d'application - ${payload.app_name}`);
+    form.set("_template", "table");
+    form.set("_captcha", "false");
+    form.set("app_name", payload.app_name);
+    form.set("creator_name", payload.creator_name);
+    form.set("category", payload.category);
+    form.set("platform", payload.platform);
+    form.set("app_link", payload.app_link);
+    form.set("description", payload.description);
+    form.set("email", payload.email);
+    form.set("logo_link", payload.logo_link || "");
+    form.set("submission_id", payload.id);
+    form.set("created_at", payload.created_at);
+
+    await fetch("https://formsubmit.co/contact.applimanagement@gmail.com", {
+      method: "POST",
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+      body: form.toString(),
+    });
+  } catch {
+    /* Best effort: ne pas bloquer la soumission si l'email echoue */
+  }
 }
