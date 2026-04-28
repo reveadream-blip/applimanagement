@@ -1,5 +1,12 @@
 {
   "name": "applimanagement",
   "private": true,
-  "description": "Site statique + API via Cloudflare Pages Functions (dossier functions/). Pas de wrangler en CI."
+  "description": "Pages statiques + Functions (functions/). Deploy Git : wrangler pages deploy — pas wrangler deploy.",
+  "scripts": {
+    "pages:deploy": "wrangler pages deploy .",
+    "pages:dev": "wrangler pages dev ."
+  },
+  "devDependencies": {
+    "wrangler": "^4.85.0"
+  }
 }

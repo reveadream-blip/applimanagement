@@ -1,5 +1,8 @@
-# Optionnel : developpement local avec "npx wrangler pages dev ."
-# En production (Pages + Git) : pas besoin de commande wrangler dans le build.
+# Pages (site + functions/). Pour CI Git, si une "Deploy command" est imposee :
+#   npx wrangler pages deploy .
+# NE PAS utiliser : npx wrangler deploy (reserve aux Workers sans assets Pages).
+#
+# Dev local : npx wrangler pages dev .
 # Liaisons KV + secret ADMIN_TOKEN : Dashboard Cloudflare → ton projet Pages → Parametres → Functions
 
 name = "applimanagement"

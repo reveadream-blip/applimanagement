@@ -7,7 +7,10 @@ L’API est dans `functions/api/[[path]].js` (Pages Functions). Tu **ne mets pas
 1. **Un projet Pages** lie a GitHub `applimanagement`.
 2. **Build command :** vide  
 3. **Build output directory :** `.`  
-4. **Deploy command :** vide (supprimer `npx wrangler deploy` si tu l’avais mis pour Workers).
+4. **Deploy command :**  
+   - Ideal : vide si ton type de projet ne l’exige pas.  
+   - Si le tableau de bord **oblige** une commande et tu utilises Wrangler pour Pages : **`npx wrangler pages deploy .`** (avec un **point** à la fin).  
+   - **Ne mets pas** `npx wrangler deploy` : ce n’est pas pour un projet Pages (`wrangler.toml` avec `pages_build_output_dir`) → erreur *Missing entry-point* ou avertissement *wrangler pages deploy should be used*.
 
 Puis : **Parametres du projet Pages → Functions** :
 - Lier le namespace KV avec le nom de variable **`APPS_KV`** (meme nom que dans le code).
