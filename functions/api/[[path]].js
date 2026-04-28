@@ -104,8 +104,11 @@ async function listSubmissions(request, env, url) {
   const missingKv = requireKv(env);
   if (missingKv) return missingKv;
 
+  const missingAdmin = requireAdminSecret(env);
+  if (missingAdmin) return missingAdmin;
+
   if (!isAuthorized(request, env)) {
-    return json({ error: "Unauthorized" }, 401);
+    return json({ error: "Unauthorized", detail: "Bearer token does not match ADMIN_TOKEN." }, 401);
   }
 
   const status = url.searchParams.get("status") || "pending";
@@ -126,8 +129,11 @@ async function approveSubmission(request, env, id) {
   const missingKv = requireKv(env);
   if (missingKv) return missingKv;
 
+  const missingAdmin = requireAdminSecret(env);
+  if (missingAdmin) return missingAdmin;
+
   if (!isAuthorized(request, env)) {
-    return json({ error: "Unauthorized" }, 401);
+    return json({ error: "Unauthorized", detail: "Bearer token does not match ADMIN_TOKEN." }, 401);
   }
 
   const key = `submission:${id}`;
@@ -165,6 +171,20 @@ function requireKv(env) {
         detail: "APPS_KV binding missing in Cloudflare Pages Settings > Functions > Bindings.",
       },
       500
+    );
+  }
+  return null;
+}
+
+function requireAdminSecret(env) {
+  if (!env || env.ADMIN_TOKEN === undefined || env.ADMIN_TOKEN === "") {
+    return json(
+      {
+        error: "Configuration error",
+        detail:
+          "ADMIN_TOKEN secret missing. Add it in Pages Settings > Variables and Secrets (Production), then redeploy.",
+      },
+      503
     );
   }
   return null;
