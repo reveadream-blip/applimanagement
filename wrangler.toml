@@ -8,7 +8,3 @@
 name = "applimanagement"
 compatibility_date = "2026-04-27"
 pages_build_output_dir = "."
-
-[[kv_namespaces]]
-binding = "APPS_KV"
-id = "REMPLACEZ_PAR_VOTRE_KV_NAMESPACE_ID"
