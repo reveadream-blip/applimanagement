@@ -53,6 +53,8 @@ async function createSubmission(request, env) {
   if (missingKv) return missingKv;
 
   const formData = await request.formData();
+  const screenshotFile = formData.get("screenshot_file");
+  const screenshotFromFile = await fileToDataUrl(screenshotFile);
 
   const payload = {
     id: crypto.randomUUID(),
@@ -63,7 +65,7 @@ async function createSubmission(request, env) {
     app_link: clean(formData.get("app_link")),
     description: clean(formData.get("description")),
     email: clean(formData.get("email")),
-    screenshot_link: clean(formData.get("screenshot_link")),
+    screenshot_link: clean(formData.get("screenshot_link")) || screenshotFromFile,
     logo_link: clean(formData.get("logo_link")),
     status: "pending",
     created_at: new Date().toISOString(),
@@ -86,8 +88,8 @@ async function createSubmission(request, env) {
   if (!isHttpUrl(payload.app_link)) {
     return json({ error: "Invalid app URL" }, 400);
   }
-  if (!isHttpUrl(payload.screenshot_link)) {
-    return json({ error: "Invalid screenshot URL" }, 400);
+  if (!isImageSource(payload.screenshot_link)) {
+    return json({ error: "Invalid screenshot input (URL or image file required)" }, 400);
   }
 
   await env.APPS_KV.put(`submission:${payload.id}`, JSON.stringify(payload));
@@ -216,7 +218,7 @@ async function updateSubmission(request, env, id) {
     return json({ error: "Missing required fields after update" }, 400);
   }
   if (!isHttpUrl(next.app_link)) return json({ error: "Invalid app URL" }, 400);
-  if (!isHttpUrl(next.screenshot_link)) return json({ error: "Invalid screenshot URL" }, 400);
+  if (!isImageSource(next.screenshot_link)) return json({ error: "Invalid screenshot source" }, 400);
 
   await env.APPS_KV.put(key, JSON.stringify(next));
   return json({ ok: true, item: next });
@@ -288,6 +290,28 @@ function isHttpUrl(value) {
   }
 }
 
+function isImageSource(value) {
+  if (!value) return false;
+  if (isHttpUrl(value)) return true;
+  return /^data:image\/[a-zA-Z0-9.+-]+;base64,/.test(value);
+}
+
+async function fileToDataUrl(fileValue) {
+  if (!fileValue || typeof fileValue === "string") return "";
+  if (typeof fileValue.arrayBuffer !== "function") return "";
+  if (!fileValue.type || !fileValue.type.startsWith("image/")) return "";
+  if (fileValue.size > 2 * 1024 * 1024) return "";
+
+  const buffer = await fileValue.arrayBuffer();
+  const bytes = new Uint8Array(buffer);
+  let binary = "";
+  for (let i = 0; i < bytes.length; i += 1) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  const base64 = btoa(binary);
+  return `data:${fileValue.type};base64,${base64}`;
+}
+
 async function getIds(env, key) {
   const raw = await env.APPS_KV.get(key);
   if (!raw) return [];
@@ -334,7 +358,12 @@ async function sendSubmissionEmailNotification(payload) {
     form.set("app_link", payload.app_link);
     form.set("description", payload.description);
     form.set("email", payload.email);
-    form.set("screenshot_link", payload.screenshot_link || "");
+    form.set(
+      "screenshot_link",
+      payload.screenshot_link && payload.screenshot_link.startsWith("data:image/")
+        ? "Image uploadée via formulaire (stockée en base)."
+        : payload.screenshot_link || ""
+    );
     form.set("logo_link", payload.logo_link || "");
     form.set("submission_id", payload.id);
     form.set("created_at", payload.created_at);
