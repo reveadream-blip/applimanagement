@@ -15,6 +15,11 @@
         <div class="bg-white border border-slate-200 rounded-2xl p-4 mb-6">
             <label for="admin-token" class="block text-sm font-semibold mb-2">Token admin</label>
             <input id="admin-token" type="password" class="w-full rounded-xl border border-slate-300 px-4 py-3" placeholder="Coller le token ADMIN_TOKEN">
+            <label for="submission-status" class="block text-sm font-semibold mt-4 mb-2">Type de fiches</label>
+            <select id="submission-status" class="w-full rounded-xl border border-slate-300 px-4 py-3">
+                <option value="pending">En attente</option>
+                <option value="approved">Publiees</option>
+            </select>
             <button id="load-pending" class="mt-3 rounded-xl bg-slate-900 text-white px-4 py-2.5 font-semibold hover:bg-slate-800">Charger les soumissions en attente</button>
         </div>
 
@@ -24,6 +29,7 @@
 
     <script>
         const tokenInput = document.getElementById("admin-token");
+        const statusSelect = document.getElementById("submission-status");
         const loadButton = document.getElementById("load-pending");
         const pendingList = document.getElementById("pending-list");
         const empty = document.getElementById("pending-empty");
@@ -50,7 +56,8 @@
             const token = normalizeAdminToken(tokenInput.value);
             if (!token) return;
 
-            const response = await fetch("/api/submissions?status=pending", {
+            const currentStatus = statusSelect.value;
+            const response = await fetch(`/api/submissions?status=${currentStatus}`, {
                 headers: { "Authorization": `Bearer ${token}` }
             });
 
@@ -78,7 +85,7 @@
             const list = await response.json();
             if (!Array.isArray(list) || list.length === 0) {
                 empty.classList.remove("hidden");
-                empty.textContent = "Aucune soumission en attente.";
+                empty.textContent = currentStatus === "approved" ? "Aucune fiche publiee." : "Aucune soumission en attente.";
                 return;
             }
 
@@ -96,7 +103,9 @@
                     <p class="text-sm text-slate-700 mb-3">${esc(item.description)}</p>
                     <a href="${esc(item.app_link)}" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline text-sm">Voir le lien</a>
                     <div class="mt-4 flex gap-2">
-                        <button data-id="${esc(item.id)}" class="approve-btn rounded-xl bg-emerald-600 text-white px-4 py-2 text-sm font-semibold hover:bg-emerald-700">Valider et publier</button>
+                        ${currentStatus === "pending" ? `<button data-id="${esc(item.id)}" class="approve-btn rounded-xl bg-emerald-600 text-white px-4 py-2 text-sm font-semibold hover:bg-emerald-700">Valider et publier</button>` : ""}
+                        <button data-id="${esc(item.id)}" class="edit-btn rounded-xl bg-blue-600 text-white px-4 py-2 text-sm font-semibold hover:bg-blue-700">Modifier</button>
+                        <button data-id="${esc(item.id)}" class="delete-btn rounded-xl bg-red-600 text-white px-4 py-2 text-sm font-semibold hover:bg-red-700">Supprimer</button>
                     </div>
                 </article>
             `).join("");
@@ -114,6 +123,61 @@
                     } else {
                         button.disabled = false;
                         alert("Erreur de validation.");
+                    }
+                });
+            });
+
+            document.querySelectorAll(".edit-btn").forEach((button) => {
+                button.addEventListener("click", async () => {
+                    const id = button.getAttribute("data-id");
+                    const source = list.find((x) => x.id === id);
+                    if (!source) return;
+
+                    const appName = prompt("Nom de l'application", source.app_name);
+                    if (appName === null) return;
+                    const appLink = prompt("Lien de l'application", source.app_link);
+                    if (appLink === null) return;
+                    const screenshotLink = prompt("Lien screenshot", source.screenshot_link || source.logo_link || "");
+                    if (screenshotLink === null) return;
+                    const description = prompt("Description", source.description);
+                    if (description === null) return;
+
+                    const updateResponse = await fetch(`/api/submissions/${id}`, {
+                        method: "PATCH",
+                        headers: {
+                            "Authorization": `Bearer ${normalizeAdminToken(tokenInput.value)}`,
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            app_name: appName,
+                            app_link: appLink,
+                            screenshot_link: screenshotLink,
+                            description
+                        })
+                    });
+
+                    if (updateResponse.ok) {
+                        await loadPending();
+                    } else {
+                        alert("Erreur de modification.");
+                    }
+                });
+            });
+
+            document.querySelectorAll(".delete-btn").forEach((button) => {
+                button.addEventListener("click", async () => {
+                    const id = button.getAttribute("data-id");
+                    if (!confirm("Supprimer definitivement cette fiche ?")) return;
+
+                    const deleteResponse = await fetch(`/api/submissions/${id}`, {
+                        method: "DELETE",
+                        headers: { "Authorization": `Bearer ${normalizeAdminToken(tokenInput.value)}` }
+                    });
+
+                    if (deleteResponse.ok) {
+                        await loadPending();
+                    } else {
+                        alert("Erreur de suppression.");
                     }
                 });
             });

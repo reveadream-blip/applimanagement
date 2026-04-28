@@ -26,6 +26,16 @@ export async function onRequest(context) {
       return approveSubmission(request, env, approveMatch[1]);
     }
 
+    const updateMatch = path.match(/^\/api\/submissions\/([^/]+)$/);
+    if ((request.method === "PATCH" || request.method === "PUT") && updateMatch) {
+      return updateSubmission(request, env, updateMatch[1]);
+    }
+
+    const deleteMatch = path.match(/^\/api\/submissions\/([^/]+)$/);
+    if (request.method === "DELETE" && deleteMatch) {
+      return deleteSubmission(request, env, deleteMatch[1]);
+    }
+
     return json({ error: "Not found" }, 404);
   } catch (error) {
     return json(
@@ -157,6 +167,79 @@ async function approveSubmission(request, env, id) {
   await pushId(env, "approved_ids", id);
 
   return json({ ok: true });
+}
+
+async function updateSubmission(request, env, id) {
+  const missingKv = requireKv(env);
+  if (missingKv) return missingKv;
+  const missingAdmin = requireAdminSecret(env);
+  if (missingAdmin) return missingAdmin;
+  if (!isAuthorized(request, env)) {
+    return json({ error: "Unauthorized", detail: "Bearer token does not match ADMIN_TOKEN." }, 401);
+  }
+
+  const key = `submission:${id}`;
+  const raw = await env.APPS_KV.get(key);
+  if (!raw) return json({ error: "Submission not found" }, 404);
+  const item = JSON.parse(raw);
+
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: "Invalid JSON body" }, 400);
+  }
+
+  const next = {
+    ...item,
+    app_name: clean(body.app_name ?? item.app_name),
+    creator_name: clean(body.creator_name ?? item.creator_name),
+    category: clean(body.category ?? item.category),
+    platform: clean(body.platform ?? item.platform),
+    app_link: clean(body.app_link ?? item.app_link),
+    description: clean(body.description ?? item.description),
+    screenshot_link: clean(body.screenshot_link ?? item.screenshot_link),
+    email: clean(body.email ?? item.email),
+    logo_link: clean(body.logo_link ?? item.logo_link),
+  };
+
+  if (
+    !next.app_name ||
+    !next.creator_name ||
+    !next.category ||
+    !next.platform ||
+    !next.app_link ||
+    !next.screenshot_link ||
+    !next.description ||
+    !next.email
+  ) {
+    return json({ error: "Missing required fields after update" }, 400);
+  }
+  if (!isHttpUrl(next.app_link)) return json({ error: "Invalid app URL" }, 400);
+  if (!isHttpUrl(next.screenshot_link)) return json({ error: "Invalid screenshot URL" }, 400);
+
+  await env.APPS_KV.put(key, JSON.stringify(next));
+  return json({ ok: true, item: next });
+}
+
+async function deleteSubmission(request, env, id) {
+  const missingKv = requireKv(env);
+  if (missingKv) return missingKv;
+  const missingAdmin = requireAdminSecret(env);
+  if (missingAdmin) return missingAdmin;
+  if (!isAuthorized(request, env)) {
+    return json({ error: "Unauthorized", detail: "Bearer token does not match ADMIN_TOKEN." }, 401);
+  }
+
+  const key = `submission:${id}`;
+  const raw = await env.APPS_KV.get(key);
+  if (!raw) return json({ error: "Submission not found" }, 404);
+
+  await env.APPS_KV.delete(key);
+  await removeId(env, "pending_ids", id);
+  await removeId(env, "approved_ids", id);
+
+  return json({ ok: true, id });
 }
 
 function clean(value) {
