@@ -35,13 +35,36 @@
             <p class="text-slate-600">Apps are automatically published here after admin approval.</p>
         </header>
 
+        <section class="mb-6">
+            <div class="max-w-sm">
+                <label for="category-filter" class="block text-sm font-semibold mb-2">Filter by category</label>
+                <select id="category-filter" class="w-full rounded-xl border border-slate-300 px-4 py-2.5 bg-white">
+                    <option value="all">All categories</option>
+                </select>
+            </div>
+        </section>
+
         <div id="apps-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         <p id="empty-state" class="hidden mt-8 text-slate-500">No published app yet.</p>
+        <div id="pagination" class="hidden mt-8 flex items-center justify-center gap-2">
+            <button id="prev-page" class="rounded-lg border border-slate-300 px-3 py-1.5 text-sm hover:bg-slate-50">Previous</button>
+            <span id="page-indicator" class="text-sm text-slate-600"></span>
+            <button id="next-page" class="rounded-lg border border-slate-300 px-3 py-1.5 text-sm hover:bg-slate-50">Next</button>
+        </div>
     </main>
 
     <script>
         const grid = document.getElementById("apps-grid");
         const emptyState = document.getElementById("empty-state");
+        const categoryFilter = document.getElementById("category-filter");
+        const pagination = document.getElementById("pagination");
+        const prevPageBtn = document.getElementById("prev-page");
+        const nextPageBtn = document.getElementById("next-page");
+        const pageIndicator = document.getElementById("page-indicator");
+        const PAGE_SIZE = 10;
+        let allApps = [];
+        let filteredApps = [];
+        let currentPage = 1;
 
         function escapeHtml(value) {
             return (value || "")
@@ -52,41 +75,96 @@
                 .replaceAll("'", "&#039;");
         }
 
+        function populateCategoryFilter(apps) {
+            const categories = [...new Set(apps.map((app) => (app.category || "").trim()).filter(Boolean))]
+                .sort((a, b) => a.localeCompare(b, "en"));
+            categoryFilter.innerHTML = `<option value="all">All categories</option>` +
+                categories.map((category) => `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`).join("");
+        }
+
+        function applyFilterAndRender() {
+            const selected = categoryFilter.value;
+            filteredApps = selected === "all"
+                ? allApps
+                : allApps.filter((app) => (app.category || "") === selected);
+            currentPage = 1;
+            renderPage();
+        }
+
+        function renderPage() {
+            grid.innerHTML = "";
+            emptyState.classList.add("hidden");
+            pagination.classList.add("hidden");
+
+            if (!Array.isArray(filteredApps) || filteredApps.length === 0) {
+                emptyState.classList.remove("hidden");
+                return;
+            }
+
+            const totalPages = Math.max(1, Math.ceil(filteredApps.length / PAGE_SIZE));
+            if (currentPage > totalPages) currentPage = totalPages;
+            const start = (currentPage - 1) * PAGE_SIZE;
+            const pageApps = filteredApps.slice(start, start + PAGE_SIZE);
+
+            grid.innerHTML = pageApps.map((app) => `
+                <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                    ${app.screenshot_link || app.logo_link ? `
+                    <div class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
+                        <img src="${escapeHtml(app.screenshot_link || app.logo_link)}" alt="${escapeHtml(app.app_name)} screenshot" class="w-full h-44 object-cover">
+                    </div>
+                    ` : ""}
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <h2 class="font-bold text-lg">${escapeHtml(app.app_name)}</h2>
+                        <span class="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-600">${escapeHtml(app.platform)}</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-3">${escapeHtml(app.category)}</p>
+                    <p class="text-slate-700 text-sm leading-relaxed mb-4">${escapeHtml(app.description)}</p>
+                    <p class="text-xs text-slate-500 mb-4">By ${escapeHtml(app.creator_name)}</p>
+                    <a href="${escapeHtml(app.app_link)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                        Open app
+                    </a>
+                </article>
+            `).join("");
+
+            if (totalPages > 1) {
+                pagination.classList.remove("hidden");
+                pageIndicator.textContent = `Page ${currentPage} / ${totalPages}`;
+                prevPageBtn.disabled = currentPage === 1;
+                nextPageBtn.disabled = currentPage === totalPages;
+                prevPageBtn.classList.toggle("opacity-50", currentPage === 1);
+                nextPageBtn.classList.toggle("opacity-50", currentPage === totalPages);
+            }
+        }
+
         async function loadApps() {
             try {
                 const response = await fetch("/api/apps");
                 if (!response.ok) throw new Error("Load error");
-                const apps = await response.json();
-
-                if (!Array.isArray(apps) || apps.length === 0) {
-                    emptyState.classList.remove("hidden");
-                    return;
-                }
-
-                grid.innerHTML = apps.map((app) => `
-                    <article class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
-                        ${app.screenshot_link || app.logo_link ? `
-                        <div class="mb-4 overflow-hidden rounded-xl border border-slate-200 bg-slate-100">
-                            <img src="${escapeHtml(app.screenshot_link || app.logo_link)}" alt="${escapeHtml(app.app_name)} screenshot" class="w-full h-44 object-cover">
-                        </div>
-                        ` : ""}
-                        <div class="flex items-center justify-between gap-2 mb-3">
-                            <h2 class="font-bold text-lg">${escapeHtml(app.app_name)}</h2>
-                            <span class="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-600">${escapeHtml(app.platform)}</span>
-                        </div>
-                        <p class="text-sm text-slate-500 mb-3">${escapeHtml(app.category)}</p>
-                        <p class="text-slate-700 text-sm leading-relaxed mb-4">${escapeHtml(app.description)}</p>
-                        <p class="text-xs text-slate-500 mb-4">By ${escapeHtml(app.creator_name)}</p>
-                        <a href="${escapeHtml(app.app_link)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
-                            Open app
-                        </a>
-                    </article>
-                `).join("");
+                allApps = await response.json();
+                if (!Array.isArray(allApps)) allApps = [];
+                populateCategoryFilter(allApps);
+                filteredApps = allApps;
+                renderPage();
             } catch (error) {
                 emptyState.classList.remove("hidden");
                 emptyState.textContent = "Unable to load apps right now.";
             }
         }
+
+        categoryFilter.addEventListener("change", applyFilterAndRender);
+        prevPageBtn.addEventListener("click", () => {
+            if (currentPage > 1) {
+                currentPage -= 1;
+                renderPage();
+            }
+        });
+        nextPageBtn.addEventListener("click", () => {
+            const totalPages = Math.max(1, Math.ceil(filteredApps.length / PAGE_SIZE));
+            if (currentPage < totalPages) {
+                currentPage += 1;
+                renderPage();
+            }
+        });
 
         loadApps();
     </script>
