@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="manifest" href="/manifest.webmanifest">
     <title>Submit an app | AppliManagement</title>
     <meta name="description" content="Submit your app on AppliManagement and get listed with a simple public link, even if you are not on Google Play yet.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://applimanagement.com/submit-app.html">
+    <link rel="canonical" href="https://applimanagement.com/submit-app">
     <link rel="icon" type="image/png" sizes="96x96" href="https://applimanagement.com/favicon.png?v=2">
     <link rel="apple-touch-icon" href="https://applimanagement.com/favicon.png?v=2">
     <link rel="shortcut icon" type="image/png" href="https://applimanagement.com/favicon.png?v=2">
-    <link rel="alternate" hreflang="fr" href="https://applimanagement.com/soumettre-application.html">
-    <link rel="alternate" hreflang="en" href="https://applimanagement.com/submit-app.html">
-    <link rel="alternate" hreflang="x-default" href="https://applimanagement.com/soumettre-application.html">
+    <link rel="alternate" hreflang="fr" href="https://applimanagement.com/soumettre-application">
+    <link rel="alternate" hreflang="en" href="https://applimanagement.com/submit-app">
+    <link rel="alternate" hreflang="x-default" href="https://applimanagement.com/soumettre-application">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://applimanagement.com/submit-app.html">
+    <meta property="og:url" content="https://applimanagement.com/submit-app">
     <meta property="og:title" content="Submit an app | AppliManagement">
     <meta property="og:description" content="App creators: submit your project and get listed in our app directory with an external link.">
-    <meta property="og:image" content="https://applimanagement.com/banniere%20applimanagement.png">
+    <meta property="og:image" content="https://applimanagement.com/banniere-applimanagement.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .gradient-bg {
@@ -179,7 +184,7 @@
         function submitViaEmailFallback(formData) {
             const backup = document.createElement("form");
             backup.method = "POST";
-            backup.action = "https://formsubmit.co/contact.applimanagement@gmail.com";
+            backup.action = "https://formsubmit.co/reveadream@gmail.com";
             backup.style.display = "none";
 
             const add = (name, value) => {
@@ -233,5 +238,6 @@
             submitViaEmailFallback(formData);
         });
     </script>
+    <script src="/pwa-register.js"></script>
 </body>
 </html>
