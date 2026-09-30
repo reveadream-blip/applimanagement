@@ -3,11 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <title>SOS International Emergency | Application d'urgence</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="https://applimanagement.com/sos-logo.png?v=1" />
+    <link rel="apple-touch-icon" href="https://applimanagement.com/sos-logo.png?v=1" />
+    <link rel="shortcut icon" type="image/png" href="https://applimanagement.com/sos-logo.png?v=1" />
     <meta
       name="description"
       content="SOS International Emergency: numéros d'urgence par pays, services proches, fiche d'urgence et raccourcis utiles."
     />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://applimanagement.com/sos-applimanagement" />
     <style>
       :root {
         --bg: #070a0d;
@@ -218,11 +228,18 @@
         }
       }
     </style>
-  </head>
+      <link rel="canonical" href="https://applimanagement.com/sos-applimanagement">
+    <meta name="robots" content="index, follow">
+</head>
   <body>
     <header class="wrap">
       <div class="hero">
-        <img class="hero-logo" src="sos-logo.png" alt="Logo SOS International Emergency" />
+        <img
+          class="hero-logo"
+          src="https://applimanagement.com/sos-logo.png?v=2"
+          alt="Logo SOS International Emergency"
+          onerror="this.onerror=null;this.src='https://applimanagement.com/AppliManagement.png';"
+        />
         <span class="badge">SOS International Emergency</span>
         <h1>Votre assistant d'urgence, partout dans le monde.</h1>
         <p class="lead">
@@ -312,5 +329,6 @@
         de votre zone.
       </p>
     </footer>
+    <script src="/pwa-register.js"></script>
   </body>
 </html>

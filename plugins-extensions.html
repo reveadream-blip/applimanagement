@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <title>Plugins PrestaShop &amp; WordPress | AppliManagement</title>
+    <meta name="description" content="Catalogue de plugins PrestaShop et WordPress pas chers sans abonnement : modules en achat unique, téléchargement ZIP, compatibilité PrestaShop 1.7/8/9.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://applimanagement.com/plugins-extensions">
+    <link rel="alternate" hreflang="fr" href="https://applimanagement.com/plugins-extensions">
+    <link rel="alternate" hreflang="en" href="https://applimanagement.com/plugins-extensions-en">
+    <link rel="alternate" hreflang="x-default" href="https://applimanagement.com/plugins-extensions">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://applimanagement.com/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="https://applimanagement.com/favicon.png?v=2">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-900">
+    <nav class="border-b border-slate-200 bg-white sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-3">
+            <a href="index.html" class="flex items-center gap-3 font-bold text-lg">
+                <img src="https://applimanagement.com/AppliManagement.png" alt="AppliManagement" class="h-9 w-auto">
+                <span>AppliManagement</span>
+            </a>
+            <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                <a href="plateforme-referencement.html" class="text-sm font-semibold text-slate-600 hover:text-blue-600 hidden sm:inline">Plateforme</a>
+                <span class="text-sm font-semibold text-blue-600 hidden sm:inline">Plugins</span>
+                <div class="inline-flex items-center gap-1 rounded-full bg-slate-100 border border-slate-200 p-1 text-xs font-bold uppercase tracking-wide">
+                    <a href="plugins-extensions.html" class="px-2.5 py-1 rounded-full bg-slate-900 text-white">FR</a>
+                    <a href="plugins-extensions-en.html" class="px-2.5 py-1 rounded-full text-slate-500 hover:bg-white">EN</a>
+                </div>
+                <a href="index.html#contact" class="text-sm font-semibold bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-10">
+        <header class="mb-12">
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-3">Plugins PrestaShop &amp; WordPress pas chers sans abonnement</h1>
+            <p class="text-slate-600 text-lg max-w-3xl">
+                Modules et extensions pour <strong>WordPress</strong> et <strong>PrestaShop</strong> : installation par fichier ZIP, mises à jour et support selon l’offre. Les achats passent par Stripe ; le ZIP est téléchargeable depuis cette page après paiement.
+            </p>
+            <p class="text-slate-600 text-base max-w-3xl mt-3">
+                Chez AppliManagement : <strong>achat unique</strong>, pas d’abonnement forcé. Des plugins e-commerce efficaces, à un prix accessible.
+            </p>
+        </header>
+
+        <div class="mb-10 rounded-3xl border border-emerald-200/90 bg-gradient-to-br from-emerald-50 via-white to-teal-50 p-6 md:p-8 shadow-lg shadow-emerald-900/5 ring-1 ring-emerald-100/80">
+            <p class="text-center text-slate-700 text-sm md:text-base mb-6 md:mb-7 leading-relaxed max-w-2xl mx-auto">
+                Marre des extensions réservées à l’<strong class="text-emerald-800">abonnement</strong> ? Nos plugins listés ici visent un modèle <strong class="text-slate-900">achat unique</strong> : vous restez propriétaire, sans renouvellement forcé.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+                <span class="inline-flex items-center gap-2.5 rounded-2xl border-2 border-emerald-400/70 bg-white px-4 py-2.5 text-sm font-extrabold text-emerald-900 shadow-md shadow-emerald-900/10">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700"><i class="fas fa-calendar-xmark"></i></span>
+                    Zéro abonnement
+                </span>
+                <span class="inline-flex items-center gap-2.5 rounded-2xl border-2 border-violet-400/70 bg-white px-4 py-2.5 text-sm font-extrabold text-violet-950 shadow-md shadow-violet-900/10">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-violet-100 text-violet-700"><i class="fas fa-gem"></i></span>
+                    Propriétaire à vie
+                </span>
+                <span class="inline-flex items-center gap-2.5 rounded-2xl border-2 border-amber-400/80 bg-white px-4 py-2.5 text-sm font-extrabold text-amber-950 shadow-md shadow-amber-900/10">
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-amber-100 text-amber-800"><i class="fas fa-scale-balanced"></i></span>
+                    Pas de frais cachés
+                </span>
+            </div>
+        </div>
+
+        <div id="payment-banner" class="hidden mb-8 rounded-2xl border px-4 py-3 text-sm font-medium" role="status"></div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <section class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-sky-100 text-sky-700 text-xl font-bold">W</span>
+                    <h2 class="text-2xl font-bold">WordPress</h2>
+                </div>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                    Plugins (extensions) au format ZIP, compatibles avec les sites WordPress récents. Pour ajouter une fonction sans tout reconstruire.
+                </p>
+                <ul class="text-sm text-slate-700 space-y-2 mb-6">
+                    <li class="flex gap-2"><span class="text-emerald-600 font-bold">•</span> Livraison par archive après achat (lien sécurisé)</li>
+                    <li class="flex gap-2"><span class="text-emerald-600 font-bold">•</span> Le dossier <code class="text-xs bg-slate-100 px-1 rounded">/downloads/</code> n’est pas accessible directement</li>
+                    <li class="flex gap-2"><span class="text-emerald-600 font-bold">•</span> D’autres plugins sur demande</li>
+                </ul>
+
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">Plugin Sitemap</h3>
+                        <span id="plugin-price-ts-simple-sitemap" class="inline-flex items-center rounded-full bg-emerald-100 text-emerald-900 text-sm font-bold px-3 py-1">19,90&nbsp;€ TTC</span>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Génère automatiquement un <strong>sitemap.xml</strong> sur WordPress. Une fois activé, le fichier est prêt pour Google. <strong>Pas d’écran de config obligatoire</strong>. Pratique pour une vitrine ou un blog.
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive livrée : <code class="bg-white px-1 rounded border">ts-simple-sitemap.zip</code> · Paiement sécurisé par carte (Stripe). Le montant facturé est celui confirmé sur Stripe avant paiement.</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-sitemap" class="rounded-xl bg-emerald-600 text-white font-semibold py-2.5 hover:bg-emerald-700 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-sitemap" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour cette session (gardez cet onglet ou réessayez après un nouvel achat).</p>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">TS Page Cache Lite</h3>
+                        <span class="inline-flex items-center rounded-full bg-sky-100 text-sky-900 text-sm font-bold px-3 py-1">29,90&nbsp;€ TTC</span>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        <strong>Cache fichier</strong> pour pages HTML : visiteurs non connectés reçoivent une version statique ultra rapide depuis le disque. Exclut automatiquement l’admin, les comptes connectés, l’AJAX et les pages WooCommerce sensibles (panier, commande, compte). Réglages sous <strong>Réglages → TS Page Cache</strong> (durée, purge).
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive : <code class="bg-white px-1 rounded border">ts-page-cache-lite.zip</code> · Paiement Stripe (même parcours que le Sitemap).</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-cache" class="rounded-xl bg-sky-600 text-white font-semibold py-2.5 hover:bg-sky-700 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-cache" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint-cache" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour ce plugin sur cette session.</p>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">TS Font Optimizer Lite</h3>
+                        <span class="inline-flex items-center rounded-full bg-violet-100 text-violet-900 text-sm font-bold px-3 py-1">14,90&nbsp;€ TTC</span>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        <strong>Optimisation des polices</strong> WordPress : ajout automatique de <code>display=swap</code> sur Google Fonts, <code>preconnect</code> vers <code>fonts.gstatic.com</code>, et preload optionnel de vos fichiers <code>.woff2</code> pour accélérer le rendu.
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive : <code class="bg-white px-1 rounded border">ts-font-optimizer-lite.zip</code> · Réglages sous <strong>Réglages → TS Font Optimizer</strong>.</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-fonts" class="rounded-xl bg-violet-600 text-white font-semibold py-2.5 hover:bg-violet-700 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-fonts" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint-fonts" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour ce plugin sur cette session.</p>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">Delay JS Execution Lite</h3>
+                        <span class="inline-flex items-center rounded-full bg-amber-100 text-amber-900 text-sm font-bold px-3 py-1">19,90&nbsp;€ TTC</span>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Retarde l’exécution des scripts <strong>non critiques</strong> jusqu’à la première interaction (scroll, clic, mouvement) ou après un délai maximum configurable. Utile pour améliorer <strong>CLS</strong>, <strong>FCP</strong> et les scores PageSpeed sans toucher au thème.
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive : <code class="bg-white px-1 rounded border">ts-delay-js-execution-lite.zip</code> · Réglages sous <strong>Réglages → Delay JS Execution</strong>.</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-delayjs" class="rounded-xl bg-amber-600 text-white font-semibold py-2.5 hover:bg-amber-700 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-delayjs" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint-delayjs" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour ce plugin sur cette session.</p>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">Advanced Database Cleaner</h3>
+                        <span class="inline-flex items-center rounded-full bg-rose-100 text-rose-900 text-sm font-bold px-3 py-1">24,90&nbsp;€ TTC</span>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Nettoyage avancé de la base WordPress : révisions anciennes, brouillons automatiques, commentaires indésirables et transients expirés. L’outil propose un écran dédié pour lancer le nettoyage et, en option, optimiser les tables MySQL.
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive : <code class="bg-white px-1 rounded border">advanced-database-cleaner.zip</code> · Outil recommandé après plusieurs années d’utilisation d’un site ou de nombreux plugins.</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-dbcleaner" class="rounded-xl bg-rose-600 text-white font-semibold py-2.5 hover:bg-rose-700 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-dbcleaner" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint-dbcleaner" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour ce plugin sur cette session.</p>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">Performance Pro</h3>
+                        <span class="inline-flex items-center rounded-full bg-emerald-100 text-emerald-900 text-sm font-bold px-3 py-1">39,00&nbsp;€ TTC</span>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Helper perf WordPress : cache simple pour les pages publiques, polices Google, JS différé et nettoyage BDD, le tout depuis un seul écran. Alternative légère à WP Rocket pour une vitrine ou un blog.
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive : <code class="bg-white px-1 rounded border">performance-pro.zip</code> · Paramétrage dans <strong>Performance Pro</strong> (menu de gauche).</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-performance" class="rounded-xl bg-emerald-700 text-white font-semibold py-2.5 hover:bg-emerald-800 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-performance" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint-performance" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour ce plugin sur cette session.</p>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">Forms Unlimited</h3>
+                        <span class="inline-flex items-center rounded-full bg-fuchsia-100 text-fuchsia-900 text-sm font-bold px-3 py-1">49,00&nbsp;€ TTC</span>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Plugin de <strong>formulaires</strong> : builder JSON en drag-and-drop, logique conditionnelle, shortcode et bouton Stripe. Achat unique, face aux suites payées à l’année type Gravity Forms / WPForms.
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive : <code class="bg-white px-1 rounded border">forms-unlimited.zip</code> · Réglages Stripe + formulaires dans l’admin WordPress.</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-forms" class="rounded-xl bg-fuchsia-700 text-white font-semibold py-2.5 hover:bg-fuchsia-800 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-forms" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint-forms" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour ce plugin sur cette session.</p>
+                </div>
+
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">RGPD Fix</h3>
+                        <span class="inline-flex items-center rounded-full bg-slate-100 text-slate-900 text-sm font-bold px-3 py-1">25,00&nbsp;€ TTC</span>
+                    </div>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Gestion des <strong>cookies &amp; consentements</strong> en local : bannière RGPD simple, refus possible, et blocage automatique des scripts marqués par catégorie (statistiques, marketing) tant que l’utilisateur n’a pas accepté.
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive : <code class="bg-white px-1 rounded border">rgpd-fix.zip</code> · Pas de SaaS ni de cloud, tout reste sur votre site WordPress.</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-rgpd" class="rounded-xl bg-slate-900 text-white font-semibold py-2.5 hover:bg-slate-800 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-rgpd" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint-rgpd" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour ce plugin sur cette session.</p>
+                </div>
+
+                <p class="text-sm text-amber-800 bg-amber-50 border border-amber-100 rounded-xl px-4 py-3 mb-4">
+                    Besoin d’un plugin sur mesure ? Écrivez-nous depuis la page d’accueil.
+                </p>
+                <a href="index.html#contact" class="inline-flex rounded-xl bg-slate-900 text-white font-semibold px-5 py-2.5 hover:bg-slate-800">Demander un plugin WordPress</a>
+            </section>
+
+            <section class="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-100 text-violet-700 text-xl font-bold">P</span>
+                    <h2 class="text-2xl font-bold">PrestaShop</h2>
+                </div>
+                <p class="text-slate-600 mb-4 leading-relaxed">
+                    Modules PrestaShop (ZIP) pour étendre votre boutique : paiement, logistique, contenu, intégrations métiers.
+                </p>
+                <p class="text-sm text-slate-700 mb-4 leading-relaxed">
+                    <strong>Compatibilité claire :</strong> tous les modules PrestaShop listés ci-dessous sont maintenus pour <strong>PrestaShop 1.7, 8 et 9</strong>, afin de sécuriser vos projets de migration 2026.
+                </p>
+                <ul class="text-sm text-slate-700 space-y-2 mb-6">
+                    <li class="flex gap-2"><span class="text-emerald-600 font-bold">•</span> Installation classique via le back-office</li>
+                    <li class="flex gap-2"><span class="text-emerald-600 font-bold">•</span> Versions testées sur les branches supportées</li>
+                    <li class="flex gap-2"><span class="text-emerald-600 font-bold">•</span> Licences et mises à jour selon produit</li>
+                </ul>
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">Pack Turbo</h3>
+                        <span class="inline-flex items-center rounded-full bg-emerald-100 text-emerald-900 text-sm font-bold px-3 py-1">69,00&nbsp;€ TTC</span>
+                    </div>
+                    <span class="inline-flex items-center rounded-full bg-slate-900 text-white text-xs font-bold px-2.5 py-1 mb-3">Compatible 1.7 | 8 | 9</span>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Module PrestaShop <strong>Vitesse &amp; WebP</strong> : conversion des images en WebP (batch) et assistant pour exploiter l’Opcache serveur. Conçu comme alternative locale aux solutions “Super Speed” premium.
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive : <code class="bg-white px-1 rounded border">packturbo-prestashop.zip</code> · Back-office inclus pour lancer la conversion WebP et vérifier l’état Opcache. · Compatibilité : PrestaShop 1.7, 8, 9.</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-packturbo" class="rounded-xl bg-emerald-700 text-white font-semibold py-2.5 hover:bg-emerald-800 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-packturbo" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint-packturbo" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour ce module sur cette session.</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">Relance de Panier Abandonné</h3>
+                        <span class="inline-flex items-center rounded-full bg-orange-100 text-orange-900 text-sm font-bold px-3 py-1">49,90&nbsp;€ TTC</span>
+                    </div>
+                    <span class="inline-flex items-center rounded-full bg-slate-900 text-white text-xs font-bold px-2.5 py-1 mb-3">Compatible 1.7 | 8 | 9</span>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Module PrestaShop de <strong>relance panier abandonné</strong> : envoi automatique d'emails de rappel aux clients n'ayant pas finalisé leur commande, avec templates FR/EN prêts à l'emploi pour récupérer plus de ventes.
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive : <code class="bg-white px-1 rounded border">abandoned-cart-reminder-pro.zip</code> · Paramétrage depuis le back-office pour activer et personnaliser les relances. · Compatibilité : PrestaShop 1.7, 8, 9.</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-abandonedcart" class="rounded-xl bg-orange-600 text-white font-semibold py-2.5 hover:bg-orange-700 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-abandonedcart" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint-abandonedcart" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour ce module sur cette session.</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">SEO Expert &amp; Automatisation</h3>
+                        <span class="inline-flex items-center rounded-full bg-indigo-100 text-indigo-900 text-sm font-bold px-3 py-1">89,00&nbsp;€ TTC</span>
+                    </div>
+                    <span class="inline-flex items-center rounded-full bg-slate-900 text-white text-xs font-bold px-2.5 py-1 mb-3">Compatible 1.7 | 8 | 9</span>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Générez automatiquement les balises <strong>Title</strong>, <strong>Meta-Description</strong> et les tags <strong>Alt</strong> des images pour jusqu’à 5000 produits en moins de 2 minutes.
+                    </p>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Modèles de texte : utilisez des variables comme <code>{product_name} au meilleur prix à {city}</code> pour personnaliser vos balises en masse, sans édition produit par produit.
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive : <code class="bg-white px-1 rounded border">seo-expert-automation-prestashop.zip</code> · Configuration des patterns directement depuis le back-office module. · Compatibilité : PrestaShop 1.7, 8, 9.</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-seoexpert" class="rounded-xl bg-indigo-700 text-white font-semibold py-2.5 hover:bg-indigo-800 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-seoexpert" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint-seoexpert" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour ce module sur cette session.</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">Rétractation Facile</h3>
+                        <span class="inline-flex items-center rounded-full bg-cyan-100 text-cyan-900 text-sm font-bold px-3 py-1">29,00&nbsp;€ TTC</span>
+                    </div>
+                    <span class="inline-flex items-center rounded-full bg-slate-900 text-white text-xs font-bold px-2.5 py-1 mb-3">Compatible 1.7 | 8 | 9</span>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Bouton client <strong>“Rétractation Facile”</strong> conforme à l’obligation UE (juin 2026) : affichage clair dans l’espace compte avec formulaire de rétractation généré automatiquement.
+                    </p>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Le module informe aussi le marchand dès l’envoi de la demande pour un traitement plus rapide des retours.
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive : <code class="bg-white px-1 rounded border">retractation-facile-prestashop.zip</code> · Installation simple via le back-office PrestaShop. · Compatibilité : PrestaShop 1.7, 8, 9.</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-retractation" class="rounded-xl bg-cyan-700 text-white font-semibold py-2.5 hover:bg-cyan-800 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-retractation" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint-retractation" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour ce module sur cette session.</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">Droit à l'Oubli &amp; RGPD</h3>
+                        <span class="inline-flex items-center rounded-full bg-rose-100 text-rose-900 text-sm font-bold px-3 py-1">39,00&nbsp;€ TTC</span>
+                    </div>
+                    <span class="inline-flex items-center rounded-full bg-slate-900 text-white text-xs font-bold px-2.5 py-1 mb-3">Compatible 1.7 | 8 | 9</span>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Module RGPD simplifié : le client peut demander en <strong>un clic</strong> l’<strong>export CSV</strong> de ses données ou la <strong>suppression</strong> depuis son compte.
+                    </p>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Alternative locale sans abonnement SaaS : « <em>Soyez en règle avec la CNIL pour le prix d'un déjeuner.</em> »
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive : <code class="bg-white px-1 rounded border">droit-a-loubli-rgpd-prestashop.zip</code> · Le marchand reçoit un email lorsqu’une suppression est demandée. · Compatibilité : PrestaShop 1.7, 8, 9.</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-rgpdpresta" class="rounded-xl bg-rose-700 text-white font-semibold py-2.5 hover:bg-rose-800 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-rgpdpresta" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint-rgpdpresta" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour ce module sur cette session.</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">Générateur de fiches produits</h3>
+                        <span class="inline-flex items-center rounded-full bg-violet-100 text-violet-900 text-sm font-bold px-3 py-1">79,00&nbsp;€ TTC</span>
+                    </div>
+                    <span class="inline-flex items-center rounded-full bg-slate-900 text-white text-xs font-bold px-2.5 py-1 mb-3">Compatible 1.7 | 8 | 9</span>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Connecteur API pour réécrire les descriptions, corriger les fautes ou traduire les fiches produits en masse (clé API fournie par le marchand).
+                    </p>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Modèle en achat unique : <strong>pas de facturation au mot</strong>. Le marchand branche sa propre clé API depuis le back-office.
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive : <code class="bg-white px-1 rounded border">ai-product-sheet-generator-prestashop.zip</code> · Traitement batch piloté depuis le back-office. · Compatibilité : PrestaShop 1.7, 8, 9.</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-aipsg" class="rounded-xl bg-violet-700 text-white font-semibold py-2.5 hover:bg-violet-800 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-aipsg" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint-aipsg" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour ce module sur cette session.</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">One-Page Checkout Lite</h3>
+                        <span class="inline-flex items-center rounded-full bg-emerald-100 text-emerald-900 text-sm font-bold px-3 py-1">49,00&nbsp;€ TTC</span>
+                    </div>
+                    <span class="inline-flex items-center rounded-full bg-slate-900 text-white text-xs font-bold px-2.5 py-1 mb-3">Compatible 1.7 | 8 | 9</span>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Version allégée : <strong>Panier + Adresse + Paiement Stripe</strong> sur la même page. Moins d’étapes que le tunnel natif PrestaShop.
+                    </p>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Alternative abordable aux modules premium > 100 € tout en gardant l’essentiel du parcours de commande.
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive : <code class="bg-white px-1 rounded border">one-page-checkout-lite-prestashop.zip</code> · Configuration Stripe et libellé bouton dans le module. · Compatibilité : PrestaShop 1.7, 8, 9.</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-opcl" class="rounded-xl bg-emerald-700 text-white font-semibold py-2.5 hover:bg-emerald-800 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-opcl" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint-opcl" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour ce module sur cette session.</p>
+                </div>
+                <div class="rounded-xl border border-slate-200 bg-slate-50 p-5 mb-6">
+                    <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                        <h3 class="font-bold text-slate-900 text-lg">Nettoyeur de Paniers &amp; Stats</h3>
+                        <span class="inline-flex items-center rounded-full bg-teal-100 text-teal-900 text-sm font-bold px-3 py-1">34,00&nbsp;€ TTC</span>
+                    </div>
+                    <span class="inline-flex items-center rounded-full bg-slate-900 text-white text-xs font-bold px-2.5 py-1 mb-3">Compatible 1.7 | 8 | 9</span>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Outil de nettoyage automatique programmé : suppression des <strong>paniers abandonnés anciens</strong> et des données de stats/connexions obsolètes qui alourdissent PrestaShop.
+                    </p>
+                    <p class="text-sm text-slate-700 mb-3 leading-relaxed">
+                        Objectif performance : « <em>Réduisez la taille de votre base et accélérez votre back-office.</em> »
+                    </p>
+                    <p class="text-xs text-slate-500 mb-4">Archive : <code class="bg-white px-1 rounded border">cart-stats-cleaner-lite-prestashop.zip</code> · Exécution manuelle + hook cron intégré. · Compatibilité : PrestaShop 1.7, 8, 9.</p>
+                    <div class="flex flex-col gap-2">
+                        <button type="button" id="buy-plugin-cartstats" class="rounded-xl bg-teal-700 text-white font-semibold py-2.5 hover:bg-teal-800 transition">
+                            Acheter et télécharger (Stripe)
+                        </button>
+                        <button type="button" id="download-plugin-cartstats" class="hidden rounded-xl bg-blue-600 text-white font-semibold py-2.5 hover:bg-blue-700 transition">
+                            Télécharger le ZIP
+                        </button>
+                    </div>
+                    <p id="plugin-paid-hint-cartstats" class="hidden mt-3 text-xs font-semibold text-blue-700">Accès ZIP activé pour ce module sur cette session.</p>
+                </div>
+                <p class="text-sm text-amber-800 bg-amber-50 border border-amber-100 rounded-xl px-4 py-3 mb-4">
+                    D'autres modules arrivent. Pour un module sur mesure, contactez-nous.
+                </p>
+                <a href="index.html#contact" class="inline-flex rounded-xl bg-slate-900 text-white font-semibold px-5 py-2.5 hover:bg-slate-800">Demander un module PrestaShop</a>
+            </section>
+        </div>
+
+        <p class="mt-10 text-center text-sm text-slate-500">
+            Voir aussi la <a href="plateforme-referencement.html" class="text-blue-600 font-semibold hover:underline">plateforme de référencement</a> pour les applications web et mobiles.
+        </p>
+    </main>
+
+    <script>
+        const PAID_SLUGS_KEY = "applimanagement_paid_slugs_v1";
+        const SESSIONS_BY_SLUG_KEY = "applimanagement_checkout_sessions_by_slug_v2";
+        const PLUGIN_ROWS = [
+            { slug: "wordpress-simple-sitemap", buy: "buy-plugin-sitemap", dl: "download-plugin-sitemap", hint: "plugin-paid-hint", zip: "ts-simple-sitemap.zip" },
+            { slug: "wordpress-ts-page-cache", buy: "buy-plugin-cache", dl: "download-plugin-cache", hint: "plugin-paid-hint-cache", zip: "ts-page-cache-lite.zip" },
+            { slug: "wordpress-ts-font-optimizer", buy: "buy-plugin-fonts", dl: "download-plugin-fonts", hint: "plugin-paid-hint-fonts", zip: "ts-font-optimizer-lite.zip" },
+            { slug: "wordpress-delay-js-execution", buy: "buy-plugin-delayjs", dl: "download-plugin-delayjs", hint: "plugin-paid-hint-delayjs", zip: "ts-delay-js-execution-lite.zip" },
+            { slug: "wordpress-advanced-database-cleaner", buy: "buy-plugin-dbcleaner", dl: "download-plugin-dbcleaner", hint: "plugin-paid-hint-dbcleaner", zip: "advanced-database-cleaner.zip" },
+            { slug: "wordpress-performance-pro", buy: "buy-plugin-performance", dl: "download-plugin-performance", hint: "plugin-paid-hint-performance", zip: "performance-pro.zip" },
+            { slug: "wordpress-forms-unlimited", buy: "buy-plugin-forms", dl: "download-plugin-forms", hint: "plugin-paid-hint-forms", zip: "forms-unlimited.zip" },
+            { slug: "wordpress-rgpd-fix", buy: "buy-plugin-rgpd", dl: "download-plugin-rgpd", hint: "plugin-paid-hint-rgpd", zip: "rgpd-fix.zip" },
+            { slug: "prestashop-pack-turbo", buy: "buy-plugin-packturbo", dl: "download-plugin-packturbo", hint: "plugin-paid-hint-packturbo", zip: "packturbo-prestashop.zip" },
+            { slug: "prestashop-abandoned-cart-reminder-pro", buy: "buy-plugin-abandonedcart", dl: "download-plugin-abandonedcart", hint: "plugin-paid-hint-abandonedcart", zip: "abandoned-cart-reminder-pro.zip" },
+            { slug: "prestashop-seo-expert-automation", buy: "buy-plugin-seoexpert", dl: "download-plugin-seoexpert", hint: "plugin-paid-hint-seoexpert", zip: "seo-expert-automation-prestashop.zip" },
+            { slug: "prestashop-retractation-facile", buy: "buy-plugin-retractation", dl: "download-plugin-retractation", hint: "plugin-paid-hint-retractation", zip: "retractation-facile-prestashop.zip" },
+            { slug: "prestashop-droit-a-loubli-rgpd", buy: "buy-plugin-rgpdpresta", dl: "download-plugin-rgpdpresta", hint: "plugin-paid-hint-rgpdpresta", zip: "droit-a-loubli-rgpd-prestashop.zip" },
+            { slug: "prestashop-ai-product-sheet-generator", buy: "buy-plugin-aipsg", dl: "download-plugin-aipsg", hint: "plugin-paid-hint-aipsg", zip: "ai-product-sheet-generator-prestashop.zip" },
+            { slug: "prestashop-one-page-checkout-lite", buy: "buy-plugin-opcl", dl: "download-plugin-opcl", hint: "plugin-paid-hint-opcl", zip: "one-page-checkout-lite-prestashop.zip" },
+            { slug: "prestashop-cart-stats-cleaner-lite", buy: "buy-plugin-cartstats", dl: "download-plugin-cartstats", hint: "plugin-paid-hint-cartstats", zip: "cart-stats-cleaner-lite-prestashop.zip" }
+        ];
+        const paymentBanner = document.getElementById("payment-banner");
+
+        function getPaidSlugs() {
+            try {
+                const raw = sessionStorage.getItem(PAID_SLUGS_KEY);
+                const list = raw ? JSON.parse(raw) : [];
+                return Array.isArray(list) ? list : [];
+            } catch {
+                return [];
+            }
+        }
+
+        function savePaidSlugs(slugs) {
+            sessionStorage.setItem(PAID_SLUGS_KEY, JSON.stringify([...new Set(slugs)]));
+        }
+
+        function addPaidSlug(slug) {
+            if (!slug) return;
+            const next = getPaidSlugs();
+            if (!next.includes(slug)) next.push(slug);
+            savePaidSlugs(next);
+        }
+
+        function setSessionForSlug(slug, sessionId) {
+            try {
+                const raw = sessionStorage.getItem(SESSIONS_BY_SLUG_KEY);
+                const map = raw ? JSON.parse(raw) : {};
+                if (typeof map !== "object" || map === null) return;
+                map[slug] = sessionId;
+                sessionStorage.setItem(SESSIONS_BY_SLUG_KEY, JSON.stringify(map));
+            } catch { /* ignore */ }
+        }
+
+        function getSessionForSlug(slug) {
+            try {
+                const raw = sessionStorage.getItem(SESSIONS_BY_SLUG_KEY);
+                const map = raw ? JSON.parse(raw) : {};
+                return map && typeof map === "object" ? map[slug] || "" : "";
+            } catch {
+                return "";
+            }
+        }
+
+        function pluginRow(slug) {
+            return PLUGIN_ROWS.find((r) => r.slug === slug);
+        }
+
+        function showPaymentBanner(variant, message) {
+            paymentBanner.textContent = message;
+            paymentBanner.classList.remove("hidden", "border-emerald-200", "bg-emerald-50", "text-emerald-900", "border-amber-200", "bg-amber-50", "text-amber-900", "border-red-200", "bg-red-50", "text-red-900");
+            if (variant === "success") {
+                paymentBanner.classList.add("border-emerald-200", "bg-emerald-50", "text-emerald-900");
+            } else if (variant === "cancel") {
+                paymentBanner.classList.add("border-amber-200", "bg-amber-50", "text-amber-900");
+            } else {
+                paymentBanner.classList.add("border-red-200", "bg-red-50", "text-red-900");
+            }
+            paymentBanner.classList.remove("hidden");
+        }
+
+        function updatePluginButtons() {
+            PLUGIN_ROWS.forEach(({ slug, buy, dl, hint }) => {
+                const paid = getPaidSlugs().includes(slug);
+                const buyEl = document.getElementById(buy);
+                const dlEl = document.getElementById(dl);
+                const hintEl = document.getElementById(hint);
+                if (buyEl) buyEl.classList.toggle("hidden", paid);
+                if (dlEl) dlEl.classList.toggle("hidden", !paid);
+                if (hintEl) hintEl.classList.toggle("hidden", !paid);
+            });
+        }
+
+        async function handleReturnFromStripe() {
+            const params = new URLSearchParams(window.location.search);
+            const base = "plugins-extensions.html";
+
+            if (params.get("payment") === "cancelled") {
+                showPaymentBanner("cancel", "Paiement annulé.");
+                window.history.replaceState({}, "", base);
+                return;
+            }
+
+            if (params.get("payment") !== "success" || !params.get("session_id")) return;
+
+            const sessionId = params.get("session_id");
+            try {
+                const response = await fetch(`/api/verify-checkout-session?session_id=${encodeURIComponent(sessionId)}`);
+                const data = await response.json();
+                if (!response.ok || !data.ok || data.kind !== "plugin") {
+                    throw new Error(data.detail || data.error || "Vérification impossible");
+                }
+                addPaidSlug(data.plugin_slug);
+                setSessionForSlug(data.plugin_slug, sessionId);
+                showPaymentBanner("success", `Merci ! Téléchargez « ${data.plugin_title || "le plugin"} » avec le bouton bleu du bloc correspondant.`);
+            } catch {
+                showPaymentBanner("error", "Impossible de confirmer le paiement. Réessayez dans un instant ou vérifiez votre email.");
+            }
+            window.history.replaceState({}, "", base);
+        }
+
+        async function startPluginCheckout(pluginSlug) {
+            const email = prompt("Email pour le reçu Stripe :", "");
+            if (email === null) return;
+            const cleanEmail = (email || "").trim();
+            if (!cleanEmail) {
+                alert("Email requis.");
+                return;
+            }
+            try {
+                const response = await fetch("/api/checkout", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        kind: "plugin",
+                        plugin_slug: pluginSlug,
+                        email: cleanEmail,
+                        locale: "fr"
+                    })
+                });
+                const data = await response.json();
+                if (!response.ok || !data.url) {
+                    alert(data.detail || data.error || "Impossible de lancer le paiement.");
+                    return;
+                }
+                window.location.href = data.url;
+            } catch {
+                alert("Erreur réseau.");
+            }
+        }
+
+        async function downloadPluginZip(pluginSlug) {
+            const row = pluginRow(pluginSlug);
+            if (!row) return;
+            const sessionId = getSessionForSlug(pluginSlug);
+            if (!sessionId) {
+                alert("Session de paiement introuvable pour ce plugin. Rachetez ou utilisez le même navigateur.");
+                return;
+            }
+            try {
+                const response = await fetch("/api/plugin-download", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ session_id: sessionId, plugin_slug: pluginSlug })
+                });
+                if (!response.ok) {
+                    let detail = "Téléchargement refusé.";
+                    try {
+                        const err = await response.json();
+                        if (err.detail) detail += " " + err.detail;
+                    } catch { /* ignore */ }
+                    alert(detail);
+                    return;
+                }
+                const blob = await response.blob();
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = row.zip;
+                a.click();
+                URL.revokeObjectURL(url);
+            } catch {
+                alert("Erreur réseau lors du téléchargement.");
+            }
+        }
+
+        PLUGIN_ROWS.forEach(({ slug, buy, dl }) => {
+            document.getElementById(buy)?.addEventListener("click", () => startPluginCheckout(slug));
+            document.getElementById(dl)?.addEventListener("click", () => downloadPluginZip(slug));
+        });
+
+        (async () => {
+            await handleReturnFromStripe();
+            updatePluginButtons();
+        })();
+    </script>
+    <script src="/pwa-register.js"></script>
+</body>
+</html>
