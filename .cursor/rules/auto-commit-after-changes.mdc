@@ -1,17 +1,18 @@
 ---
-description: Commit git automatique après chaque modification dans ce projet
+description: Commit + push git automatiques après chaque modification
 alwaysApply: true
 ---
 
-# Commit après chaque modification
+# Commit et push après chaque modification
 
 Dès qu’une tâche de modification de fichiers est terminée dans ce dépôt AppliManagement :
 
 1. Lancer `git status`, `git diff` et `git log -5 --oneline` (en parallèle).
 2. Stager uniquement les fichiers liés à la tâche (pas de secrets `.env`, credentials, etc.).
-3. Créer un commit avec un message court style du dépôt (`feat:`, `fix:`, `seo:`, etc.), en français ou anglais cohérent avec l’historique.
+3. Créer un commit avec un message court style du dépôt (`feat:`, `fix:`, `seo:`, etc.), cohérent avec l’historique.
 4. Vérifier avec `git status` que le commit a réussi.
-5. Ne pas pousser (`git push`) sauf demande explicite de l’utilisateur.
-6. Ne pas utiliser `--force`, `--no-verify`, ni modifier la config git.
+5. Pousser automatiquement sur la branche suivie : `git push` (ou `git push -u origin HEAD` si pas d’upstream).
+6. Ne jamais utiliser `--force`, `--force-with-lease`, `--no-verify`, ni modifier la config git.
+7. Si le push échoue, signaler l’erreur clairement sans forcer.
 
-Si aucun fichier n’a changé, ne pas créer de commit vide.
+Si aucun fichier n’a changé, ne pas créer de commit vide ni de push inutile.
