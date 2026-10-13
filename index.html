@@ -20,14 +20,14 @@
     <meta property="og:url" content="https://applimanagement.com/">
     <meta property="og:title" content="Sites vitrines &amp; CRM métiers | AppliManagement">
     <meta property="og:description" content="Sites vitrines, e-commerce et apps web : achat unique, propriétaire à vie. CRM par abonnement.">
-    <meta property="og:image" content="https://applimanagement.com/banniere-applimanagement.png">
+    <meta property="og:image" content="https://applimanagement.com/assets/og-banner.jpg">
     <meta property="og:image:alt" content="AppliManagement : sites vitrines et solutions CRM">
     <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="AppliManagement">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sites vitrines &amp; CRM métiers | AppliManagement">
     <meta name="twitter:description" content="Sites vitrines, e-commerce et apps web sans abonnement. CRM en abonnement mensuel.">
-    <meta name="twitter:image" content="https://applimanagement.com/banniere-applimanagement.png">
+    <meta name="twitter:image" content="https://applimanagement.com/assets/og-banner.jpg">
 
     <script type="application/ld+json">
     {
@@ -56,9 +56,10 @@
             "@type": "PostalAddress",
             "streetAddress": "26 Soi Naya, Rawai",
             "addressLocality": "Phuket",
+            "postalCode": "83100",
             "addressCountry": "TH"
           },
-          "hasMap": "https://maps.google.com/?q=26+Soi+Naya,+Rawai,+Phuket",
+          "hasMap": "https://www.google.com/maps?q=26+Soi+Naya,+Rawai,+Phuket",
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "customer service",
@@ -84,10 +85,12 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="/assets/logo-am.webp" type="image/webp">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/app.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    <style>i.fas,i.far,i.fab{display:inline-block;width:1.1em;text-align:center}</style>
     <style>
         html { scroll-behavior: smooth; }
         .gradient-bg {
@@ -124,7 +127,7 @@
     <nav class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-lg shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-3 lg:flex-nowrap">
             <a href="/" class="flex shrink-0 items-center gap-2 sm:gap-3 hover:opacity-90 transition group min-w-0 max-w-[min(100%,280px)] sm:max-w-none">
-                <img src="https://applimanagement.com/AppliManagement.png" alt="Logo AppliManagement" class="h-9 sm:h-10 w-auto shrink-0 drop-shadow-sm">
+                <img src="/assets/logo-am.webp" alt="Logo AppliManagement" class="h-9 sm:h-10 w-auto shrink-0 drop-shadow-sm" width="40" height="40" fetchpriority="high" decoding="async">
                 <span class="text-base sm:text-lg font-bold tracking-tight text-slate-900 truncate">AppliManagement</span>
             </a>
 
@@ -196,6 +199,12 @@
                 On livre aussi des <strong class="text-slate-200">applications web</strong> et des boutiques :
                 vous restez propriétaire du site, le CRM reste en abonnement.
             </p>
+            <p class="text-sm text-slate-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+                En pratique : un <strong class="text-slate-200">CRM + site vitrine</strong> pour capter les demandes,
+                une <strong class="text-slate-200">application mobile</strong> lisible sur téléphone,
+                ou un <strong class="text-slate-200">site vitrine CMS</strong> simple à éditer.
+                Pas de stack obscure : un site clair, un outil métier, et le suivi après mise en ligne.
+            </p>
             <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-10 md:mb-12 max-w-3xl mx-auto px-2">
                 <span class="inline-flex items-center gap-2.5 rounded-2xl border border-violet-400/40 bg-gradient-to-br from-violet-500/25 via-indigo-600/15 to-slate-900/20 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-black/25 ring-1 ring-white/15 backdrop-blur-sm">
                     <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-violet-400/25 text-violet-100"><i class="fas fa-gem"></i></span>
@@ -264,7 +273,7 @@
                 <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-blue-100 via-slate-100 to-indigo-100 opacity-80 blur-sm"></div>
                 <div class="relative rounded-3xl border border-slate-200/80 bg-slate-50 p-3 shadow-card">
                     <div class="rounded-2xl overflow-hidden ring-1 ring-slate-200/60 shadow-inner bg-white">
-                        <img src="site-vitrine-restauration.png" alt="Maquette fictive de site vitrine restaurant, La Table du Lavoir" class="w-full h-full object-cover object-top" loading="lazy" width="1200" height="675">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&amp;q=75" alt="Maquette fictive de site vitrine restaurant, La Table du Lavoir" class="w-full h-full object-cover object-top" loading="lazy" width="1200" height="675" decoding="async">
                     </div>
                 </div>
             </div>
@@ -658,7 +667,7 @@
         <div class="max-w-7xl mx-auto grid gap-10 md:grid-cols-3 text-sm">
             <div class="space-y-3">
                 <a href="/" class="inline-flex items-center gap-3 hover:opacity-90 transition">
-                    <img src="https://applimanagement.com/AppliManagement.png" alt="AppliManagement" class="h-8 brightness-0 invert opacity-90" width="32" height="32">
+                    <img src="/assets/logo-am.webp" alt="AppliManagement" class="h-8 brightness-0 invert opacity-90" width="32" height="32" loading="lazy" decoding="async">
                     <span class="font-bold text-white">AppliManagement.com</span>
                 </a>
                 <p class="text-slate-500 leading-relaxed">
@@ -678,11 +687,11 @@
             </div>
             <div>
                 <p class="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">Contact</p>
-                <ul class="space-y-2 text-slate-400">
-                    <li>AppliManagement · Papin Natcha</li>
-                    <li>26 Soi Naya, Rawai, Phuket, Thaïlande</li>
+                <ul class="space-y-2 text-slate-400" itemscope itemtype="https://schema.org/PostalAddress">
+                    <li itemprop="name">AppliManagement · Papin Natcha</li>
+                    <li>Adresse postale : <span itemprop="streetAddress">26 Soi Naya, Rawai</span>, <span itemprop="postalCode">83100</span> <span itemprop="addressLocality">Phuket</span>, <span itemprop="addressCountry">Thaïlande</span></li>
                     <li><a href="mailto:contact.applimanagement@gmail.com" class="hover:text-white transition">contact.applimanagement@gmail.com</a></li>
-                    <li><a href="https://maps.google.com/?q=26+Soi+Naya,+Rawai,+Phuket" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Voir sur Google Maps</a></li>
+                    <li><a href="https://www.google.com/maps?q=26+Soi+Naya,+Rawai,+Phuket,+83100" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Voir sur Google Maps</a></li>
                 </ul>
                 <p class="text-slate-600 text-xs mt-4">Expertise web &amp; data · 2026</p>
             </div>
