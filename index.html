@@ -58,6 +58,13 @@
             "addressLocality": "Phuket",
             "addressCountry": "TH"
           },
+          "hasMap": "https://maps.google.com/?q=26+Soi+Naya,+Rawai,+Phuket",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "contact.applimanagement@gmail.com",
+            "availableLanguage": ["fr", "en"]
+          },
           "description": "Expertise web et outils de gestion : sites vitrines, CRM métiers (BTP, location, services) et intégrations."
         },
         {
@@ -79,23 +86,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'soft': '0 2px 15px -3px rgba(15, 23, 42, 0.08), 0 10px 20px -5px rgba(15, 23, 42, 0.06)',
-                        'card': '0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 20px 40px -12px rgba(15, 23, 42, 0.12)',
-                    },
-                },
-            },
-        };
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     <style>
         html { scroll-behavior: smooth; }
         .gradient-bg {
@@ -131,7 +123,7 @@
 
     <nav class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-lg shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-3 lg:flex-nowrap">
-            <a href="index.html" class="flex shrink-0 items-center gap-2 sm:gap-3 hover:opacity-90 transition group min-w-0 max-w-[min(100%,280px)] sm:max-w-none">
+            <a href="/" class="flex shrink-0 items-center gap-2 sm:gap-3 hover:opacity-90 transition group min-w-0 max-w-[min(100%,280px)] sm:max-w-none">
                 <img src="https://applimanagement.com/AppliManagement.png" alt="Logo AppliManagement" class="h-9 sm:h-10 w-auto shrink-0 drop-shadow-sm">
                 <span class="text-base sm:text-lg font-bold tracking-tight text-slate-900 truncate">AppliManagement</span>
             </a>
@@ -141,30 +133,30 @@
                     <i class="fas fa-bars text-lg"></i>
                 </summary>
                 <div class="absolute right-0 top-full mt-2 w-[min(calc(100vw-2rem),20rem)] py-2 rounded-2xl bg-white border border-slate-200 shadow-card z-50 flex flex-col gap-0.5 text-sm font-medium">
-                    <a href="index.html#vitrine" class="px-4 py-2.5 hover:bg-slate-50 text-slate-700">Sites Vitrines</a>
-                    <a href="index.html#crm" class="px-4 py-2.5 hover:bg-slate-50 text-blue-600 font-semibold">Solutions CRM</a>
-                    <a href="rankflow-seo.html" class="px-4 py-2.5 hover:bg-slate-50 text-slate-700">RankFlow SEO</a>
-                    <a href="index.html#tarifs" class="px-4 py-2.5 hover:bg-slate-50 text-slate-700">Tarifs</a>
+                    <a href="/#vitrine" class="px-4 py-2.5 hover:bg-slate-50 text-slate-700">Sites Vitrines</a>
+                    <a href="/metiersdomaines" class="px-4 py-2.5 hover:bg-slate-50 text-blue-600 font-semibold">Solutions CRM</a>
+                    <a href="/rankflow-seo" class="px-4 py-2.5 hover:bg-slate-50 text-slate-700">RankFlow SEO</a>
+                    <a href="/#tarifs" class="px-4 py-2.5 hover:bg-slate-50 text-slate-700">Tarifs</a>
                     <div class="mx-4 my-2 h-px bg-slate-200"></div>
                     <div class="px-4 py-2 text-xs uppercase tracking-wider text-slate-500">Langue</div>
                     <div class="px-4 pb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide">
-                        <a href="index.html" class="px-2.5 py-1 rounded-full bg-slate-900 text-white">FR</a>
-                        <a href="index-en.html" class="px-2.5 py-1 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-50">EN</a>
+                        <a href="/" class="px-2.5 py-1 rounded-full bg-slate-900 text-white">Français</a>
+                        <a href="/index-en" class="px-2.5 py-1 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-50">English</a>
                     </div>
-                    <a href="index.html#contact" class="mx-2 mt-1 text-center bg-blue-600 text-white px-4 py-2.5 rounded-xl hover:bg-blue-700 transition">Contact</a>
+                    <a href="/#contact" class="mx-2 mt-1 text-center bg-blue-600 text-white px-4 py-2.5 rounded-xl hover:bg-blue-700 transition">Contact</a>
                 </div>
             </details>
 
             <div class="hidden lg:flex flex-nowrap items-center justify-end gap-3 xl:gap-4 ml-auto shrink min-w-0 text-[11px] xl:text-xs font-semibold uppercase tracking-wide text-slate-600">
-                <a href="index.html#vitrine" class="hover:text-blue-600 transition whitespace-nowrap shrink-0" title="Sites vitrines">Sites vitrines</a>
-                <a href="index.html#crm" class="text-blue-600 whitespace-nowrap shrink-0" title="Solutions CRM">CRM</a>
-                <a href="rankflow-seo.html" class="hover:text-blue-600 transition whitespace-nowrap shrink-0" title="RankFlow : outil SEO">RankFlow</a>
-                <a href="index.html#tarifs" class="hover:text-blue-600 transition whitespace-nowrap shrink-0">Tarifs</a>
+                <a href="/#vitrine" class="hover:text-blue-600 transition whitespace-nowrap shrink-0" title="Sites vitrines">Sites vitrines</a>
+                <a href="/metiersdomaines" class="text-blue-600 whitespace-nowrap shrink-0" title="Solutions CRM">CRM</a>
+                <a href="/rankflow-seo" class="hover:text-blue-600 transition whitespace-nowrap shrink-0" title="RankFlow : outil SEO">RankFlow</a>
+                <a href="/#tarifs" class="hover:text-blue-600 transition whitespace-nowrap shrink-0">Tarifs</a>
                 <div class="flex items-center gap-1 shrink-0 text-[10px] xl:text-xs font-bold normal-case">
-                    <a href="index.html" class="px-2 py-1 rounded-full bg-slate-900 text-white whitespace-nowrap">FR</a>
-                    <a href="index-en.html" class="px-2 py-1 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-50 transition whitespace-nowrap">EN</a>
+                    <a href="/" class="px-2 py-1 rounded-full bg-slate-900 text-white whitespace-nowrap">Français</a>
+                    <a href="/index-en" class="px-2 py-1 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-50 transition whitespace-nowrap">English</a>
                 </div>
-                <a href="index.html#contact" class="bg-blue-600 text-white px-4 py-2 xl:px-5 xl:py-2.5 rounded-full hover:bg-blue-700 transition shadow-md shadow-blue-600/25 whitespace-nowrap shrink-0 text-[11px] xl:text-xs">Contact</a>
+                <a href="/#contact" class="bg-blue-600 text-white px-4 py-2 xl:px-5 xl:py-2.5 rounded-full hover:bg-blue-700 transition shadow-md shadow-blue-600/25 whitespace-nowrap shrink-0 text-[11px] xl:text-xs">Contact</a>
             </div>
         </div>
     </nav>
@@ -198,6 +190,12 @@
             <p class="text-sm md:text-base text-slate-400 mb-8 max-w-3xl mx-auto leading-relaxed">
                 <strong class="text-slate-200">Abonnement mensuel :</strong> nos solutions <strong class="text-slate-200">CRM</strong> de gestion métier (à partir de 19&nbsp;€/mois).
             </p>
+            <p class="text-sm text-slate-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Besoin d&apos;un <strong class="text-slate-200">site vitrine</strong> seul, d&apos;un
+                <strong class="text-slate-200">logiciel CRM</strong> métier, ou des deux ?
+                On livre aussi des <strong class="text-slate-200">applications web</strong> et des boutiques :
+                vous restez propriétaire du site, le CRM reste en abonnement.
+            </p>
             <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-10 md:mb-12 max-w-3xl mx-auto px-2">
                 <span class="inline-flex items-center gap-2.5 rounded-2xl border border-violet-400/40 bg-gradient-to-br from-violet-500/25 via-indigo-600/15 to-slate-900/20 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-black/25 ring-1 ring-white/15 backdrop-blur-sm">
                     <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-violet-400/25 text-violet-100"><i class="fas fa-gem"></i></span>
@@ -207,7 +205,7 @@
                     <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-400/25 text-blue-100"><i class="fas fa-repeat"></i></span>
                     CRM · abonnement mensuel
                 </span>
-                <a href="rankflow-seo.html" class="inline-flex items-center gap-2.5 rounded-2xl border border-lime-400/40 bg-gradient-to-br from-lime-500/25 via-emerald-600/15 to-slate-900/20 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-black/25 ring-1 ring-white/15 backdrop-blur-sm hover:brightness-110 transition">
+                <a href="/rankflow-seo" class="inline-flex items-center gap-2.5 rounded-2xl border border-lime-400/40 bg-gradient-to-br from-lime-500/25 via-emerald-600/15 to-slate-900/20 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-black/25 ring-1 ring-white/15 backdrop-blur-sm hover:brightness-110 transition">
                     <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-lime-400/25 text-lime-100"><i class="fas fa-chart-line"></i></span>
                     RankFlow · SEO
                 </a>
@@ -258,7 +256,7 @@
                     </li>
                     <li class="flex items-start gap-3 text-slate-700">
                         <span class="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600"><i class="fas fa-check text-xs"></i></span>
-                        <a href="rankflow-seo.html" class="hover:text-blue-600 underline-offset-2 hover:underline">RankFlow : audit SEO &amp; suivi de positions</a>
+                        <a href="/rankflow-seo" class="hover:text-blue-600 underline-offset-2 hover:underline">RankFlow : audit SEO &amp; suivi de positions</a>
                     </li>
                 </ul>
             </div>
@@ -499,7 +497,7 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto relative">
-            <a href="metiersdomaines.html" class="bg-white p-8 rounded-3xl feature-card text-center flex flex-col h-full border border-slate-100 shadow-soft group hover:border-blue-200">
+            <a href="/metiersdomaines" class="bg-white p-8 rounded-3xl feature-card text-center flex flex-col h-full border border-slate-100 shadow-soft group hover:border-blue-200">
                 <div class="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-2xl text-blue-600 group-hover:scale-105 transition-transform duration-300">
                     <i class="fas fa-briefcase"></i>
                 </div>
@@ -522,7 +520,7 @@
                 </div>
             </a>
 
-            <a href="metiersdomaines.html" class="bg-white p-8 rounded-3xl feature-card text-center flex flex-col h-full border border-slate-100 shadow-soft group hover:border-blue-300">
+            <a href="/metiersdomaines" class="bg-white p-8 rounded-3xl feature-card text-center flex flex-col h-full border border-slate-100 shadow-soft group hover:border-blue-300">
                 <div class="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-50 text-2xl text-blue-600 group-hover:scale-105 transition-transform duration-300">
                     <i class="fas fa-magic"></i>
                 </div>
@@ -536,7 +534,7 @@
 
         <div class="mt-16 md:mt-20 max-w-5xl mx-auto relative">
             <div class="text-center mb-8">
-                <a href="metiersdomaines.html" class="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-10 py-4 rounded-2xl font-extrabold text-lg shadow-xl shadow-orange-500/25 hover:shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 hover:scale-[1.02] btn-pulse">
+                <a href="/metiersdomaines" class="inline-block bg-gradient-to-r from-orange-500 to-orange-600 text-white px-10 py-4 rounded-2xl font-extrabold text-lg shadow-xl shadow-orange-500/25 hover:shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 hover:scale-[1.02] btn-pulse">
                     🚀 Tester gratuitement nos CRM
                 </a>
                 <p class="text-slate-500 text-sm mt-4">Essai gratuit · puis abonnement mensuel, sans engagement</p>
@@ -550,7 +548,7 @@
                 <p class="text-slate-600 leading-relaxed mb-3">Une interface pensée pour centraliser les alertes critiques, orienter immédiatement les équipes et accélérer la prise de décision.</p>
                 <p class="text-slate-600 leading-relaxed mb-3">Chaque étape est guidée : signalement, qualification, déclenchement des actions et suivi des interventions en temps réel.</p>
                 <p class="text-slate-600 leading-relaxed mb-8">Objectif : réduire le temps de réaction, fiabiliser la communication et garder une vision claire sur chaque situation d'urgence.</p>
-                <a href="sos-applimanagement.html" class="inline-flex items-center justify-center gap-2 rounded-xl bg-red-600 px-6 py-3 font-bold text-white hover:bg-red-700 transition shadow-lg shadow-red-600/25">
+                <a href="/sos-applimanagement" class="inline-flex items-center justify-center gap-2 rounded-xl bg-red-600 px-6 py-3 font-bold text-white hover:bg-red-700 transition shadow-lg shadow-red-600/25">
                     Voir la démo
                     <i class="fas fa-arrow-right"></i>
                 </a>
@@ -608,7 +606,7 @@
                         <li class="flex gap-2"><i class="fas fa-check text-blue-600 mt-0.5 shrink-0"></i> Fiches clients illimitées</li>
                         <li class="flex gap-2"><i class="fas fa-check text-blue-600 mt-0.5 shrink-0"></i> Sans engagement</li>
                     </ul>
-                    <a href="metiersdomaines.html" class="block text-center py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">Testez gratuitement</a>
+                    <a href="/metiersdomaines" class="block text-center py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">Testez gratuitement</a>
                 </div>
             </div>
         </div>
@@ -657,13 +655,37 @@
     </main>
 
     <footer class="bg-slate-950 text-slate-400 py-12 px-4 border-t border-white/5">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-sm">
-            <a href="index.html" class="flex items-center gap-3 hover:opacity-90 transition">
-                <img src="https://applimanagement.com/AppliManagement.png" alt="AppliManagement" class="h-8 brightness-0 invert opacity-90">
-                <span class="font-bold text-white">AppliManagement.com</span>
-            </a>
-            <a href="mentions-legales.html" class="text-slate-400 hover:text-white transition underline-offset-4 hover:underline">Mentions légales</a>
-            <p class="text-slate-600 text-xs md:text-sm">Expertise web &amp; data · 2026</p>
+        <div class="max-w-7xl mx-auto grid gap-10 md:grid-cols-3 text-sm">
+            <div class="space-y-3">
+                <a href="/" class="inline-flex items-center gap-3 hover:opacity-90 transition">
+                    <img src="https://applimanagement.com/AppliManagement.png" alt="AppliManagement" class="h-8 brightness-0 invert opacity-90" width="32" height="32">
+                    <span class="font-bold text-white">AppliManagement.com</span>
+                </a>
+                <p class="text-slate-500 leading-relaxed">
+                    Sites vitrines, e-commerce, apps web et CRM métiers.
+                    Achat unique pour les sites, abonnement mensuel pour les CRM.
+                </p>
+            </div>
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">Pages</p>
+                <ul class="space-y-2">
+                    <li><a href="/metiersdomaines" class="hover:text-white transition">CRM par métier</a></li>
+                    <li><a href="/batipro.applimanagement" class="hover:text-white transition">BatiPro artisans BTP</a></li>
+                    <li><a href="/rankflow-seo" class="hover:text-white transition">RankFlow audit SEO</a></li>
+                    <li><a href="/index-en" class="hover:text-white transition">English version</a></li>
+                    <li><a href="/mentions-legales" class="hover:text-white transition">Mentions légales</a></li>
+                </ul>
+            </div>
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-wide text-slate-500 mb-3">Contact</p>
+                <ul class="space-y-2 text-slate-400">
+                    <li>AppliManagement · Papin Natcha</li>
+                    <li>26 Soi Naya, Rawai, Phuket, Thaïlande</li>
+                    <li><a href="mailto:contact.applimanagement@gmail.com" class="hover:text-white transition">contact.applimanagement@gmail.com</a></li>
+                    <li><a href="https://maps.google.com/?q=26+Soi+Naya,+Rawai,+Phuket" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Voir sur Google Maps</a></li>
+                </ul>
+                <p class="text-slate-600 text-xs mt-4">Expertise web &amp; data · 2026</p>
+            </div>
         </div>
     </footer>
 

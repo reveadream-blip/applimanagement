@@ -8,6 +8,8 @@
     "pages:dev": "wrangler pages dev ."
   },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3",
     "wrangler": "^4.85.0"
   }
 }

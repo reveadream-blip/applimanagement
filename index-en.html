@@ -32,23 +32,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'soft': '0 2px 15px -3px rgba(15, 23, 42, 0.08), 0 10px 20px -5px rgba(15, 23, 42, 0.06)',
-                        'card': '0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 20px 40px -12px rgba(15, 23, 42, 0.12)',
-                    },
-                },
-            },
-        };
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     <style>
         html { scroll-behavior: smooth; }
         .gradient-bg { background: linear-gradient(145deg, #0b1220 0%, #1e293b 45%, #0f172a 100%); }
@@ -63,7 +48,7 @@
 <body class="bg-slate-50 font-sans text-slate-900 antialiased">
     <nav class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-lg shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-x-4 gap-y-3 lg:flex-nowrap">
-            <a href="index-en.html" class="flex shrink-0 items-center gap-2 sm:gap-3 hover:opacity-90 transition min-w-0 max-w-[min(100%,280px)] sm:max-w-none">
+            <a href="/index-en" class="flex shrink-0 items-center gap-2 sm:gap-3 hover:opacity-90 transition min-w-0 max-w-[min(100%,280px)] sm:max-w-none">
                 <img src="https://applimanagement.com/AppliManagement.png" alt="AppliManagement" class="h-9 sm:h-10 w-auto shrink-0">
                 <span class="text-base sm:text-lg font-bold tracking-tight text-slate-900 truncate">AppliManagement</span>
             </a>
@@ -75,13 +60,13 @@
                 <div class="absolute right-0 top-full mt-2 w-[min(calc(100vw-2rem),20rem)] py-2 rounded-2xl bg-white border border-slate-200 shadow-card z-50 flex flex-col gap-0.5 text-sm font-medium">
                     <a href="#websites" class="px-4 py-2.5 hover:bg-slate-50 text-slate-700">Business Websites</a>
                     <a href="#crm" class="px-4 py-2.5 hover:bg-slate-50 text-blue-600 font-semibold">CRM Solutions</a>
-                    <a href="rankflow-seo.html" class="px-4 py-2.5 hover:bg-slate-50 text-slate-700">RankFlow SEO</a>
+                    <a href="/rankflow-seo" class="px-4 py-2.5 hover:bg-slate-50 text-slate-700">RankFlow SEO</a>
                     <a href="#pricing" class="px-4 py-2.5 hover:bg-slate-50 text-slate-700">Pricing</a>
                     <div class="mx-4 my-2 h-px bg-slate-200"></div>
                     <div class="px-4 py-2 text-xs uppercase tracking-wider text-slate-500">Language</div>
                     <div class="px-4 pb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide">
-                        <a href="index.html" class="px-2.5 py-1 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-50">FR</a>
-                        <a href="index-en.html" class="px-2.5 py-1 rounded-full bg-slate-900 text-white">EN</a>
+                        <a href="/" class="px-2.5 py-1 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-50">Français</a>
+                        <a href="/index-en" class="px-2.5 py-1 rounded-full bg-slate-900 text-white">English</a>
                     </div>
                     <a href="#contact" class="mx-2 mt-1 text-center bg-blue-600 text-white px-4 py-2.5 rounded-xl hover:bg-blue-700 transition">Contact</a>
                 </div>
@@ -90,11 +75,11 @@
             <div class="hidden lg:flex flex-nowrap items-center justify-end gap-3 xl:gap-4 ml-auto shrink min-w-0 text-[11px] xl:text-xs font-semibold uppercase tracking-wide text-slate-600">
                 <a href="#websites" class="hover:text-blue-600 transition whitespace-nowrap shrink-0" title="Business websites">Websites</a>
                 <a href="#crm" class="text-blue-600 whitespace-nowrap shrink-0" title="CRM solutions">CRM</a>
-                <a href="rankflow-seo.html" class="hover:text-blue-600 transition whitespace-nowrap shrink-0" title="RankFlow SEO tool">RankFlow</a>
+                <a href="/rankflow-seo" class="hover:text-blue-600 transition whitespace-nowrap shrink-0" title="RankFlow SEO tool">RankFlow</a>
                 <a href="#pricing" class="hover:text-blue-600 transition whitespace-nowrap shrink-0">Pricing</a>
                 <div class="flex items-center gap-1 shrink-0 text-[10px] xl:text-xs font-bold normal-case">
-                    <a href="index.html" class="px-2 py-1 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-50 whitespace-nowrap">FR</a>
-                    <a href="index-en.html" class="px-2 py-1 rounded-full bg-slate-900 text-white whitespace-nowrap">EN</a>
+                    <a href="/" class="px-2 py-1 rounded-full border border-slate-300 text-slate-600 hover:bg-slate-50 whitespace-nowrap">Français</a>
+                    <a href="/index-en" class="px-2 py-1 rounded-full bg-slate-900 text-white whitespace-nowrap">English</a>
                 </div>
                 <a href="#contact" class="bg-blue-600 text-white px-4 py-2 xl:px-5 xl:py-2.5 rounded-full hover:bg-blue-700 transition shadow-md shadow-blue-600/25 whitespace-nowrap shrink-0 text-[11px] xl:text-xs">Contact</a>
             </div>
@@ -130,7 +115,7 @@
                         <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-blue-400/25 text-blue-100"><i class="fas fa-repeat"></i></span>
                         CRM · monthly subscription
                     </span>
-                    <a href="rankflow-seo.html" class="inline-flex items-center gap-2.5 rounded-2xl border border-lime-400/40 bg-gradient-to-br from-lime-500/25 via-emerald-600/15 to-slate-900/20 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-black/25 ring-1 ring-white/15 backdrop-blur-sm hover:brightness-110 transition">
+                    <a href="/rankflow-seo" class="inline-flex items-center gap-2.5 rounded-2xl border border-lime-400/40 bg-gradient-to-br from-lime-500/25 via-emerald-600/15 to-slate-900/20 px-4 py-2.5 text-sm font-bold text-white shadow-lg shadow-black/25 ring-1 ring-white/15 backdrop-blur-sm hover:brightness-110 transition">
                         <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-lime-400/25 text-lime-100"><i class="fas fa-chart-line"></i></span>
                         RankFlow · SEO
                     </a>
@@ -167,7 +152,7 @@
                         <li class="flex items-start gap-3"><span class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600"><i class="fas fa-check text-xs"></i></span> Clean, professional design</li>
                         <li class="flex items-start gap-3"><span class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600"><i class="fas fa-check text-xs"></i></span> Works on mobile and desktop</li>
                         <li class="flex items-start gap-3"><span class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600"><i class="fas fa-check text-xs"></i></span> SEO foundations included</li>
-                        <li class="flex items-start gap-3"><span class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600"><i class="fas fa-check text-xs"></i></span> <a href="rankflow-seo.html" class="hover:text-blue-600 underline-offset-2 hover:underline">RankFlow: SEO audit &amp; ranking tracking</a></li>
+                        <li class="flex items-start gap-3"><span class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-600"><i class="fas fa-check text-xs"></i></span> <a href="/rankflow-seo" class="hover:text-blue-600 underline-offset-2 hover:underline">RankFlow: SEO audit &amp; ranking tracking</a></li>
                     </ul>
                 </div>
                 <div class="rounded-3xl border border-slate-200/80 bg-slate-50 p-3 shadow-card">
@@ -342,7 +327,7 @@
                 <p class="text-slate-500 text-lg mt-4 max-w-2xl mx-auto">Built for your industry. Billed as a <strong class="text-slate-700">monthly subscription</strong>.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
-                <a href="metiersdomaines.html" class="bg-white p-8 rounded-3xl feature-card text-center flex flex-col h-full border border-slate-100 shadow-soft group hover:border-blue-200">
+                <a href="/metiersdomaines" class="bg-white p-8 rounded-3xl feature-card text-center flex flex-col h-full border border-slate-100 shadow-soft group hover:border-blue-200">
                     <div class="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-2xl text-blue-600"><i class="fas fa-briefcase"></i></div>
                     <h3 class="text-lg font-bold mb-2 text-slate-900 group-hover:text-blue-600 transition-colors">For Companies</h3>
                     <p class="text-sm text-slate-500 flex-1 leading-relaxed">Construction, rental, maintenance, local services.</p>
@@ -352,7 +337,7 @@
                     <h3 class="text-lg font-bold mb-1 text-slate-900 group-hover:text-emerald-700 transition-colors">freshrescue.app</h3>
                     <p class="text-sm text-slate-500 flex-1 leading-relaxed text-left">Swiss anti-food-waste app connecting merchants and customers with time-limited offers.</p>
                 </a>
-                <a href="metiersdomaines.html" class="bg-white p-8 rounded-3xl feature-card text-center flex flex-col h-full border border-slate-100 shadow-soft group hover:border-blue-300">
+                <a href="/metiersdomaines" class="bg-white p-8 rounded-3xl feature-card text-center flex flex-col h-full border border-slate-100 shadow-soft group hover:border-blue-300">
                     <div class="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-50 text-2xl text-blue-600"><i class="fas fa-magic"></i></div>
                     <h3 class="text-lg font-bold mb-2 text-slate-900 group-hover:text-blue-600 transition-colors">Automation</h3>
                     <p class="text-sm text-slate-500 flex-1 leading-relaxed">Documents, geo-tracking, quotes, signatures and custom workflows.</p>
@@ -393,7 +378,7 @@
                             <li class="flex gap-2"><i class="fas fa-check text-blue-600 mt-0.5 shrink-0"></i> Unlimited document storage</li>
                             <li class="flex gap-2"><i class="fas fa-check text-blue-600 mt-0.5 shrink-0"></i> No long-term commitment</li>
                         </ul>
-                        <a href="metiersdomaines.html" class="block text-center py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition">Start free trial</a>
+                        <a href="/metiersdomaines" class="block text-center py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition">Start free trial</a>
                     </div>
                 </div>
             </div>
@@ -424,11 +409,11 @@
 
     <footer class="bg-slate-950 text-slate-400 py-12 px-4 border-t border-white/5">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-sm">
-            <a href="index-en.html" class="flex items-center gap-3 hover:opacity-90 transition">
+            <a href="/index-en" class="flex items-center gap-3 hover:opacity-90 transition">
                 <img src="https://applimanagement.com/AppliManagement.png" alt="AppliManagement" class="h-8 brightness-0 invert opacity-90">
                 <span class="font-bold text-white">AppliManagement.com</span>
             </a>
-            <a href="mentions-legales.html" class="text-slate-400 hover:text-white transition underline-offset-4 hover:underline">Legal notice</a>
+            <a href="/mentions-legales" class="text-slate-400 hover:text-white transition underline-offset-4 hover:underline">Legal notice</a>
             <p class="text-slate-600 text-xs md:text-sm">Web and data expertise - 2026</p>
         </div>
     </footer>
