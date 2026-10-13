@@ -7,39 +7,33 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://applimanagement.com/m%C3%A9tiersdomaines.html</loc>
+    <loc>https://applimanagement.com/metiersdomaines</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://applimanagement.com/metiersdomaines.html</loc>
+    <loc>https://applimanagement.com/batipro.applimanagement</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://applimanagement.com/batipro.applimanagement.html</loc>
-    <lastmod>2026-04-18</lastmod>
+    <loc>https://applimanagement.com/rankflow-seo</loc>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://applimanagement.com/mentions-legales.html</loc>
-    <lastmod>2026-04-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://applimanagement.com/index-en.html</loc>
+    <loc>https://applimanagement.com/index-en</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://applimanagement.com/rankflow-seo.html</loc>
+    <loc>https://applimanagement.com/mentions-legales</loc>
     <lastmod>2026-10-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

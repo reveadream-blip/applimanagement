@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Page accentuée -> version ASCII canonique
+RewriteRule ^m[eé]tiersdomaines\.html$ /metiersdomaines [R=301,L,NC]
+RewriteRule ^métiersdomaines/?$ /metiersdomaines [R=301,L,NC]

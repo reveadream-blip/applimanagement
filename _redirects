@@ -1,0 +1,5 @@
+# Canonique sans accent (évite page orpheline + title/meta dupliqués)
+/métiersdomaines /metiersdomaines 301
+/métiersdomaines.html /metiersdomaines 301
+/m%C3%A9tiersdomaines /metiersdomaines 301
+/m%C3%A9tiersdomaines.html /metiersdomaines 301
