@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RankFlow : audit SEO | AppliManagement</title>
-    <meta name="description" content="RankFlow, l'outil SEO d'AppliManagement : diagnostic technique, performance, audit on-page et suivi de positions Google.">
+    <title>RankFlow : audit SEO &amp; positions | AppliManagement</title>
+    <meta name="description" content="RankFlow analyse ton site comme un SEO : diagnostic technique, PageSpeed, Search Console et suivi de positions. Outil AppliManagement.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://applimanagement.com/rankflow-seo.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://applimanagement.com/rankflow-seo.html">
-    <meta property="og:title" content="RankFlow : audit SEO | AppliManagement">
-    <meta property="og:description" content="Diagnostic SEO, PageSpeed, audit on-page et suivi de classements. Accédez à l'application RankFlow.">
-    <meta property="og:image" content="https://applimanagement.com/AppliManagement.png">
-    <meta name="twitter:card" content="summary">
+    <meta property="og:title" content="RankFlow : audit SEO &amp; positions | AppliManagement">
+    <meta property="og:description" content="Diagnostic SEO, performance, GSC et classements. Lance RankFlow en quelques minutes.">
+    <meta property="og:image" content="https://applimanagement.com/banniere-applimanagement.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="AppliManagement">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="RankFlow : audit SEO | AppliManagement">
-    <meta name="twitter:description" content="Outil SEO AppliManagement : diagnostic, performance et positions Google.">
+    <meta name="twitter:description" content="Diagnostic SEO, PageSpeed, GSC et suivi de positions.">
+    <meta name="twitter:image" content="https://applimanagement.com/banniere-applimanagement.png">
     <link rel="icon" type="image/png" sizes="96x96" href="https://applimanagement.com/favicon.png?v=2">
     <link rel="apple-touch-icon" href="https://applimanagement.com/favicon.png?v=2">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script type="application/ld+json">
     {
@@ -25,65 +30,1053 @@
       "@type": "WebPage",
       "name": "RankFlow : audit SEO",
       "url": "https://applimanagement.com/rankflow-seo.html",
-      "description": "Page de présentation de RankFlow, outil SEO d'AppliManagement.",
+      "description": "Page d'accueil RankFlow, outil SEO d'AppliManagement.",
       "isPartOf": {
         "@type": "WebSite",
+        "name": "AppliManagement",
+        "url": "https://applimanagement.com"
+      },
+      "publisher": {
+        "@type": "Organization",
         "name": "AppliManagement",
         "url": "https://applimanagement.com"
       }
     }
     </script>
+    <style>
+        :root {
+            --ink: #edf2ff;
+            --muted: rgba(237, 242, 255, 0.78);
+            --gold: #ffb100;
+            --gold-soft: #ffdb75;
+            --navy: #070d1c;
+            --navy-deep: #050912;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+            color: var(--ink);
+            background:
+                radial-gradient(circle at 70% 14%, rgba(255, 157, 0, 0.25), transparent 24%),
+                linear-gradient(180deg, var(--navy) 0%, var(--navy-deep) 100%);
+            overflow-x: clip;
+        }
+
+        .home { min-height: 100dvh; min-height: 100vh; }
+
+        .nav, .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding-left: max(20px, env(safe-area-inset-left, 0px));
+            padding-right: max(20px, env(safe-area-inset-right, 0px));
+        }
+
+        .nav {
+            padding-block: 18px;
+            padding-top: max(18px, env(safe-area-inset-top, 0px));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px 12px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: inherit;
+            min-width: 0;
+        }
+
+        .logo-mark {
+            background: var(--gold);
+            color: #121212;
+            font-size: 0.65rem;
+            font-weight: 800;
+            border-radius: 8px;
+            padding: 5px 7px;
+            letter-spacing: 0.02em;
+        }
+
+        .logo p { margin: 0; font-weight: 700; font-size: 1rem; }
+        .logo small {
+            display: block;
+            color: rgba(237, 242, 255, 0.64);
+            font-size: 0.58rem;
+            letter-spacing: 0.04em;
+        }
+
+        .nav nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav nav a {
+            color: rgba(237, 242, 255, 0.86);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav nav a:hover { color: #fff; }
+
+        .btn {
+            border: 0;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 10px 14px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease;
+        }
+
+        .btn-primary, .btn-accent {
+            background: var(--gold);
+            color: #161616;
+            box-shadow: 0 10px 22px rgba(245, 158, 11, 0.28);
+        }
+
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(1.02);
+        }
+
+        .content {
+            padding-top: 14px;
+            padding-bottom: 56px;
+            overflow-x: clip;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+            gap: 42px;
+            align-items: center;
+            min-height: 560px;
+            animation: fade-up 0.6s ease both;
+        }
+
+        .tag {
+            display: inline-block;
+            margin: 0 0 16px;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            color: var(--gold-soft);
+            background: rgba(255, 177, 0, 0.12);
+            border: 1px solid rgba(255, 177, 0, 0.3);
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: clamp(2.2rem, 5.6vw, 4.2rem);
+            line-height: 0.98;
+            max-width: 640px;
+            letter-spacing: -0.02em;
+            animation: title-in 0.75s ease-out both;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+            animation: accent-glow 1.2s ease-out 0.2s both;
+        }
+
+        .hero-text > p {
+            color: var(--muted);
+            max-width: 560px;
+            font-size: 1.05rem;
+            margin: 18px 0 0;
+            line-height: 1.65;
+        }
+
+        .hero-actions {
+            margin-top: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .proofs {
+            margin: 20px 0 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+            color: rgba(237, 242, 255, 0.68);
+            font-size: 0.85rem;
+        }
+
+        .proofs li {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-visual {
+            position: relative;
+            min-width: 0;
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), filter 0.35s ease;
+        }
+
+        .hero-visual:hover {
+            transform: translateY(-4px) scale(1.01);
+            filter: brightness(1.04);
+        }
+
+        /* Hero mock dashboard */
+        .hdp {
+            position: relative;
+            border-radius: 22px;
+            padding: 1px;
+            background: linear-gradient(125deg, rgba(251, 191, 36, 0.55), rgba(56, 189, 248, 0.4), rgba(167, 139, 250, 0.5), rgba(251, 191, 36, 0.45));
+            background-size: 280% 280%;
+            animation: hdp-aurora 14s ease infinite;
+            box-shadow: 0 28px 64px rgba(0, 0, 0, 0.55), 0 0 80px rgba(56, 189, 248, 0.08);
+        }
+
+        .hdp__mesh {
+            position: absolute;
+            inset: 1px;
+            border-radius: 21px;
+            background:
+                radial-gradient(ellipse 80% 50% at 20% -10%, rgba(251, 191, 36, 0.14), transparent 50%),
+                radial-gradient(ellipse 80% 60% at 90% 110%, rgba(99, 102, 241, 0.18), transparent 55%),
+                linear-gradient(180deg, #0c1224 0%, #080c18 48%, #060a14 100%);
+        }
+
+        .hdp__chrome {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .hdp__dots { display: flex; gap: 6px; }
+        .hdp__dot { width: 10px; height: 10px; border-radius: 50%; }
+        .hdp__dot--r { background: #ff5f57; }
+        .hdp__dot--y { background: #febc2e; }
+        .hdp__dot--g { background: #28c840; }
+
+        .hdp__chrome-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: rgba(226, 232, 240, 0.75);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hdp__live {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #4ade80;
+            background: rgba(34, 197, 94, 0.12);
+            border: 1px solid rgba(74, 222, 128, 0.25);
+        }
+
+        .hdp__live-ping {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #4ade80;
+            animation: hdp-ping 2s ease-out infinite;
+        }
+
+        .hdp__body { position: relative; z-index: 2; padding: 14px; }
+
+        .hdp__kpi {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .hdp__kpi-card {
+            border-radius: 14px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hdp__kpi-label {
+            display: block;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: rgba(226, 232, 240, 0.55);
+            margin-bottom: 8px;
+        }
+
+        .hdp__kpi-value {
+            margin: 0;
+            font-size: 1.55rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #fff;
+        }
+
+        .hdp__kpi-card--amber .hdp__kpi-value { color: #fbbf24; }
+        .hdp__kpi-card--sky .hdp__kpi-value { color: #38bdf8; }
+        .hdp__kpi-card--emerald .hdp__kpi-value { color: #34d399; }
+
+        .hdp__panel {
+            border-radius: 14px;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .hdp__panel-title {
+            margin: 0 0 10px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: rgba(226, 232, 240, 0.55);
+        }
+
+        .hdp__bars {
+            display: grid;
+            gap: 8px;
+        }
+
+        .hdp__bar-row {
+            display: grid;
+            grid-template-columns: 72px 1fr 36px;
+            gap: 8px;
+            align-items: center;
+            font-size: 0.72rem;
+            color: rgba(226, 232, 240, 0.7);
+        }
+
+        .hdp__bar-track {
+            height: 8px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+        }
+
+        .hdp__bar-fill {
+            height: 100%;
+            border-radius: 999px;
+            width: 0;
+            transition: width 0.8s ease;
+        }
+
+        .hdp__bar-fill--a { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+        .hdp__bar-fill--b { background: linear-gradient(90deg, #0284c7, #38bdf8); }
+        .hdp__bar-fill--c { background: linear-gradient(90deg, #059669, #34d399); }
+
+        .features {
+            margin-top: 70px;
+            text-align: center;
+            color: #0f172a;
+            background: #f4f5f8;
+            border-radius: 20px;
+            padding: 44px 24px 22px;
+        }
+
+        .chip {
+            display: inline-block;
+            margin: 0;
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #a16207;
+            background: #fef3c7;
+        }
+
+        .features h2 {
+            margin: 12px 0 8px;
+            font-size: clamp(1.8rem, 2.8vw, 2.5rem);
+            letter-spacing: -0.02em;
+        }
+
+        .features-intro {
+            max-width: 760px;
+            margin: 0 auto;
+            color: #4b5563;
+            line-height: 1.55;
+        }
+
+        .feature-grid {
+            margin-top: 28px;
+            display: grid;
+            gap: 14px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .feature-card {
+            border-radius: 13px;
+            border: 1px solid #e6e8ef;
+            background: #fff;
+            padding: 16px 18px;
+            text-align: left;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            animation: fade-up 0.5s ease both;
+        }
+
+        .feature-card.active {
+            background: #fffde9;
+            border-color: #f0df9f;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-2px);
+            border-color: #d6dbe7;
+            box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
+        }
+
+        .feature-head {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .feature-head h3 {
+            margin: 0;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-head span {
+            font-size: 0.7rem;
+            color: #6b7280;
+            white-space: nowrap;
+        }
+
+        .feature-card p {
+            margin: 10px 0 0;
+            color: #626b7a;
+            line-height: 1.5;
+        }
+
+        .stats {
+            margin-top: 22px;
+            border-radius: 18px;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            color: #111827;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            overflow: hidden;
+        }
+
+        .stats div {
+            padding: 18px 14px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            animation: fade-up 0.5s ease both;
+        }
+
+        .stats strong {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #d97706;
+            font-size: clamp(1.35rem, 5vw, 2rem);
+        }
+
+        .stats span {
+            color: #6b7280;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            max-width: 42ch;
+        }
+
+        .pricing-section {
+            margin-top: 22px;
+            border-radius: 20px;
+            background: #f4f5f8;
+            color: #0f172a;
+            padding: 40px clamp(14px, 4vw, 22px) 28px;
+            text-align: center;
+            border: 1px solid #e5e7eb;
+        }
+
+        .pricing-label {
+            margin: 0;
+            color: #a16207;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .pricing-section-title {
+            margin: 10px 0 8px;
+            font-size: clamp(1.55rem, 2.4vw, 2rem);
+            font-weight: 800;
+            color: #0f2744;
+            letter-spacing: -0.02em;
+        }
+
+        .pricing-section-subtitle {
+            margin: 0 auto 28px;
+            max-width: 640px;
+            color: #64748b;
+            font-size: 0.98rem;
+            line-height: 1.55;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            text-align: left;
+        }
+
+        .pricing-card {
+            border-radius: 16px;
+            background: #fff;
+            padding: 22px 14px 18px;
+            border: 2px solid #e5e7eb;
+            box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1);
+        }
+
+        .pricing-card--blue { border-color: #93c5fd; }
+        .pricing-card--orange { border-color: #f59e0b; }
+        .pricing-card--purple { border-color: #d8b4fe; }
+
+        .pricing-card-badge {
+            align-self: center;
+            margin: 0 0 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #f59e0b, #ea580c);
+            color: #fff;
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .pricing-card-pill {
+            display: inline-block;
+            align-self: flex-start;
+            padding: 5px 11px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .pricing-card-pill--blue { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; }
+        .pricing-card-pill--orange { background: #fffbeb; color: #b45309; border: 1px solid #fde68a; }
+        .pricing-card-pill--purple { background: #faf5ff; color: #7e22ce; border: 1px solid #e9d5ff; }
+
+        .pricing-card-price {
+            margin: 14px 0 10px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .pricing-card-amount {
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: #0f2744;
+            letter-spacing: -0.03em;
+        }
+
+        .pricing-card-suffix {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #64748b;
+        }
+
+        .pricing-card-desc {
+            margin: 0 0 14px;
+            font-size: 0.88rem;
+            line-height: 1.55;
+            color: #64748b;
+        }
+
+        .pricing-card-features {
+            margin: 0 0 18px;
+            padding: 0;
+            list-style: none;
+            flex: 1;
+        }
+
+        .pricing-card-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.82rem;
+            color: #334155;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .pricing-card-features li i {
+            color: #10b981;
+            margin-top: 2px;
+        }
+
+        .pricing-card-cta {
+            display: block;
+            text-align: center;
+            margin-top: auto;
+            padding: 11px 12px;
+            border-radius: 11px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+        }
+
+        .pricing-card-cta--blue { background: #dbeafe; color: #1e40af; border: 1px solid #93c5fd; }
+        .pricing-card-cta--orange { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+        .pricing-card-cta--purple { background: #f3e8ff; color: #6b21a8; border: 1px solid #d8b4fe; }
+
+        .pricing-how {
+            margin-top: 28px;
+            padding: 20px 22px;
+            border-radius: 14px;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            text-align: left;
+        }
+
+        .pricing-how-title {
+            margin: 0 0 12px;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #0f2744;
+        }
+
+        .pricing-how-list {
+            margin: 0;
+            padding-left: 1.15rem;
+            color: #475569;
+            font-size: 0.88rem;
+            line-height: 1.65;
+        }
+
+        .pricing-how-list li { margin-bottom: 6px; }
+
+        .site-footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 18px max(20px, env(safe-area-inset-left, 0px)) 28px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: space-between;
+            color: rgba(237, 242, 255, 0.55);
+            font-size: 0.85rem;
+        }
+
+        .site-footer a {
+            color: rgba(237, 242, 255, 0.7);
+            text-decoration: none;
+        }
+
+        .site-footer a:hover { color: #fff; }
+
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes title-in {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes accent-glow {
+            0% { text-shadow: 0 0 0 rgba(255, 177, 0, 0); }
+            55% { text-shadow: 0 0 12px rgba(255, 177, 0, 0.5), 0 0 28px rgba(255, 177, 0, 0.28); }
+            100% { text-shadow: 0 0 0 rgba(255, 177, 0, 0); }
+        }
+
+        @keyframes hdp-aurora {
+            0%, 100% { background-position: 0% 40%; }
+            50% { background-position: 100% 60%; }
+        }
+
+        @keyframes hdp-ping {
+            0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55); }
+            70% { box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+        }
+
+        .feature-card:nth-child(1), .stats div:nth-child(1) { animation-delay: 0.05s; }
+        .feature-card:nth-child(2), .stats div:nth-child(2) { animation-delay: 0.1s; }
+        .feature-card:nth-child(3), .stats div:nth-child(3) { animation-delay: 0.15s; }
+        .feature-card:nth-child(4), .stats div:nth-child(4) { animation-delay: 0.2s; }
+        .feature-card:nth-child(5) { animation-delay: 0.25s; }
+        .feature-card:nth-child(6) { animation-delay: 0.3s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero, .hero h1, .hero h1 span, .feature-card, .stats div, .hdp { animation: none; }
+            .hero-visual:hover { transform: none; filter: none; }
+            .hdp__live-ping { animation: none; }
+        }
+
+        @media (max-width: 980px) {
+            .nav nav { display: none; }
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+            .feature-grid { grid-template-columns: 1fr; }
+            .pricing-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 1px;
+                background: #e5e7eb;
+            }
+            .stats div { background: #fff; }
+            .hero h1 { font-size: clamp(2rem, 9vw, 2.9rem); }
+        }
+
+        @media (max-width: 640px) {
+            .nav, .content, .site-footer {
+                padding-left: max(14px, env(safe-area-inset-left, 0px));
+                padding-right: max(14px, env(safe-area-inset-right, 0px));
+            }
+            .hero-actions .btn {
+                flex: 1 1 140px;
+                min-height: 44px;
+            }
+            .hdp__kpi { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
-    <nav class="border-b border-slate-200 bg-white sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-3">
-            <a href="index.html" class="flex items-center gap-3 font-bold text-lg">
-                <img src="https://applimanagement.com/AppliManagement.png" alt="AppliManagement" class="h-9 w-auto">
-                <span>AppliManagement</span>
-            </a>
-            <div class="flex flex-wrap items-center gap-2 sm:gap-3">
-                <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-blue-600">Accueil</a>
-                <a href="index.html#tarifs" class="text-sm font-semibold text-slate-600 hover:text-blue-600 hidden sm:inline">Tarifs</a>
-                <a href="index.html#contact" class="text-sm font-semibold bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700">Contact</a>
+<body>
+<div class="home">
+    <header class="nav">
+        <a href="index.html" class="logo">
+            <span class="logo-mark">RF</span>
+            <div>
+                <p>RankFlow</p>
+                <small>APPLIMANAGEMENT · SEO</small>
             </div>
-        </div>
-    </nav>
-
-    <main class="max-w-3xl mx-auto px-4 py-14 md:py-20">
-        <p class="text-xs font-bold uppercase tracking-widest text-lime-700 mb-3">Outil SEO</p>
-        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 mb-4">
-            RankFlow
-        </h1>
-        <p class="text-lg text-slate-600 leading-relaxed mb-6">
-            RankFlow est l&apos;application SEO d&apos;AppliManagement. Elle aide à comprendre pourquoi un site n&apos;apparaît pas (ou trop bas) sur Google, puis à corriger : technique, contenu, vitesse et positions.
-        </p>
-
-        <ul class="space-y-3 text-slate-700 mb-10">
-            <li class="flex gap-3"><i class="fas fa-check text-lime-600 mt-1"></i> Diagnostic SEO (sitemap, robots, indexation, contenu)</li>
-            <li class="flex gap-3"><i class="fas fa-check text-lime-600 mt-1"></i> Performance PageSpeed et Core Web Vitals</li>
-            <li class="flex gap-3"><i class="fas fa-check text-lime-600 mt-1"></i> Audit on-page (titles, méta, H1, images)</li>
-            <li class="flex gap-3"><i class="fas fa-check text-lime-600 mt-1"></i> Mots-clés et suivi de classements</li>
-        </ul>
-
-        <a
-            href="https://seo.applimanagement.com"
-            class="inline-flex items-center gap-2 rounded-xl bg-lime-500 px-6 py-3.5 text-base font-bold text-slate-950 hover:bg-lime-400 transition shadow-md shadow-lime-600/20"
-            rel="noopener"
-        >
-            Accéder à RankFlow
-            <i class="fas fa-arrow-right text-sm"></i>
         </a>
-        <p class="mt-3 text-sm text-slate-500">
-            Ouvre l&apos;application sur
-            <a href="https://seo.applimanagement.com" class="text-blue-600 hover:underline" rel="noopener">seo.applimanagement.com</a>
-        </p>
+        <nav aria-label="Navigation principale">
+            <a href="#features">Fonctionnalités</a>
+            <a href="#pricing">Tarifs</a>
+            <a href="https://seo.applimanagement.com" rel="noopener">Essai gratuit</a>
+        </nav>
+        <a href="https://seo.applimanagement.com" class="btn btn-primary" rel="noopener">Se connecter</a>
+    </header>
+
+    <main class="content">
+        <section class="hero">
+            <div class="hero-text">
+                <p class="tag">Audit SEO en direct</p>
+                <h1>L&apos;outil qui <span>clarifie</span> pourquoi ton site ne ranke pas</h1>
+                <p>
+                    Diagnostic technique, PageSpeed, Search Console et suivi de positions dans une seule interface.
+                    Tu vois ce qui bloque, tu priorises, tu corriges.
+                </p>
+                <div class="hero-actions">
+                    <a href="https://seo.applimanagement.com" class="btn btn-accent" rel="noopener">Commencer gratuitement</a>
+                    <a href="#features" class="btn btn-ghost">Voir les fonctionnalités</a>
+                </div>
+                <ul class="proofs">
+                    <li><i class="fas fa-shield-halved" aria-hidden="true"></i> Données techniques réelles</li>
+                    <li><i class="fas fa-clock" aria-hidden="true"></i> Premier diagnostic en quelques minutes</li>
+                    <li><i class="fas fa-chart-line" aria-hidden="true"></i> Positions et GSC à jour</li>
+                </ul>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+                <div class="hdp">
+                    <div class="hdp__mesh"></div>
+                    <div class="hdp__chrome">
+                        <div class="hdp__dots">
+                            <span class="hdp__dot hdp__dot--r"></span>
+                            <span class="hdp__dot hdp__dot--y"></span>
+                            <span class="hdp__dot hdp__dot--g"></span>
+                        </div>
+                        <div class="hdp__chrome-title">
+                            <i class="fas fa-chart-line" style="color:#38bdf8"></i>
+                            <span>RankFlow</span>
+                        </div>
+                        <span class="hdp__live">
+                            <span class="hdp__live-ping"></span>
+                            Live
+                        </span>
+                    </div>
+                    <div class="hdp__body">
+                        <div class="hdp__kpi">
+                            <div class="hdp__kpi-card hdp__kpi-card--amber">
+                                <span class="hdp__kpi-label">Score SEO</span>
+                                <p class="hdp__kpi-value" data-count="72">0</p>
+                            </div>
+                            <div class="hdp__kpi-card hdp__kpi-card--sky">
+                                <span class="hdp__kpi-label">Pages</span>
+                                <p class="hdp__kpi-value" data-count="148">0</p>
+                            </div>
+                            <div class="hdp__kpi-card hdp__kpi-card--emerald">
+                                <span class="hdp__kpi-label">Clics GSC</span>
+                                <p class="hdp__kpi-value" data-count="890">0</p>
+                            </div>
+                        </div>
+                        <div class="hdp__panel">
+                            <p class="hdp__panel-title">Priorités du diagnostic</p>
+                            <div class="hdp__bars">
+                                <div class="hdp__bar-row">
+                                    <span>Technique</span>
+                                    <div class="hdp__bar-track"><div class="hdp__bar-fill hdp__bar-fill--a" data-w="86"></div></div>
+                                    <span>86%</span>
+                                </div>
+                                <div class="hdp__bar-row">
+                                    <span>Contenu</span>
+                                    <div class="hdp__bar-track"><div class="hdp__bar-fill hdp__bar-fill--b" data-w="64"></div></div>
+                                    <span>64%</span>
+                                </div>
+                                <div class="hdp__bar-row">
+                                    <span>Vitesse</span>
+                                    <div class="hdp__bar-track"><div class="hdp__bar-fill hdp__bar-fill--c" data-w="51"></div></div>
+                                    <span>51%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <p class="chip">Fonctionnalités</p>
+            <h2>Tout ce dont tu as besoin, rien de superflu</h2>
+            <p class="features-intro">
+                RankFlow est conçu pour les sites vitrines, e-commerce et apps web qui veulent comprendre Google sans jargon inutile.
+            </p>
+            <div class="feature-grid">
+                <article class="feature-card active">
+                    <div class="feature-head">
+                        <h3><i class="fas fa-sitemap" aria-hidden="true"></i> Diagnostic SEO complet</h3>
+                        <span>Populaire</span>
+                    </div>
+                    <p>Sitemap, robots, indexabilité, on-page et crawl de tes pages pour lister les vrais blocages.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-head">
+                        <h3><i class="fas fa-gauge-high" aria-hidden="true"></i> PageSpeed &amp; Core Web Vitals</h3>
+                        <span>Lighthouse</span>
+                    </div>
+                    <p>Mobile et desktop : perf, LCP, CLS et pistes concrètes pour accélérer ton site.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-head">
+                        <h3><i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i> Search Console</h3>
+                        <span>GSC</span>
+                    </div>
+                    <p>Impressions, clics, requêtes et cannibalisation pour voir ce que Google te montre déjà.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-head">
+                        <h3><i class="fas fa-arrow-trend-up" aria-hidden="true"></i> Suivi de positions</h3>
+                        <span>Classements</span>
+                    </div>
+                    <p>Suis tes mots-clés dans le temps et repère les hausses ou baisses sans tableur.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-head">
+                        <h3><i class="fas fa-lightbulb" aria-hidden="true"></i> Mapping sémantique</h3>
+                        <span>Suggest</span>
+                    </div>
+                    <p>Idées de requêtes autour de ton sujet pour enrichir pages et maillage interne.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-head">
+                        <h3><i class="fas fa-mobile-screen" aria-hidden="true"></i> Utilisable partout</h3>
+                        <span>Web app</span>
+                    </div>
+                    <p>Interface claire sur desktop comme sur téléphone. Tu lances un audit, tu reviens plus tard.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="stats" aria-label="Indicateurs">
+            <div>
+                <strong><i class="fas fa-bolt" aria-hidden="true"></i> &lt; 5 min</strong>
+                <span>pour lancer un premier diagnostic utile</span>
+            </div>
+            <div>
+                <strong><i class="fas fa-list-check" aria-hidden="true"></i> 20+</strong>
+                <span>contrôles SEO techniques et contenu</span>
+            </div>
+            <div>
+                <strong><i class="fas fa-clock" aria-hidden="true"></i> 24/7</strong>
+                <span>accès à l&apos;app depuis n&apos;importe où</span>
+            </div>
+            <div>
+                <strong><i class="fas fa-file-pdf" aria-hidden="true"></i> PDF</strong>
+                <span>rapport clair à partager avec ton équipe</span>
+            </div>
+        </section>
+
+        <section class="pricing-section" id="pricing">
+            <p class="pricing-label">Tarifs</p>
+            <h2 class="pricing-section-title">Plans &amp; accès</h2>
+            <p class="pricing-section-subtitle">
+                Choisis la formule adaptée à ton rythme. Tu peux aussi ouvrir l&apos;outil tout de suite pour tester.
+            </p>
+            <div class="pricing-grid">
+                <article class="pricing-card pricing-card--blue">
+                    <span class="pricing-card-pill pricing-card-pill--blue">Essai</span>
+                    <p class="pricing-card-price">
+                        <span class="pricing-card-amount">0 €</span>
+                        <span class="pricing-card-suffix">pour démarrer</span>
+                    </p>
+                    <p class="pricing-card-desc">Accède à RankFlow et lance ton premier diagnostic SEO.</p>
+                    <ul class="pricing-card-features">
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Diagnostic technique de base</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>PageSpeed homepage</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Vue claire des priorités</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Sans engagement</span></li>
+                    </ul>
+                    <a href="https://seo.applimanagement.com" class="pricing-card-cta pricing-card-cta--blue" rel="noopener">Commencer</a>
+                </article>
+                <article class="pricing-card pricing-card--orange">
+                    <div class="pricing-card-badge"><i class="fas fa-star" aria-hidden="true"></i> Populaire</div>
+                    <span class="pricing-card-pill pricing-card-pill--orange">Pro</span>
+                    <p class="pricing-card-price">
+                        <span class="pricing-card-amount">Sur devis</span>
+                    </p>
+                    <p class="pricing-card-desc">Suivi régulier, GSC et classements pour un site en croissance.</p>
+                    <ul class="pricing-card-features">
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Diagnostic complet + crawl</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Search Console connectée</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Suivi de positions</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Rapports PDF</span></li>
+                    </ul>
+                    <a href="index.html#contact" class="pricing-card-cta pricing-card-cta--orange">Nous contacter</a>
+                </article>
+                <article class="pricing-card pricing-card--purple">
+                    <span class="pricing-card-pill pricing-card-pill--purple">Agence</span>
+                    <p class="pricing-card-price">
+                        <span class="pricing-card-amount">Sur devis</span>
+                    </p>
+                    <p class="pricing-card-desc">Plusieurs sites, process d&apos;audit et accompagnement AppliManagement.</p>
+                    <ul class="pricing-card-features">
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Multi-sites</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Priorisation des constats</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Benchmark concurrents</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Support dédié</span></li>
+                    </ul>
+                    <a href="index.html#contact" class="pricing-card-cta pricing-card-cta--purple">Nous contacter</a>
+                </article>
+            </div>
+            <div class="pricing-how">
+                <h3 class="pricing-how-title">Comment ça fonctionne ?</h3>
+                <ul class="pricing-how-list">
+                    <li>Tu ouvres RankFlow, tu indiques ton domaine, tu lances le diagnostic.</li>
+                    <li>Les résultats arrivent au fil de l&apos;analyse : technique, contenu, perf, GSC.</li>
+                    <li>Pour un suivi Pro ou Agence, on calibre avec toi via le formulaire de contact.</li>
+                </ul>
+            </div>
+        </section>
     </main>
 
-    <footer class="border-t border-slate-200 bg-white mt-8">
-        <div class="max-w-6xl mx-auto px-4 py-6 flex flex-wrap items-center justify-between gap-3 text-sm text-slate-500">
-            <a href="index.html" class="hover:text-slate-800">AppliManagement</a>
-            <a href="mentions-legales.html" class="hover:text-slate-800">Mentions légales</a>
+    <footer class="site-footer">
+        <a href="index.html">AppliManagement</a>
+        <div style="display:flex;gap:16px;flex-wrap:wrap">
+            <a href="https://seo.applimanagement.com" rel="noopener">Ouvrir RankFlow</a>
+            <a href="mentions-legales.html">Mentions légales</a>
         </div>
     </footer>
+</div>
+
+<script>
+(function () {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+    }
+
+    function animateCounters() {
+        var nodes = document.querySelectorAll("[data-count]");
+        if (!nodes.length) return;
+        if (reduce) {
+            nodes.forEach(function (el) {
+                el.textContent = el.getAttribute("data-count");
+            });
+            return;
+        }
+        var duration = 900;
+        var start = performance.now();
+        function tick(now) {
+            var p = Math.min((now - start) / duration, 1);
+            var e = easeOutCubic(p);
+            nodes.forEach(function (el) {
+                var target = parseInt(el.getAttribute("data-count"), 10) || 0;
+                el.textContent = String(Math.round(target * e));
+            });
+            if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+    }
+
+    function animateBars() {
+        var fills = document.querySelectorAll(".hdp__bar-fill[data-w]");
+        requestAnimationFrame(function () {
+            fills.forEach(function (el) {
+                el.style.width = (el.getAttribute("data-w") || "0") + "%";
+            });
+        });
+    }
+
+    animateCounters();
+    animateBars();
+})();
+</script>
 </body>
 </html>
