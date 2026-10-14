@@ -581,6 +581,30 @@
         .pricing-card--blue { border-color: #93c5fd; }
         .pricing-card--orange { border-color: #f59e0b; }
         .pricing-card--purple { border-color: #d8b4fe; }
+        .pricing-card--amber {
+            border-color: #fbbf24;
+            background: linear-gradient(180deg, #fffbeb 0%, #fff 55%);
+        }
+        .pricing-card--recommended {
+            border-color: #fb923c;
+            background: linear-gradient(180deg, #fff7ed 0%, #fff 50%);
+            box-shadow: 0 14px 36px rgba(234, 88, 12, 0.14);
+        }
+        .pricing-card--slate { border-color: #cbd5e1; background: #f8fafc; }
+
+        .pricing-guarantee {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0 auto 22px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid #a7f3d0;
+            background: #ecfdf5;
+            color: #065f46;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
 
         .pricing-card-badge {
             align-self: center;
@@ -888,6 +912,7 @@
         <nav aria-label="Navigation principale">
             <a href="#features">Fonctionnalités</a>
             <a href="#comparatif">Comparatif</a>
+            <a href="#correction-tarifs">Correction</a>
             <a href="#pricing">Tarifs</a>
             <a href="https://seo.applimanagement.com" rel="noopener">Essai gratuit</a>
         </nav>
@@ -1108,8 +1133,70 @@
             </p>
         </section>
 
+        <section class="pricing-section" id="correction-tarifs">
+            <p class="pricing-label">Correction clé en main</p>
+            <h2 class="pricing-section-title">On applique les correctifs sur votre site</h2>
+            <p class="pricing-section-subtitle">
+                Ne passez pas des heures à déchiffrer le rapport. Intervention à distance
+                (WordPress, Shopify, sur-mesure) à partir des erreurs SEO et GEO détectées.
+            </p>
+            <p class="pricing-guarantee">
+                <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                Garantie score amélioré ou réintervention gratuite
+            </p>
+            <div class="pricing-grid">
+                <article class="pricing-card pricing-card--amber">
+                    <div class="pricing-card-badge" style="background:linear-gradient(135deg,#d97706,#b45309)">Le plus accessible</div>
+                    <span class="pricing-card-pill pricing-card-pill--orange">Essentiel Local / TPE</span>
+                    <p class="pricing-card-price">
+                        <span class="pricing-card-amount">290&nbsp;€</span>
+                        <span class="pricing-card-suffix">HT · forfait unique</span>
+                    </p>
+                    <p class="pricing-card-desc">Sites vitrines simples, artisans, commerces de proximité (1 à 10 pages).</p>
+                    <ul class="pricing-card-features">
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Erreurs critiques (meta, Hn, 404)</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Schema.org local &amp; Google Maps</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Vitesse de base (images, cache)</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Rapport Avant / Après</span></li>
+                    </ul>
+                    <a href="https://buy.stripe.com/5kQ7sE8IfaZ365U6EXcZa0p" class="pricing-card-cta pricing-card-cta--orange" target="_blank" rel="noopener noreferrer">Résoudre mes erreurs à 290&nbsp;€</a>
+                </article>
+                <article class="pricing-card pricing-card--recommended">
+                    <div class="pricing-card-badge"><i class="fas fa-star" aria-hidden="true"></i> Recommandé</div>
+                    <span class="pricing-card-pill pricing-card-pill--orange">Business &amp; Performance</span>
+                    <p class="pricing-card-price">
+                        <span class="pricing-card-amount">690&nbsp;€</span>
+                        <span class="pricing-card-suffix">HT · forfait unique</span>
+                    </p>
+                    <p class="pricing-card-desc">PME, services, sites vitrines complexes (10 à 50 pages).</p>
+                    <ul class="pricing-card-features">
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Tout l&apos;Essentiel inclus</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Optimisation code CSS/JS avancée</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>PageSpeed / GTmetrix poussés</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Sécurisation &amp; redirections</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Session expert 30 min</span></li>
+                    </ul>
+                    <a href="https://buy.stripe.com/eVqdR2f6D8QV51Q8N5cZa0n" class="pricing-card-cta pricing-card-cta--orange" target="_blank" rel="noopener noreferrer">Choisir l&apos;offre Business</a>
+                </article>
+                <article class="pricing-card pricing-card--slate">
+                    <span class="pricing-card-pill pricing-card-pill--blue">Sur-mesure / E-commerce</span>
+                    <p class="pricing-card-price">
+                        <span class="pricing-card-amount">1&nbsp;500&nbsp;€</span>
+                        <span class="pricing-card-suffix">HT · ou sur devis</span>
+                    </p>
+                    <p class="pricing-card-desc">Boutiques WooCommerce, PrestaShop, Shopify ou gros sites (&gt;&nbsp;50 pages).</p>
+                    <ul class="pricing-card-features">
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Correctifs catalogue / fiches produits</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Tunnels de conversion &amp; requêtes complexes</span></li>
+                        <li><i class="fas fa-circle-check" aria-hidden="true"></i><span>Recette complète Avant / Après</span></li>
+                    </ul>
+                    <a href="https://buy.stripe.com/6oU6oAe2z9UZ8e22oHcZa0o" class="pricing-card-cta pricing-card-cta--blue" target="_blank" rel="noopener noreferrer">Demander un devis sur-mesure</a>
+                </article>
+            </div>
+        </section>
+
         <section class="pricing-section" id="pricing">
-            <p class="pricing-label">Tarifs</p>
+            <p class="pricing-label">Accès RankFlow</p>
             <h2 class="pricing-section-title">Essai gratuit, puis 89&nbsp;€ par site</h2>
             <p class="pricing-section-subtitle">
                 Tu testes sans payer : scores et nombre de corrections. L&apos;analyse détaillée et tous les outils RankFlow pour un site : 89&nbsp;€ (paiement Stripe). Beaucoup moins cher qu&apos;un audit agence à ~2&nbsp;000&nbsp;€.
