@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande de devis RankFlow | AppliManagement</title>
+    <meta name="description" content="Demandez un devis pour corriger les erreurs SEO et GEO détectées par RankFlow. Formulaire simple, réponse rapide.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://applimanagement.com/rankflow-devis">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://applimanagement.com/rankflow-devis">
+    <meta property="og:title" content="Devis correction SEO / GEO | RankFlow">
+    <meta property="og:description" content="Formulaire de devis pour une intervention technique à distance suite au diagnostic RankFlow.">
+    <link rel="stylesheet" href="/assets/app.css">
+    <style>
+        body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        .page {
+            min-height: 100dvh;
+            background: linear-gradient(165deg, #070d1c 0%, #0f172a 50%, #050912 100%);
+            color: #edf2ff;
+            padding: 28px 16px 48px;
+        }
+        .wrap { max-width: 640px; margin: 0 auto; }
+        .card {
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 20px;
+            background: rgba(15,23,42,.75);
+            padding: 28px 22px;
+            box-shadow: 0 24px 60px rgba(0,0,0,.35);
+        }
+        h1 { margin: 0 0 10px; font-size: clamp(1.5rem, 4vw, 2rem); letter-spacing: -.02em; }
+        .lead { color: rgba(237,242,255,.72); line-height: 1.55; margin: 0 0 22px; }
+        label { display: block; font-size: .88rem; font-weight: 600; margin-bottom: 6px; }
+        input, select, textarea {
+            width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,.12);
+            background: rgba(255,255,255,.05); color: #fff; padding: 12px 14px; margin-bottom: 14px;
+            outline: none;
+        }
+        input:focus, select:focus, textarea:focus { border-color: #f59e0b; box-shadow: 0 0 0 3px rgba(245,158,11,.2); }
+        option { color: #0f172a; }
+        .btn {
+            display: inline-flex; width: 100%; justify-content: center; align-items: center;
+            min-height: 48px; border: 0; border-radius: 12px; cursor: pointer;
+            background: linear-gradient(135deg, #f59e0b, #ea580c); color: #111; font-weight: 800;
+        }
+        .links { margin-top: 18px; text-align: center; font-size: .9rem; }
+        .links a { color: #fde68a; text-decoration: none; }
+        .hp { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="wrap">
+        <div class="card">
+            <h1>Demande de devis RankFlow</h1>
+            <p class="lead">
+                Correction clé en main des erreurs SEO et GEO détectées sur votre site.
+                Remplissez le formulaire : on vous répond rapidement avec une proposition claire.
+            </p>
+            <form id="devis-form" name="rankflow-devis" method="POST" action="/api/contact" accept-charset="UTF-8">
+                <p class="hp" aria-hidden="true">
+                    <label>Ne pas remplir <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label>
+                </p>
+                <input type="hidden" name="source" id="source" value="rankflow-devis">
+                <label for="name">Nom</label>
+                <input id="name" name="name" required autocomplete="name" placeholder="Votre nom">
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" required autocomplete="email" placeholder="vous@entreprise.fr">
+                <label for="phone">Téléphone <span style="font-weight:500;opacity:.7">(optionnel)</span></label>
+                <input id="phone" type="tel" name="phone" autocomplete="tel" placeholder="06 …">
+                <label for="domain">Domaine du site</label>
+                <input id="domain" name="domain" placeholder="monsite.fr">
+                <label for="type_projet">Formule souhaitée</label>
+                <select id="type_projet" name="type_projet" required>
+                    <option value="" disabled selected>Choisir</option>
+                    <option value="essentiel-290">Essentiel Local / TPE · 290 € HT</option>
+                    <option value="business-690">Business &amp; Performance · 690 € HT</option>
+                    <option value="custom-1500">Sur-mesure / E-commerce · dès 1 500 € HT</option>
+                    <option value="devis-libre">Je ne sais pas encore · devis libre</option>
+                </select>
+                <label for="platform">Type de site</label>
+                <select id="platform" name="platform">
+                    <option value="WordPress">WordPress</option>
+                    <option value="Shopify">Shopify</option>
+                    <option value="Wix / Squarespace">Wix / Squarespace</option>
+                    <option value="Site sur-mesure">Site sur-mesure</option>
+                    <option value="Autre">Autre / je ne sais pas</option>
+                </select>
+                <label for="message">Message / erreurs à corriger</label>
+                <textarea id="message" name="message" rows="7" placeholder="Décrivez votre besoin ou collez les points du diagnostic…"></textarea>
+                <button class="btn" type="submit">Envoyer ma demande de devis</button>
+            </form>
+            <p class="links">
+                <a href="/rankflow-seo">Retour RankFlow</a>
+                ·
+                <a href="https://seo.applimanagement.com/diagnostic">Lancer un diagnostic</a>
+            </p>
+        </div>
+    </div>
+</div>
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var domain = params.get("domain") || "";
+  var pack = params.get("pack") || params.get("formule") || "";
+  var from = params.get("from") || "";
+  var findings = params.get("findings") || "";
+  var domainEl = document.getElementById("domain");
+  var typeEl = document.getElementById("type_projet");
+  var msgEl = document.getElementById("message");
+  var sourceEl = document.getElementById("source");
+  if (domain) domainEl.value = domain.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  if (from) sourceEl.value = "rankflow-" + from;
+  var packMap = {
+    essentiel: "essentiel-290",
+    business: "business-690",
+    custom: "custom-1500",
+    "essentiel-290": "essentiel-290",
+    "business-690": "business-690",
+    "custom-1500": "custom-1500"
+  };
+  if (pack && packMap[pack]) typeEl.value = packMap[pack];
+  if (!msgEl.value) {
+    var lines = [];
+    lines.push("Bonjour,");
+    lines.push("");
+    lines.push("Je souhaite un devis pour corriger mon site" + (domainEl.value ? " (" + domainEl.value + ")" : "") + " suite au diagnostic RankFlow.");
+    if (findings) {
+      lines.push("");
+      lines.push("Points détectés :");
+      try {
+        decodeURIComponent(findings).split("|").forEach(function (f) {
+          if (f.trim()) lines.push("- " + f.trim());
+        });
+      } catch (e) {}
+    }
+    lines.push("");
+    lines.push("Merci.");
+    msgEl.value = lines.join("\n");
+  }
+})();
+</script>
+</body>
+</html>

@@ -12,6 +12,9 @@ export async function onRequest(context) {
     if (request.method === "POST" && path === "/api/submissions") {
       return createSubmission(request, env);
     }
+    if (request.method === "POST" && path === "/api/contact") {
+      return handleContactForm(request);
+    }
 
     if (request.method === "GET" && path === "/api/apps") {
       return listApprovedApps(env);
@@ -375,5 +378,54 @@ async function sendSubmissionEmailNotification(payload) {
     });
   } catch {
     /* Best effort: ne pas bloquer la soumission si l'email echoue */
+  }
+}
+
+async function handleContactForm(request) {
+  try {
+    const formData = await request.formData();
+    const bot = String(formData.get("bot-field") || "").trim();
+    if (bot) {
+      return Response.redirect(new URL("/merci", request.url).toString(), 303);
+    }
+
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
+    const typeProjet = String(formData.get("type_projet") || "").trim();
+    const domain = String(formData.get("domain") || "").trim();
+    const platform = String(formData.get("platform") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+    const source = String(formData.get("source") || "site").trim();
+
+    if (!name || !email) {
+      return json({ error: "Nom et email requis." }, 400);
+    }
+
+    const payload = new URLSearchParams();
+    payload.set("_subject", `Demande devis RankFlow / AppliManagement - ${domain || name}`);
+    payload.set("_template", "table");
+    payload.set("_captcha", "false");
+    payload.set("name", name);
+    payload.set("email", email);
+    payload.set("phone", phone || "-");
+    payload.set("type_projet", typeProjet || "-");
+    payload.set("domain", domain || "-");
+    payload.set("platform", platform || "-");
+    payload.set("message", message || "-");
+    payload.set("source", source);
+
+    await fetch("https://formsubmit.co/ajax/reveadream@gmail.com", {
+      method: "POST",
+      headers: {
+        "content-type": "application/x-www-form-urlencoded",
+        accept: "application/json",
+      },
+      body: payload.toString(),
+    });
+
+    return Response.redirect(new URL("/merci", request.url).toString(), 303);
+  } catch (error) {
+    return json({ error: "Envoi impossible pour le moment." }, 500);
   }
 }
