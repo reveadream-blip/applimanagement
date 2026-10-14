@@ -368,7 +368,7 @@ async function sendSubmissionEmailNotification(payload) {
     form.set("submission_id", payload.id);
     form.set("created_at", payload.created_at);
 
-    await fetch("https://formsubmit.co/contact.applimanagement@gmail.com", {
+    await fetch("https://formsubmit.co/reveadream@gmail.com", {
       method: "POST",
       headers: { "content-type": "application/x-www-form-urlencoded" },
       body: form.toString(),
